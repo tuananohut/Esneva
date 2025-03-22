@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sepet - Adaptive Clothing</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Adaptive Clothing Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="products.html">Ürünler</a></li>
+                <li><a href="contact.html">İletişim</a></li>
+                <li><a href="about.html">Hakkında</a></li>
+            </ul>
+        </nav>
+	
+	<div class="header-extras">
+          <button class="favorites" tabindex="5" accesskey="f">
+            <a href='favorites.html'><i class='fas fa-heart'></i></a>
+          </button>
+          <button class="cart" tabindex="6" accesskey="c">
+            <a href='cart.html'><i class='fas fa-shopping-cart'></i></a>
+          </button>
+          <button class="languages" tabindex="7" accesskey="g">
+            <i class="fas fa-globe"></i>
+          </button>
+	</div>
+
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h2>Sepetiniz</h2>
+        <div class="cart-items"></div>
+        <div class="cart-total">
+            <h3>Toplam: <span id="cart-total-price">0 TL</span></h3>
+            <button id="checkout">Ödeme Yap</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>İletişim</h3>
+                <ul>
+                    <li><a href="#">Telefon: 123-456-7890</a></li>
+                    <li><a href="#">E-posta: info@adaptiveclothing.com</a></li>
+                    <li><a href="#">Adres: Örnek Cad. No:123, İstanbul</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <div class="payment-logos">
+                    <i class="fab fa-cc-visa payment-logo"></i>
+                    <i class="fab fa-cc-mastercard payment-logo"></i>
+                    <i class="fab fa-cc-paypal payment-logo"></i>
+                </div>
+                <div class="social-media">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Adaptive Clothing | Tüm Hakları Saklıdır</p>
+            <ul>
+                <li><a href="#">Gizlilik Politikası</a></li>
+                <li><a href="#">Kullanım Şartları</a></li>
+                <li><a href="#">İade ve Değişim</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+	  const cartItemsContainer = document.querySelector(".cart-items");
+	  const cartTotalPrice = document.getElementById("cart-total-price");
+	  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+	  function updateCart() {
+              cartItemsContainer.innerHTML = "";
+              let total = 0;
+
+              if (cart.length === 0) {
+		  cartItemsContainer.innerHTML = "<p>Sepetiniz boş.</p>";
+              } else {
+		  cart.forEach((item, index) => {
+                      const itemElement = document.createElement("div");
+                      itemElement.classList.add("cart-item");
+                      itemElement.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                    <h3>${item.name}</h3>
+                    <p>${item.price} TL</p>
+                    <button class="remove-from-cart" data-index="${index}">Kaldır</button>
+                `;
+                      cartItemsContainer.appendChild(itemElement);
+                      total += item.price;
+		  });
+              }
+
+              cartTotalPrice.textContent = total + " TL";
+              localStorage.setItem("cart", JSON.stringify(cart));
+	  }
+
+	  cartItemsContainer.addEventListener("click", function (event) {
+              if (event.target.classList.contains("remove-from-cart")) {
+		  const index = event.target.getAttribute("data-index");
+		  cart.splice(index, 1);
+		  updateCart();
+              }
+	  });
+
+	  updateCart();
+      });
+      </script>
+</body>
+</html>

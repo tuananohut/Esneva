@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürünler - Adaptive Clothing</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="logo">
+        <img src="logo.png" alt="Adaptive Clothing Logo">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="products.html">Ürünler</a></li>
+          <li><a href="contact.html">İletişim</a></li>
+          <li><a href="about.html">Hakkında</a></li>
+        </ul>
+      </nav>
+      <div class="header-extras">
+        <button class="favorites" tabindex="5" accesskey="f">
+          <a href='favorites.html'><i class='fas fa-heart'></i></a>
+        </button>
+        <button class="cart" tabindex="6" accesskey="c">
+          <a href='cart.html'><i class='fas fa-shopping-cart'></i></a>
+        </button>
+        <button class="languages" tabindex="7" accesskey="g">
+          <i class="fas fa-globe"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <button class="close-sidebar">&times;</button>
+      <h3>Kategoriler</h3>
+      <ul>
+        <li><a href="#">Üst Giyim</a></li>
+        <li><a href="#">Alt Giyim</a></li>
+        <li><a href="#">Aksesuarlar</a></li>
+        <li><a href="#">Yeni Ürünler</a></li>
+      </ul>
+    </aside>
+    
+    <!-- Toggle Button -->
+    <button class="sidebar-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Main Content -->
+    <main>
+      <div class="content-container">
+        <section class="product-list">
+          <h2>Ürünler</h2>
+          <div class="products"></div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>İletişim</h3>
+          <ul>
+            <li><a href="#">Telefon: 123-456-7890</a></li>
+            <li><a href="#">E-posta: info@adaptiveclothing.com</a></li>
+            <li><a href="#">Adres: Örnek Cad. No:123, İstanbul</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <div class="payment-logos">
+            <i class="fab fa-cc-visa payment-logo"></i>
+            <i class="fab fa-cc-mastercard payment-logo"></i>
+            <i class="fab fa-cc-paypal payment-logo"></i>
+          </div>
+          <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Adaptive Clothing | Tüm Hakları Saklıdır</p>
+        <ul>
+          <li><a href="#">Gizlilik Politikası</a></li>
+          <li><a href="#">Kullanım Şartları</a></li>
+          <li><a href="#">İade ve Değişim</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+	  const sidebar = document.querySelector(".sidebar");
+	  const sidebarToggle = document.querySelector(".sidebar-toggle");
+	  const closeSidebar = document.querySelector(".close-sidebar");
+
+	  sidebarToggle.addEventListener("click", function () {
+              sidebar.classList.toggle("active");
+	  });
+
+	  closeSidebar.addEventListener("click", function () {
+              sidebar.classList.remove("active");
+	  });
+
+	  // Sayfa dışına tıklanınca sidebar kapanır
+	  document.addEventListener("click", function (event) {
+              if (!sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
+		  sidebar.classList.remove("active");
+              }
+	  });
+	  
+	  document.querySelectorAll(".view-details").forEach(button => {
+              button.addEventListener("click", function () {
+		  const productId = this.getAttribute("data-id");
+		  window.location.href = `product-detail.html?id=${productId}`;
+              });
+	  });
+
+      });
+      </script>
+  </body>
+</html>

@@ -1,0 +1,496 @@
+/* Genel stil ayarlarý */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    height: 100%; /* Tam ekran yüksekliði */
+}
+
+/* Header için stil */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: relative;
+    z-index: 999; /* Header her zaman üstte kalacak */
+}
+
+header .logo img {
+    height: 40px;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Hamburger menüsü */
+.sidebar-toggle {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1000; /* Butonun üstte olmasý için */
+}
+
+.sidebar-toggle i {
+  font-size: 24px;
+}
+
+/* Favoriler, Sepet ve Dil Seçenekleri */
+.header-extras {
+    display: flex;
+    gap: 15px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+}
+
+button i {
+    font-size: 24px; /* Ýkon boyutu */
+}
+
+/* Slayt Gösterisi */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+    transition: opacity 1s ease-in-out; /* Geçiþ efektini ekledik */
+}
+
+.gallery-image {
+    width: 100%;
+    height: 500px; /* Fotoðraflarýn boyutunu biraz küçültüyoruz */
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out; /* Hover ile büyüme efekti */
+}
+
+/* Slayt gösterisinde üzerine gelince büyüme efekti */
+.gallery-image:hover {
+    transform: scale(1.05); /* Üzerine gelince büyüme */
+}
+
+/* Kategoriler */
+.categories {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    padding-left: 60px; /* Hamburger menüsünün sol tarafýndaki boþluðu gideriyoruz */
+}
+
+.category {
+    width: 30%;
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out; /* Hover efekti ekledik */
+}
+
+.category:hover {
+    transform: scale(1.05); /* Üzerine gelince büyüme */
+}
+
+.category h2 {
+    margin-top: 0;
+}
+
+.category-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    margin-top: auto; /* Footer her zaman en alta oturacak */
+}
+
+/* Footer içeriði düzeni */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section li {
+    margin: 5px 0;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.payment-logos {
+    display: flex;
+    gap: 15px;
+}
+
+.payment-logo {
+    font-size: 40px;
+}
+
+.social-media {
+    display: flex;
+    gap: 20px;
+}
+
+.social-media a {
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+}
+
+.social-media a:hover {
+    color: #4CAF50; /* Hover efektinde yeþil renk */
+}
+
+/* Alt Footer */
+.footer-bottom {
+    background-color: #222;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+.footer-bottom ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-bottom ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-bottom ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+:focus {
+    outline: 3px solid #4CAF50;
+}
+
+/* Ürün Sayfasý */
+.product-details {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.product-image img {
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.product-info {
+    max-width: 500px;
+    padding-left: 20px;
+}
+
+.product-price {
+    font-size: 24px;
+    color: #4CAF50;
+    margin: 10px 0;
+}
+
+.add-to-cart {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Sepet Sayfasý */
+.cart {
+    padding: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.cart-item img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.cart-total {
+    text-align: right;
+    margin-top: 20px;
+}
+
+/* Ýletiþim Sayfasý */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact label {
+    font-size: 18px;
+}
+
+.contact input, .contact textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+}
+
+.contact button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    font-size: 18px;
+}
+
+/* Ürünler Sayfasý */
+.products-page {
+    display: flex;
+    padding: 20px;
+}
+
+/* Sidebar Stili */
+.sidebar {
+    position: fixed;
+    top: 100px;
+    left: -260px; /* Baþlangýçta gizli */
+    width: 250px;
+    height: %80;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.sidebar.active {
+    left: 0; /* Açýldýðýnda görünür olacak */
+}
+
+/* Sidebar Kapatma Butonu */
+.close-sidebar {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* Sidebar Menü Linkleri */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    transition: background 0.3s ease-in-out;
+}
+
+.sidebar ul li a:hover {
+    background: #4CAF50;
+}
+
+/* Sidebar Açma Butonu */
+.sidebar-toggle {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    position: fixed;
+    top: 50px;
+    left: 20px;
+    z-index: 1001;
+    font-size: 24px;
+    display: block;
+    transition: left 0.3s ease-in-out;
+}
+
+.sidebar-toggle:hover {
+    background-color: #555;
+}
+
+.product-list {
+    flex-grow: 1;
+    margin-left: 270px; /* Sidebar geniþliði kadar boþluk býrak */
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.product-item {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+}
+
+.product-item button {
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    border: none;
+}
+
+.product-item button:hover {
+    background-color: #4CAF50;
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000; /* Butonun üstte olmasý için */
+}
+
+.sidebar-toggle i {
+  font-size: 24px;
+}
+
+/* Sepet ve Favori Ürün Stili */
+.cart-item, .favorite-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item img, .favorite-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.cart-item h3, .favorite-item h3 {
+    flex-grow: 1;
+    margin-left: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.cart-item p, .favorite-item p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+/* Silme Butonu Stili */
+.remove-from-cart, .remove-from-favorites {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-size: 14px;
+}
+
+.remove-from-cart:hover, .remove-from-favorites:hover {
+    background-color: #cc0000;
+    transform: scale(1.1);
+}
+
+/* Sepet ve Favori Sayfasý Düzeni */
+.cart-items, .favorite-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+}
