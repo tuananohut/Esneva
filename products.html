@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ürünler - Adaptive Clothing</title>
+    <title>Products - Esneva</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   </head>
@@ -14,50 +14,73 @@
         <img src="logo.png" alt="Adaptive Clothing Logo">
       </div>
       <nav>
-        <ul>
-          <li><a href="index.html">Ana Sayfa</a></li>
-          <li><a href="products.html">Ürünler</a></li>
-          <li><a href="contact.html">İletişim</a></li>
-          <li><a href="about.html">Hakkında</a></li>
+        <ul class="nav">
+          <li><strong>1</strong><a href="index.html" tabindex="1" accesskey="1">Home</a></li>
+          <li><strong>2</strong><a href="products.html" tabindex="2" accesskey="2">Products</a></li>
+          <li><strong>3</strong><a href="contact.html" tabindex="3" accesskey="3">Contact</a></li>
+          <li><strong>4</strong><a href="about.html" tabindex="4" accesskey="4">About</a></li>
         </ul>
       </nav>
       <div class="header-extras">
-        <button class="favorites" tabindex="5" accesskey="f">
-          <a href='favorites.html'><i class='fas fa-heart'></i></a>
+        <!-- Using Font Awesome Icons for Cart, Favorites, and Login -->
+        <button class="favorites" onclick="location.href='favorites.html';">
+          <i class="fas fa-heart"></i>
         </button>
-        <button class="cart" tabindex="6" accesskey="c">
-          <a href='cart.html'><i class='fas fa-shopping-cart'></i></a>
+        <button class="cart" onclick="location.href='cart.html';">
+          <i class="fas fa-shopping-cart"></i>
         </button>
-        <button class="languages" tabindex="7" accesskey="g">
-          <i class="fas fa-globe"></i>
+        <button class="login" onclick="location.href='login.html';">
+          <i class="fas fa-user"></i>
         </button>
       </div>
     </header>
 
-    <!-- Sidebar Navigation -->
-    <aside class="sidebar">
-      <button class="close-sidebar">&times;</button>
-      <h3>Kategoriler</h3>
-      <ul>
-        <li><a href="#">Üst Giyim</a></li>
-        <li><a href="#">Alt Giyim</a></li>
-        <li><a href="#">Aksesuarlar</a></li>
-        <li><a href="#">Yeni Ürünler</a></li>
-      </ul>
-    </aside>
-    
-    <!-- Toggle Button -->
-    <button class="sidebar-toggle">
-      <i class="fas fa-bars"></i>
-    </button>
-
     <!-- Main Content -->
     <main>
-      <div class="content-container">
-        <section class="product-list">
-          <h2>Ürünler</h2>
-          <div class="products"></div>
-        </section>
+      <h1 class="products-header">Products</h1>
+      <div class="products-container">
+        <div class="product-card" id="product-1">
+          <img src="product1.jpg" alt="Top Wear T-Shirt">
+          <h2>Top Wear T-Shirt</h2>
+          <p>Fiyat: 199 TL</p>
+          <div class="product-actions">
+            <button class="wishlist-btn" onclick="addToFavorites(1)"><i class="fas fa-heart"></i></button>
+            <button class="cart-btn" onclick="addToCart(1)"><i class="fas fa-shopping-cart"></i></button>
+	    <button class="details-btn" data-id="1">
+              <i class="fas fa-info-circle"></i>
+            </button>
+          </div>
+        </div>
+        <div class="product-card" id="product-2">
+          <img src="product2.jpg" alt="Bottom Wear Pants">
+          <h2>Bottom Wear Pants</h2>
+          <p>Fiyat: 299 TL</p>
+          <div class="product-actions">
+            <button class="wishlist-btn" onclick="addToFavorites(2)"><i class="fas fa-heart"></i></button>
+            <button class="cart-btn" onclick="addToCart(2)"><i class="fas fa-shopping-cart"></i></button>
+	    <button class="details-btn" data-id="2">
+              <i class="fas fa-info-circle"></i> 
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+      <!-- Product Details Modal -->
+      <div id="product-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-modal" onclick="closeModal()">&times;</span>
+          <img id="modal-product-image" src="" alt="Product Image">
+          <h2 id="modal-product-name"></h2>
+          <p id="modal-product-price"></p>
+          <p id="modal-product-description"></p>
+          <button class="add-to-cart" onclick="addToCart(modalProductId)">
+            <i class="fas fa-shopping-cart"></i> Add to Cart
+          </button>
+          <button class="add-to-favorites" onclick="addToFavorites(modalProductId)">
+            <i class="fas fa-heart"></i> Add to Favorites
+          </button>
+        </div>
       </div>
     </main>
 
@@ -65,11 +88,11 @@
     <footer>
       <div class="footer-content">
         <div class="footer-section">
-          <h3>İletişim</h3>
+          <h3>Contact</h3>
           <ul>
-            <li><a href="#">Telefon: 123-456-7890</a></li>
-            <li><a href="#">E-posta: info@adaptiveclothing.com</a></li>
-            <li><a href="#">Adres: Örnek Cad. No:123, İstanbul</a></li>
+            <li><a href="#">Phone: 123-456-7890</a></li>
+            <li><a href="#">Email: info@adaptiveclothing.com</a></li>
+            <li><a href="#">Address: Sample Street No:123, Istanbul</a></li>
           </ul>
         </div>
         <div class="footer-links">
@@ -87,45 +110,91 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 Adaptive Clothing | Tüm Hakları Saklıdır</p>
+        <p>&copy; 2025 Adaptive Clothing | All Rights Reserved</p>
         <ul>
-          <li><a href="#">Gizlilik Politikası</a></li>
-          <li><a href="#">Kullanım Şartları</a></li>
-          <li><a href="#">İade ve Değişim</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Returns & Exchanges</a></li>
         </ul>
       </div>
     </footer>
-
     <script src="script.js"></script>
+    <script src="products.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-	  const sidebar = document.querySelector(".sidebar");
-	  const sidebarToggle = document.querySelector(".sidebar-toggle");
-	  const closeSidebar = document.querySelector(".close-sidebar");
-
-	  sidebarToggle.addEventListener("click", function () {
-              sidebar.classList.toggle("active");
-	  });
-
-	  closeSidebar.addEventListener("click", function () {
-              sidebar.classList.remove("active");
-	  });
-
-	  // Sayfa dışına tıklanınca sidebar kapanır
-	  document.addEventListener("click", function (event) {
-              if (!sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
-		  sidebar.classList.remove("active");
-              }
-	  });
+	  const products = [
+              { id: 1, name: "Top Wear T-Shirt", price: "199 TL", image: "product1.jpg", description: "Comfortable and stylish adaptive T-shirt." },
+              { id: 2, name: "Bottom Wear Pants", price: "299 TL", image: "product2.jpg", description: "High-quality adaptive pants for everyday use." }
+	  ];
 	  
-	  document.querySelectorAll(".view-details").forEach(button => {
+	  const modal = document.getElementById("product-modal");
+	  const modalImage = document.getElementById("modal-product-image");
+	  const modalName = document.getElementById("modal-product-name");
+	  const modalPrice = document.getElementById("modal-product-price");
+	  const modalDescription = document.getElementById("modal-product-description");
+	  const addToCartBtn = document.querySelector(".add-to-cart");
+	  const addToFavoritesBtn = document.querySelector(".add-to-favorites");
+
+	  let modalProductId = null;
+
+	  function openModal(productId) {
+              const product = products.find(p => p.id === productId);
+              if (!product) return;
+
+              modalImage.src = product.image;
+              modalName.textContent = product.name;
+              modalPrice.textContent = `Price: ${product.price}`;
+              modalDescription.textContent = product.description;
+              modalProductId = productId;
+
+              modal.style.display = "block";
+	  }
+
+	  function closeModal() {
+              modal.style.display = "none";
+	  }
+
+	  function addToCart(productId) {
+              let cart = JSON.parse(localStorage.getItem("cart")) || [];
+              const product = products.find(p => p.id === productId);
+              if (!product) return;
+
+              cart.push(product);
+              localStorage.setItem("cart", JSON.stringify(cart));
+	  }
+
+	  function addToFavorites(productId) {
+              let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+              const product = products.find(p => p.id === productId);
+              if (!product) return;
+
+              favorites.push(product);
+              localStorage.setItem("favorites", JSON.stringify(favorites));
+	  }
+
+	  document.querySelectorAll(".details-btn").forEach(button => {
               button.addEventListener("click", function () {
-		  const productId = this.getAttribute("data-id");
-		  window.location.href = `product-detail.html?id=${productId}`;
+		  const productId = parseInt(this.getAttribute("data-id"));
+		  openModal(productId);
               });
 	  });
 
-      });
-      </script>
-  </body>
+	  document.querySelector(".close-modal").addEventListener("click", closeModal);
+
+	  window.addEventListener("click", function (event) {
+              if (event.target === modal) {
+		  closeModal();
+              }
+	  });
+
+	  addToCartBtn.addEventListener("click", function () {
+              if (modalProductId) addToCart(modalProductId);
+	  });
+
+	  addToFavoritesBtn.addEventListener("click", function () {
+              if (modalProductId) addToFavorites(modalProductId);
+	  });
+      });      
+    </script>
+</body>
 </html>
