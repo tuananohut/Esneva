@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,63 +7,144 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   </head>
-  <body>
 
-    <!-- Header Section -->
+  <body>
     <header>
       <div class="logo">
         <img src="logo.png" alt="Adaptive Clothing Logo">
       </div>
       <nav>
-        <ul>
-          <li><a href="index.html" tabindex="1" accesskey="1">Ana Sayfa</a></li>
-          <li><a href="products.html" tabindex="2" accesskey="2">Ürünler</a></li>
-          <li><a href="contact.html" tabindex="3" accesskey="3">İletişim</a></li>
-          <li><a href="about.html" tabindex="4" accesskey="4">Hakkında</a></li>
+        <ul class="nav">
+          <li><strong>1</strong><a href="index.html" tabindex="1" accesskey="1">Home</a></li>
+          <li><strong>2</strong><a href="products.html" tabindex="2" accesskey="2">Products</a></li>
+          <li><strong>3</strong><a href="contact.html" tabindex="3" accesskey="3">Contact</a></li>
+          <li><strong>4</strong><a href="about.html" tabindex="4" accesskey="4">About</a></li>
         </ul>
       </nav>
       <div class="header-extras">
-        <button class="favorites" tabindex="5" accesskey="f">
-          <a href='favorites.html'><i class='fas fa-heart'></i></a>
+        <button class="favorites" onclick="location.href='favorites.html';">
+          <strong>6</strong>
+          <i class='fas fa-heart'></i>
         </button>
-        <button class="cart" tabindex="6" accesskey="c">
-          <a href='cart.html'><i class='fas fa-shopping-cart'></i></a>
+        <button class="cart" onclick="location.href='cart.html';">
+          <strong>7</strong>
+          <i class='fas fa-shopping-cart'></i>
         </button>
-        <button class="languages" tabindex="7" accesskey="g">
-          <i class="fas fa-globe"></i>
+        <button class="login" onclick="location.href='login.html';">
+          <strong>8</strong>
+          <i class="fas fa-user"></i>
         </button>
       </div>
     </header>
 
-    <!-- Slayt Gösterisi Alanı -->
+    <!-- Slideshow Section -->
     <section class="gallery">
       <div class="slideshow-container">
         <div class="mySlides fade">
-          <img src="image1.jpg" alt="Slayt 1" class="gallery-image">
+          <img src="images/slides/image1.jpg" alt="Slide 1" class="gallery-image">
         </div>
         <div class="mySlides fade">
-          <img src="image2.jpg" alt="Slayt 2" class="gallery-image">
+          <img src="images/slides/image2.jpg" alt="Slide 2" class="gallery-image">
         </div>
         <div class="mySlides fade">
-          <img src="image3c.jpg" alt="Slayt 3" class="gallery-image">
+          <img src="images/slides/image3.jpg" alt="Slide 3" class="gallery-image">
+        </div>
+        <div class="mySlides fade">
+          <img src="images/slides/image4.jpg" alt="Slide 4" class="gallery-image">
         </div>
       </div>
     </section>
 
+    <div class="d-none d-md-block vgap"></div>
+    
+    <main>
+      <section class="features">
+	<div class="feature-container">
+	  <div class="feature-images">
+            <img src="images/features/image1.jpg" alt="Feature Image 1">
+            <img src="images/features/image2.jpg" alt="Feature Image 2">
+	  </div>
+	  <div class="feature-text">
+            <h2>Breaking Barriers with Comfort: Innovative Adaptive Clothing</h2>
+            <p>At Esneva, we design innovative adaptive clothing that makes dressing easier, more comfortable, and accessible for everyone. From t-shirts and pants to underwear and bras, our collection blends functionality, style, and inclusivity, proving that every obstacle can be overcome.</p>	    
+	  </div>
+	</div>
+      </section>
+    </main>
+    
+    <div class="d-none d-md-block vgap"></div>
+
+    <section class="feature-highlight">
+      <div class="feature-text">
+	<h2>Adaptive Design: Removing Barriers in Fashion</h2>
+	<p>
+	  At Esneva, we prioritize comfort, accessibility, and functionality in every piece we create. Our smart designs make dressing easier, more stylish, and movement-friendly.
+	</p>
+      </div>
+
+      <!-- Feature Items in Grid Layout -->
+      <div class="feature-grid">
+	<div>
+	  <h3>Seamless & Skin-Friendly</h3>
+	  <p>Ultra-soft or seamless stitching prevents irritation for sensitive skin.</p>
+	</div>
+	<div>
+	  <h3>Braille Labels & Tactile Markings</h3>
+	  <p>Our garments include Braille-embossed labels and raised markers to help visually impaired individuals identify their clothing.</p>
+	</div>
+	<div>
+	  <h3>Enhanced Grip Features</h3>
+	  <p>Loops near closures, waistbands, and fasteners for better handling and independence.</p>
+	</div>
+	<div>
+	  <h3>Empowering Individuals with Disabilities</h3>
+	  <p>We actively employ individuals with disabilities and incorporate their insights into our designs.</p>
+	</div>
+	<div>
+	  <h3>Premium Fabric: Maximum Comfort & Durability</h3>
+	  <p>We use high-quality, soft, and breathable fabrics designed for maximum comfort and effortless dressing.</p>
+	</div>
+	<div>
+	  <h3>Breathable & Soft</h3>
+	  <p>Made from cotton, bamboo, and organic fabrics for ultimate freshness.</p>
+	</div>
+	<div>
+	  <h3>Freedom of Movement</h3>
+	  <p>Stretch fabrics that provide flexibility without tightness.</p>
+	</div>
+	<div>
+	  <h3>Easy Care</h3>
+	  <p>Wrinkle-resistant, machine-washable, and low-maintenance materials.</p>
+	</div>
+	<div>
+	  <h3>Hypoallergenic & Skin-Friendly</h3>
+	  <p>Antibacterial fabrics dyed with natural, skin-safe colors.</p>
+	</div>
+      </div>
+    </section>
+    
+    <div class="d-none d-md-block vgap"></div>
+    
+    <div class="feature-text">
+      <h2>Discover the difference today!</h2>
+    </div>
+
+    <div class="d-none d-md-block vgap"></div>
+    
     <!-- Categories Section -->
     <main>
       <section class="categories">
-        <div class="category" tabindex="8" accesskey="h">
-          <h2>Üst Giyim</h2>
-          <img src="category1.jpg" alt="Üst Giyim" class="category-image">
+        <div class="category">
+          <h2>Top Wear</h2>
+          <img src="images/categories/top_wear_small.png" alt="Top Wear" class="category-image">
         </div>
-        <div class="category" tabindex="9" accesskey="i">
-          <h2>Alt Giyim</h2>
-          <img src="category2.jpg" alt="Alt Giyim" class="category-image">
+        <div class="category">
+          <h2>Bottom Wear</h2>
+          <img src="images/categories/bottom_wear.png" alt="Bottom Wear" class="category-image">
         </div>
-        <div class="category" tabindex="10" accesskey="j">
-          <h2>Aksesuarlar</h2>
-          <img src="category3.jpg" alt="Aksesuarlar" class="category-image">
+        <div class="category">
+          <h2>Accessories</h2>
+          <img src="images/categories/accessories.png" alt="Accessories" class="category-image">
         </div>
       </section>
     </main>
@@ -71,26 +152,22 @@
     <!-- Footer Section -->
     <footer>
       <div class="footer-content">
-        <!-- İletişim Bilgileri -->
         <div class="footer-section">
-          <h3>İletişim</h3>
+          <h3>Contact</h3>
           <ul>
-            <li><a href="#">Telefon: 123-456-7890</a></li>
-            <li><a href="#">E-posta: info@adaptiveclothing.com</a></li>
-            <li><a href="#">Adres: Örnek Cad. No:123, İstanbul</a></li>
+            <li><a href="#">Phone: 123-456-7890</a></li>
+            <li><a href="#">Email: info@adaptiveclothing.com</a></li>
+            <li><a href="#">Address: Example St. No:123, Istanbul</a></li>
           </ul>
         </div>
 
-        <!-- Ödeme Logoları ve Sosyal Medya -->
         <div class="footer-links">
-          <!-- Ödeme Logoları -->
           <div class="payment-logos">
             <i class="fab fa-cc-visa payment-logo"></i>
             <i class="fab fa-cc-mastercard payment-logo"></i>
             <i class="fab fa-cc-paypal payment-logo"></i>
           </div>
 
-          <!-- Sosyal Medya Linkleri -->
           <div class="social-media">
             <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -100,13 +177,12 @@
         </div>
       </div>
 
-      <!-- Alt Footer - Copyright ve Diğer Bilgiler -->
       <div class="footer-bottom">
-        <p>&copy; 2025 Adaptive Clothing | Tüm Hakları Saklıdır</p>
+        <p>&copy; 2025 Adaptive Clothing | All Rights Reserved</p>
         <ul>
-          <li><a href="#">Gizlilik Politikası</a></li>
-          <li><a href="#">Kullanım Şartları</a></li>
-          <li><a href="#">İade ve Değişim</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Returns & Exchanges</a></li>
         </ul>
       </div>
     </footer>

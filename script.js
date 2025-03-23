@@ -1,35 +1,32 @@
-// Klavye kısa yolları
-document.addEventListener('keydown', function(event) {
-    if (event.altKey) {
-        switch (event.key) {
-            case 'a': // Ana Sayfa
-                document.querySelector('a[accesskey="1"]').focus();
-                break;
-            case 'b': // Ürünler
-                document.querySelector('a[accesskey="2"]').focus();
-                break;
-            case 'c': // İletişim
-                document.querySelector('a[accesskey="3"]').focus();
-                break;
-            case 'd': // Hakkında
-                document.querySelector('a[accesskey="4"]').focus();
-                break;
-            case 'e': // Favoriler
-                document.querySelector('.favorites').focus();
-                break;
-            case 'f': // Sepet
-                document.querySelector('.cart').focus();
-                break;
-            case 'g': // Dil Seçenekleri
-                document.querySelector('.languages').focus();
-                break;
-            default:
-                break;
-        }
+document.addEventListener('keydown', function(event) {    
+    switch (event.key) {
+    case '1': // Ana Sayfa
+        window.location.href = "index.html";
+        break;
+    case '2': // Ürünler
+        window.location.href = "products.html";
+        break;
+    case '3': // İletişim
+        window.location.href = "contact.html";
+        break;
+    case '4': // Hakkında
+        window.location.href = "about.html";
+        break;
+    case '5': // Favoriler
+        window.location.href = "favorites.html";
+        break;
+    case '6': // Sepet
+        window.location.href = "cart.html";
+        break;
+    case '7': // Dil Seçenekleri
+        // window.location.href = "partnerships.html";
+        break;
+    default:
+        break;
     }
+    
 });
 
-// Kategoriler tıklanabilir olduğunda bir işlem yapılması için
 const categories = document.querySelectorAll('.category');
 categories.forEach(category => {
     category.addEventListener('click', function() {
@@ -65,38 +62,51 @@ window.onload = () => {
     renderProducts(products);
 };
 
-// Ürün listesi (örnek)
+// Product Data
 const products = [
     {
         id: 1,
-        name: "Üst Giyim T-Shirt",
+        name: "Top Wear T-Shirt",
         price: 199,
         image: "product1.jpg",
-        category: "Üst Giyim"
+        category: "Top Wear",
+        description: "Comfortable and stylish t-shirt."
     },
     {
         id: 2,
-        name: "Alt Giyim Pantolon",
+        name: "Bottom Wear Pants",
         price: 299,
         image: "product2.jpg",
-        category: "Alt Giyim"
+        category: "Bottom Wear",
+        description: "Comfortable pants."
     },
     {
         id: 3,
-        name: "Aksesuar - Şapka",
+        name: "Accessory - Hat",
         price: 129,
         image: "product3.jpg",
-        category: "Aksesuar"
+        category: "Accessory",
+        description: "Trendy and comfortable hat."
     }
 ];
 
-// Ürünleri sayfaya ekleme fonksiyonu
+
+// Modal ve ürün detayları
+const modal = document.getElementById("product-modal");
+const modalImage = document.getElementById("modal-product-image");
+const modalName = document.getElementById("modal-product-name");
+const modalPrice = document.getElementById("modal-product-price");
+const modalDescription = document.getElementById("modal-product-description");
+const closeModal = document.querySelector(".close-modal");
+const addToCartButton = document.querySelector(".add-to-cart");
+const addToFavoritesButton = document.querySelector(".add-to-favorites");
+
+// Ürünleri render etme
 function renderProducts() {
     const productsContainer = document.querySelector(".products");
-
     if (!productsContainer) return;
 
-    productsContainer.innerHTML = ""; // Önce temizle
+    productsContainer.innerHTML = "";
 
     products.forEach(product => {
         const productItem = document.createElement("div");
@@ -108,35 +118,35 @@ function renderProducts() {
             <p>Fiyat: ${product.price} TL</p>
             <button class="add-to-favorites" data-id="${product.id}"><i class="fas fa-heart"></i></button>
             <button class="add-to-cart" data-id="${product.id}"><i class="fas fa-shopping-cart"></i></button>
-<button class="view-details" data-id="1">Ürün Detayları</button>
+            <button class="details-btn" data-id="${product.id}"><i class="fas fa-info-circle"></i> View Details</button>
         `;
 
         productsContainer.appendChild(productItem);
     });
 
-    // Butonlara tıklanma olaylarını ekleyelim
-    document.querySelectorAll(".add-to-cart").forEach(button => {
+    document.querySelectorAll(".details-btn").forEach(button => {
         button.addEventListener("click", function () {
-            addToCart(this.getAttribute("data-id"));
+            const productId = this.getAttribute("data-id");
+            const product = products.find(p => p.id == productId);
+            
+            if (product && modal) {
+                modalImage.src = product.image;
+                modalName.textContent = product.name;
+                modalPrice.textContent = `${product.price} TL`;
+                modalDescription.textContent = product.description;
+                modal.style.display = "block";
+
+                addToCartButton.onclick = function () {
+                    addToCart(productId);
+                };
+                addToFavoritesButton.onclick = function () {
+                    addToFavorites(productId);
+                };
+            }
         });
     });
-
-    document.querySelectorAll(".add-to-favorites").forEach(button => {
-        button.addEventListener("click", function () {
-            addToFavorites(this.getAttribute("data-id"));
-        });
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-	document.querySelectorAll(".view-details").forEach(button => {
-            button.addEventListener("click", function () {
-		const productId = this.getAttribute("data-id");
-		window.location.href = `product-detail.html?id=${productId}`;
-            });
-	});
-    });
-
 }
+
 
 // Sepete ekleme fonksiyonu (localStorage ile saklama)
 function addToCart(productId) {
@@ -146,7 +156,6 @@ function addToCart(productId) {
     if (product) {
         cart.push(product);
         localStorage.setItem("cart", JSON.stringify(cart));
-        alert(`${product.name} sepete eklendi!`);
     }
 }
 
@@ -158,9 +167,22 @@ function addToFavorites(productId) {
     if (product) {
         favorites.push(product);
         localStorage.setItem("favorites", JSON.stringify(favorites));
-        alert(`${product.name} favorilere eklendi!`);
     }
 }
 
-// Sayfa yüklendiğinde çalıştır
+// Modal kapatma
+closeModal.addEventListener("click", function () {
+    modal.style.display = "none";
+});
+
+// Modalı dışarı tıkladığınızda kapatma
+window.addEventListener("click", function (event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
+
+// Sayfa yüklendiğinde ürünleri render et
+renderProducts();
+
 document.addEventListener("DOMContentLoaded", renderProducts);
