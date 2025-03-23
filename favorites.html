@@ -1,54 +1,59 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Favoriler - Adaptive Clothing</title>
+    <title>Favorites - Esneva</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="Adaptive Clothing Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="products.html">Ürünler</a></li>
-                <li><a href="contact.html">İletişim</a></li>
-                <li><a href="about.html">Hakkında</a></li>
-            </ul>
-        </nav>
-        <div class="header-extras">
-            <button class="favorites" tabindex="5" accesskey="f">
-                <a href='favorites.html'><i class='fas fa-heart'></i></a>
-            </button>
-            <button class="cart" tabindex="6" accesskey="c">
-                <a href='cart.html'><i class='fas fa-shopping-cart'></i></a>
-            </button>
-            <button class="languages" tabindex="7" accesskey="g">
-                <i class="fas fa-globe"></i>
-            </button>
-        </div>
-    </header>
+  <!-- Header Section -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Esneva Logo">
+    </div>
+    <nav>
+      <ul class="nav">
+        <li><strong>1</strong><a href="index.html" tabindex="1" accesskey="1">Home</a></li>
+        <li><strong>2</strong><a href="products.html" tabindex="2" accesskey="2">Products</a></li>
+        <li><strong>3</strong><a href="contact.html" tabindex="3" accesskey="3">Contact</a></li>
+        <li><strong>4</strong><a href="about.html" tabindex="4" accesskey="4">About</a></li>
+      </ul>
+    </nav>
+    <div class="header-extras">
+      <button class="favorites" onclick="location.href='favorites.html';">
+        <strong>6</strong>
+        <i class='fas fa-heart'></i>
+      </button>
+      <button class="cart" onclick="location.href='cart.html';">
+        <strong>7</strong>
+        <i class='fas fa-shopping-cart'></i>
+      </button>
+      <button class="login" onclick="location.href='login.html';">
+        <strong>8</strong>
+        <i class="fas fa-user"></i>
+      </button>
+    </div>
+  </header>
 
     <!-- Main Content -->
     <main>
-        <h2>Favorileriniz</h2>
-        <div class="favorite-items"></div>
+      <h2>Your Favorites</h2>
+      <div class="favorite-items">
+	<div class="favorite-items"></div>
+      </div>
     </main>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>İletişim</h3>
+                <h3>Contact</h3>
                 <ul>
-                    <li><a href="#">Telefon: 123-456-7890</a></li>
-                    <li><a href="#">E-posta: info@adaptiveclothing.com</a></li>
-                    <li><a href="#">Adres: Örnek Cad. No:123, İstanbul</a></li>
+                    <li><a href="#">Phone: 123-456-7890</a></li>
+                    <li><a href="#">Email: info@esneva.com</a></li>
+                    <li><a href="#">Address: Example St. No:123, Istanbul</a></li>
                 </ul>
             </div>
             <div class="footer-links">
@@ -66,11 +71,11 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Adaptive Clothing | Tüm Hakları Saklıdır</p>
+            <p>&copy; 2025 Esneva | All Rights Reserved</p>
             <ul>
-                <li><a href="#">Gizlilik Politikası</a></li>
-                <li><a href="#">Kullanım Şartları</a></li>
-                <li><a href="#">İade ve Değişim</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Returns & Exchanges</a></li>
             </ul>
         </div>
     </footer>
@@ -85,7 +90,7 @@
               favoritesContainer.innerHTML = "";
 
               if (favorites.length === 0) {
-		  favoritesContainer.innerHTML = "<p>Favorileriniz boş.</p>";
+		  favoritesContainer.innerHTML = "<p>Your favorites list is empty.</p>";
               } else {
 		  favorites.forEach((item, index) => {
                       const itemElement = document.createElement("div");
@@ -93,8 +98,8 @@
                       itemElement.innerHTML = `
                     <img src="${item.image}" alt="${item.name}" class="favorite-item-image">
                     <h3>${item.name}</h3>
-                    <p>${item.price} TL</p>
-                    <button class="remove-from-favorites" data-index="${index}">Kaldır</button>
+                    <p>${item.price} USD</p>
+                    <button class="remove-from-favorites" data-index="${index}">Remove</button>
                 `;
                       favoritesContainer.appendChild(itemElement);
 		  });
