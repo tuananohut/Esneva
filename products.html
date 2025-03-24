@@ -39,50 +39,75 @@
     <main>
       <h1 class="products-header">Products</h1>
       <div class="products-container">
-        <div class="product-card" id="product-1">
-          <img src="product1.jpg" alt="Top Wear T-Shirt">
-          <h2>Top Wear T-Shirt</h2>
-          <p>Fiyat: 199 TL</p>
-          <div class="product-actions">
+	
+	<div class="product-card" id="product-1">
+	  <img src="images/products/top/image1.jpg" alt="Adaptive Snap-On Top">
+	  <h2>Adaptive Snap-On Top – Versatile & Comfortable</h2>
+	  <p class="product-price">199 TL</p>
+	  <div class="product-actions">
             <button class="wishlist-btn" onclick="addToFavorites(1)"><i class="fas fa-heart"></i></button>
             <button class="cart-btn" onclick="addToCart(1)"><i class="fas fa-shopping-cart"></i></button>
-	    <button class="details-btn" data-id="1">
-              <i class="fas fa-info-circle"></i>
-            </button>
-          </div>
-        </div>
-        <div class="product-card" id="product-2">
-          <img src="product2.jpg" alt="Bottom Wear Pants">
-          <h2>Bottom Wear Pants</h2>
-          <p>Fiyat: 299 TL</p>
-          <div class="product-actions">
+            <button class="details-btn" data-id="1"><i class="fas fa-info-circle"></i></button>
+	  </div>
+	</div>
+
+	<div class="product-card" id="product-2">
+	  <img src="images/products/pants/image1.jpg" alt="Adaptive Elastic Waist Pants – Comfortable & Accessible">
+	  <h2>Adaptive Elastic Waist Pants – Comfortable & Accessible</h2>
+	  <p class="product-price">299 TL</p>
+	  <div class="product-actions">
             <button class="wishlist-btn" onclick="addToFavorites(2)"><i class="fas fa-heart"></i></button>
             <button class="cart-btn" onclick="addToCart(2)"><i class="fas fa-shopping-cart"></i></button>
-	    <button class="details-btn" data-id="2">
-              <i class="fas fa-info-circle"></i> 
-            </button>
-          </div>
-        </div>
+            <button class="details-btn" data-id="2"><i class="fas fa-info-circle"></i></button>
+	  </div>
+	</div>
+
+	<div class="product-card" id="product-3">
+	  <img src="images/products/underwear/image4.jpg" alt="Esneva Adaptive Open-Front Underwear">
+	  <h2>Esneva Adaptive Open-Front Underwear</h2>
+	  <p class="product-price">299 TL</p>
+	  <div class="product-actions">
+            <button class="wishlist-btn" onclick="addToFavorites(3)"><i class="fas fa-heart"></i></button>
+            <button class="cart-btn" onclick="addToCart(3)"><i class="fas fa-shopping-cart"></i></button>
+            <button class="details-btn" data-id="3"><i class="fas fa-info-circle"></i></button>
+	  </div>
+	</div>
+
+	<div class="product-card" id="product-4">
+	  <img src="images/products/bra/image2.jpg" alt="Adaptive Front-Closure Bra – Easy & Comfortable">
+	  <h2>Adaptive Front-Closure Bra – Easy & Comfortable</h2>
+	  <p class="product-price">299 TL</p>
+	  <div class="product-actions">
+            <button class="wishlist-btn" onclick="addToFavorites(4)"><i class="fas fa-heart"></i></button>
+            <button class="cart-btn" onclick="addToCart(4)"><i class="fas fa-shopping-cart"></i></button>
+            <button class="details-btn" data-id="4"><i class="fas fa-info-circle"></i></button>
+	  </div>
+	</div>
+	
       </div>
     </main>
-    
-      <!-- Product Details Modal -->
-      <div id="product-modal" class="modal">
-        <div class="modal-content">
-          <span class="close-modal" onclick="closeModal()">&times;</span>
-          <img id="modal-product-image" src="" alt="Product Image">
-          <h2 id="modal-product-name"></h2>
-          <p id="modal-product-price"></p>
-          <p id="modal-product-description"></p>
-          <button class="add-to-cart" onclick="addToCart(modalProductId)">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-          </button>
-          <button class="add-to-favorites" onclick="addToFavorites(modalProductId)">
-            <i class="fas fa-heart"></i> Add to Favorites
-          </button>
-        </div>
+
+    <!-- Product Details Modal -->
+    <div id="product-modal" class="modal">
+      <div class="modal-content">
+	<span class="close-modal">&times;</span>
+	<div class="modal-image-container">
+	  <img id="modal-product-image" src="" alt="Product Image">
+	</div>
+	<div class="modal-details">
+	  <h2 id="modal-product-name"></h2>
+	  <p id="modal-product-price"></p>
+	  <p id="modal-product-description"></p>
+	  <ul id="modal-product-features"></ul>
+	  <p id="modal-product-care-instructions"></p>
+	  <p id="modal-product-medical-notice"></p>
+	  <div class="product-actions">
+            <button class="add-to-favorites"><i class="fas fa-heart"></i></button>
+            <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+	  </div>
+	</div>
       </div>
-    </main>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -123,19 +148,79 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
 	  const products = [
-              { id: 1, name: "Top Wear T-Shirt", price: "199 TL", image: "product1.jpg", description: "Comfortable and stylish adaptive T-shirt." },
-              { id: 2, name: "Bottom Wear Pants", price: "299 TL", image: "product2.jpg", description: "High-quality adaptive pants for everyday use." }
+              {
+		  id: 2,
+		  name: "Adaptive Elastic Waist Pants – Comfortable & Accessible",
+		  price: "299 TL",
+		  image: "images/products/pants/image1.jpg",
+		  description: "Designed for ease, accessibility, and everyday comfort, these adaptive pants make dressing simple while offering style and practicality.",
+		  features: [
+                      "Easy Pull-On Design – Perfect for individuals with limited dexterity or mobility",
+                      "Internal Pull-Up Loops – Two discreet inner loops for an easier grip when pulling up",
+                      "Adjustable Elastic Waist – Expands effortlessly for maximum comfort",
+                      "Seamless Stitching – Reduces irritation and ensures a smooth feel on the skin",
+                      "Wheelchair-Friendly Fit – Wide seat area & no back pockets for improved accessibility",
+                      "Convertible Design – Can be worn as pants or shorts",
+                      "Side Zippers for Prosthetic Users – Easy-to-open leg zippers with grip loops for effortless handling",
+                      "Tactile Markers for Accessibility – Small raised details help visually impaired users distinguish clothing",
+                      "Enhanced Grip Loops – Loops on waist & zipper closures for easy handling and dressing",
+                      "Breathable & Durable Fabric – 53% Cotton, 45% Polyester, 2% Spandex for all-day comfort"
+		  ],
+		  careInstructions: "Machine Wash & Tumble Dry – Wrinkle-resistant and easy to care for. High-Quality Fabric – Soft cotton twill that stays comfortable all day.",
+		  medicalNotice: "⚠ Magnetic closures should not be worn by individuals with pacemakers or implanted medical devices."
+              },
+              {
+		  id: 1,
+		  name: "Adaptive Snap-On Top – Versatile & Comfortable",
+		  price: "199 TL",
+		  image: "images/products/top/image1.jpg",
+		  description: "Designed for maximum comfort, accessibility, and style, this adaptive top is perfect for post-surgery recovery, medical use, and independent dressing.",
+		  features: [
+                      "3 Wearing Options – Available in sleeved, short-sleeved, and sleeveless styles",
+                      "Easy Dressing – Snap closures on shoulders and sides allow for effortless dressing from the bottom up",
+                      "Modular Sleeve Design – Sleeves can be attached or detached using snap buttons, creating customizable styles",
+                      "Medical Access Made Simple – Shoulder snaps open for IV lines & medical procedures without full removal",
+                      "Seamless & Ultra-Soft Fabric – Ideal for sensitive skin & all-day comfort",
+                      "Tactile Markers for Accessibility – Small raised details on the collar and cuffs help visually impaired users distinguish clothing",
+                      "Enhanced Grip Loops – Loops on shoulders and closures for easier handling and dressing"
+		  ],
+		  careInstructions: "Machine Washable – Made of 95% Modal - 5% Spandex, breathable, and durable. Wrinkle-Resistant & Soft – Maintains shape and comfort through repeated washing.",
+		  medicalNotice: ""
+              },
+              {
+		  id: 3,
+		  name: "Adaptive Front-Closure Bra – Easy & Comfortable",
+		  price: "299 TL",
+		  image: "images/products/bra/image2.jpg",
+		  description: "Designed for ease, accessibility, and ultimate comfort, this adaptive bra supports independent dressing while ensuring a secure and stylish fit.",
+		  features: [
+                      "Magnetic Front Closure – Effortless dressing with secure magnetic fasteners",
+                      "Quick & Struggle-Free Dressing – Reduces dressing time and upper body strain",
+                      "Easy Access Design – Ideal for individuals with limited arm mobility",
+                      "Tactile Markers for Accessibility – Small raised details help visually impaired users distinguish clothing",
+                      "Enhanced Grip Loops – Loops near closure points for better handling and independence",
+                      "No Pressure Points – Wide adjustable straps for extra support & comfort",
+                      "Seamless & Soft Fabric – Perfect for sensitive skin and all-day wear",
+                      "Full Coverage & Adaptive Fit – Designed for comfort, security, and style"
+		  ],
+		  careInstructions: "Machine Washable – Made of 95% Polyester, 5% Spandex. Durable – Maintains shape & comfort through multiple washes.",
+		  medicalNotice: "⚠ Magnetic closures should not be worn by individuals with pacemakers or implanted medical devices."
+              }
 	  ];
-	  
+
 	  const modal = document.getElementById("product-modal");
 	  const modalImage = document.getElementById("modal-product-image");
 	  const modalName = document.getElementById("modal-product-name");
 	  const modalPrice = document.getElementById("modal-product-price");
 	  const modalDescription = document.getElementById("modal-product-description");
-	  const addToCartBtn = document.querySelector(".add-to-cart");
+	  const modalFeatures = document.getElementById("modal-product-features");
+	  const modalCareInstructions = document.getElementById("modal-product-care-instructions");
+	  const modalMedicalNotice = document.getElementById("modal-product-medical-notice");
+	  const addToCartBtn = document.querySelector(".cart-btn");
 	  const addToFavoritesBtn = document.querySelector(".add-to-favorites");
 
 	  let modalProductId = null;
+	  modal.style.display = "none";
 
 	  function openModal(productId) {
               const product = products.find(p => p.id === productId);
@@ -145,31 +230,24 @@
               modalName.textContent = product.name;
               modalPrice.textContent = `Price: ${product.price}`;
               modalDescription.textContent = product.description;
-              modalProductId = productId;
+              
+              // Clear any previous features and care instructions
+              modalFeatures.innerHTML = '';
+              product.features.forEach(feature => {
+		  const li = document.createElement('li');
+		  li.textContent = feature;
+		  modalFeatures.appendChild(li);
+              });
 
-              modal.style.display = "block";
+              modalCareInstructions.textContent = product.careInstructions;
+              modalMedicalNotice.textContent = product.medicalNotice;
+
+              modalProductId = productId;
+              modal.style.display = "flex";  // Open modal
 	  }
 
 	  function closeModal() {
               modal.style.display = "none";
-	  }
-
-	  function addToCart(productId) {
-              let cart = JSON.parse(localStorage.getItem("cart")) || [];
-              const product = products.find(p => p.id === productId);
-              if (!product) return;
-
-              cart.push(product);
-              localStorage.setItem("cart", JSON.stringify(cart));
-	  }
-
-	  function addToFavorites(productId) {
-              let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-              const product = products.find(p => p.id === productId);
-              if (!product) return;
-
-              favorites.push(product);
-              localStorage.setItem("favorites", JSON.stringify(favorites));
 	  }
 
 	  document.querySelectorAll(".details-btn").forEach(button => {
@@ -194,7 +272,8 @@
 	  addToFavoritesBtn.addEventListener("click", function () {
               if (modalProductId) addToFavorites(modalProductId);
 	  });
-      });      
+      });
+
     </script>
 </body>
 </html>

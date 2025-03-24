@@ -1,20 +1,20 @@
 .about {
     display: flex;
-    align-items: center;
+    align-items: flex-start;  
     justify-content: center;
     padding: 50px 20px;
 }
 
 .about-content {
     display: flex;
-    align-items: center;
+    align-items: flex-start;  
     max-width: 1200px;
     width: 100%;
-    gap: 30px; /* Space between image and text */
+    gap: 30px; 
 }
 
 .about img {
-    max-width: 500px; /* Adjust the size of the image */
+    max-width: 50%;
     width: 100%;
     border-radius: 8px;
     object-fit: cover;
@@ -26,13 +26,42 @@
 }
 
 .about h1 {
-    font-size: 56px; /* Making the About Us title larger */
-    color: var(--text-color);
+    font-size: 56px; 
+    color: var(--black);
     margin-bottom: 20px;
 }
 
 .about p {
     font-size: 18px;
-    color: var(--neutral-gray);
+    color: var(--black);
     margin-bottom: 30px;
+}
+
+.vision {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+    justify-content: center; /* Center the content vertically */
+    margin-top: 50px;
+    width: 100%;
+    min-height: 200px; /* Ensure there's enough space */
+}
+
+.vision h2 {
+    font-size: 28px;
+    color: var(--black);
+    margin-bottom: 20px;
+}
+
+.vision ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.vision li {
+    font-size: 18px;
+    color: var(--black);
+    line-height: 1.6;
+    margin-bottom: 10px;
+    text-align: left; 
 }

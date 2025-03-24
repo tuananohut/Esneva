@@ -62,31 +62,64 @@ window.onload = () => {
     renderProducts(products);
 };
 
-// Product Data
 const products = [
     {
-        id: 1,
-        name: "Top Wear T-Shirt",
-        price: 199,
-        image: "product1.jpg",
-        category: "Top Wear",
-        description: "Comfortable and stylish t-shirt."
+	id: 2,
+	name: "Adaptive Elastic Waist Pants – Comfortable & Accessible",
+	price: "299 TL",
+	image: "images/products/pants/image1.jpg",
+	description: "Designed for ease, accessibility, and everyday comfort, these adaptive pants make dressing simple while offering style and practicality.",
+	features: [
+            "Easy Pull-On Design – Perfect for individuals with limited dexterity or mobility",
+            "Internal Pull-Up Loops – Two discreet inner loops for an easier grip when pulling up",
+            "Adjustable Elastic Waist – Expands effortlessly for maximum comfort",
+            "Seamless Stitching – Reduces irritation and ensures a smooth feel on the skin",
+            "Wheelchair-Friendly Fit – Wide seat area & no back pockets for improved accessibility",
+            "Convertible Design – Can be worn as pants or shorts",
+            "Side Zippers for Prosthetic Users – Easy-to-open leg zippers with grip loops for effortless handling",
+            "Tactile Markers for Accessibility – Small raised details help visually impaired users distinguish clothing",
+            "Enhanced Grip Loops – Loops on waist & zipper closures for easy handling and dressing",
+            "Breathable & Durable Fabric – 53% Cotton, 45% Polyester, 2% Spandex for all-day comfort"
+	],
+	careInstructions: "Machine Wash & Tumble Dry – Wrinkle-resistant and easy to care for. High-Quality Fabric – Soft cotton twill that stays comfortable all day.",
+	medicalNotice: "⚠ Magnetic closures should not be worn by individuals with pacemakers or implanted medical devices."
     },
     {
-        id: 2,
-        name: "Bottom Wear Pants",
-        price: 299,
-        image: "product2.jpg",
-        category: "Bottom Wear",
-        description: "Comfortable pants."
+	id: 1,
+	name: "Adaptive Snap-On Top – Versatile & Comfortable",
+	price: "199 TL",
+	image: "images/products/top/image1.jpg",
+	description: "Designed for maximum comfort, accessibility, and style, this adaptive top is perfect for post-surgery recovery, medical use, and independent dressing.",
+	features: [
+            "3 Wearing Options – Available in sleeved, short-sleeved, and sleeveless styles",
+            "Easy Dressing – Snap closures on shoulders and sides allow for effortless dressing from the bottom up",
+            "Modular Sleeve Design – Sleeves can be attached or detached using snap buttons, creating customizable styles",
+            "Medical Access Made Simple – Shoulder snaps open for IV lines & medical procedures without full removal",
+            "Seamless & Ultra-Soft Fabric – Ideal for sensitive skin & all-day comfort",
+            "Tactile Markers for Accessibility – Small raised details on the collar and cuffs help visually impaired users distinguish clothing",
+            "Enhanced Grip Loops – Loops on shoulders and closures for easier handling and dressing"
+	],
+	careInstructions: "Machine Washable – Made of 95% Modal - 5% Spandex, breathable, and durable. Wrinkle-Resistant & Soft – Maintains shape and comfort through repeated washing.",
+	medicalNotice: ""
     },
     {
-        id: 3,
-        name: "Accessory - Hat",
-        price: 129,
-        image: "product3.jpg",
-        category: "Accessory",
-        description: "Trendy and comfortable hat."
+	id: 3,
+	name: "Adaptive Front-Closure Bra – Easy & Comfortable",
+	price: "299 TL",
+	image: "images/products/bra/image2.jpg",
+	description: "Designed for ease, accessibility, and ultimate comfort, this adaptive bra supports independent dressing while ensuring a secure and stylish fit.",
+	features: [
+            "Magnetic Front Closure – Effortless dressing with secure magnetic fasteners",
+            "Quick & Struggle-Free Dressing – Reduces dressing time and upper body strain",
+            "Easy Access Design – Ideal for individuals with limited arm mobility",
+            "Tactile Markers for Accessibility – Small raised details help visually impaired users distinguish clothing",
+            "Enhanced Grip Loops – Loops near closure points for better handling and independence",
+            "No Pressure Points – Wide adjustable straps for extra support & comfort",
+            "Seamless & Soft Fabric – Perfect for sensitive skin and all-day wear",
+            "Full Coverage & Adaptive Fit – Designed for comfort, security, and style"
+	],
+	careInstructions: "Machine Washable – Made of 95% Polyester, 5% Spandex. Durable – Maintains shape & comfort through multiple washes.",
+	medicalNotice: "⚠ Magnetic closures should not be worn by individuals with pacemakers or implanted medical devices."
     }
 ];
 
@@ -115,12 +148,12 @@ function renderProducts() {
         productItem.innerHTML = `
             <img src="${product.image}" alt="${product.name}" class="product-image">
             <h3>${product.name}</h3>
-            <p>Fiyat: ${product.price} TL</p>
+            <p>Fiyat: ${product.price}</p>
             <button class="add-to-favorites" data-id="${product.id}"><i class="fas fa-heart"></i></button>
             <button class="add-to-cart" data-id="${product.id}"><i class="fas fa-shopping-cart"></i></button>
             <button class="details-btn" data-id="${product.id}"><i class="fas fa-info-circle"></i> View Details</button>
         `;
-
+	
         productsContainer.appendChild(productItem);
     });
 
@@ -132,7 +165,7 @@ function renderProducts() {
             if (product && modal) {
                 modalImage.src = product.image;
                 modalName.textContent = product.name;
-                modalPrice.textContent = `${product.price} TL`;
+                modalPrice.textContent = `${product.price}`;
                 modalDescription.textContent = product.description;
                 modal.style.display = "block";
 

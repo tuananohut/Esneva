@@ -1,95 +1,104 @@
-const products = [
-    {
-        id: 1,
-        name: "Üst Giyim T-Shirt",
-        price: 199,
-        image: "product1.jpg",
-        category: "Üst Giyim"
-    },
-    {
-        id: 2,
-        name: "Alt Giyim Pantolon",
-        price: 299,
-        image: "product2.jpg",
-        category: "Alt Giyim"
-    },
-    {
-        id: 3,
-        name: "Aksesuar - Þapka",
-        price: 129,
-        image: "product3.jpg",
-        category: "Aksesuar"
+document.addEventListener("DOMContentLoaded", function () {
+    const products = [
+        {
+            id: 1,
+            name: "Adaptive Snap-On Top â€“ Versatile & Comfortable",
+            price: "199 TL",
+            image: "images/products/top/image1.jpg",
+            description: "Designed for ease, accessibility, and ultimate comfort, this adaptive top supports independent dressing while ensuring a secure and stylish fit."
+        },
+        {
+            id: 2,
+            name: "Adaptive Elastic Waist Pants â€“ Comfortable & Accessible",
+            price: "299 TL",
+            image: "images/products/pants/image1.jpg",
+            description: "Comfortable adaptive pants with an elastic waist for easy dressing."
+        },
+        {
+            id: 3,
+            name: "Esneva Adaptive Open-Front Underwear",
+            price: "299 TL",
+            image: "images/products/underwear/image4.jpg",
+            description: "Soft and comfortable adaptive underwear for everyday use."
+        },
+        {
+            id: 4,
+            name: "Adaptive Front-Closure Bra â€“ Easy & Comfortable",
+            price: "299 TL",
+            image: "images/products/bra/image2.jpg",
+            description: "Front-closure design for easy dressing and all-day comfort."
+        }
+    ];
+
+    const modal = document.getElementById("product-modal");
+    const modalImage = document.getElementById("modal-product-image");
+    const modalName = document.getElementById("modal-product-name");
+    const modalPrice = document.getElementById("modal-product-price");
+    const modalDescription = document.getElementById("modal-product-description");
+    const addToCartBtn = document.querySelector(".add-to-cart");
+    const addToFavoritesBtn = document.querySelector(".add-to-favorites");
+
+    let modalProductId = null;
+    modal.style.display = null;
+
+    function openModal(productId) {
+        const product = products.find(p => p.id === productId);
+        if (!product) {
+            console.error("Product not found!");
+            return;
+        }
+
+        modalImage.src = product.image;
+        modalName.textContent = product.name;
+        modalPrice.textContent = `Price: ${product.price}`;
+        modalDescription.textContent = product.description;
+        modalProductId = productId;
+
+        modal.style.display = "flex";  // AÃ§Ä±lÄ±rken `flex` olarak ayarla
     }
-];
 
-// Ürünleri sayfaya ekleme fonksiyonu
-function renderProducts() {
-    const productsContainer = document.querySelector(".products");
+    function closeModal() {
+        modal.style.display = "none";
+    }
 
-    if (!productsContainer) return;
+    function addToCart(productId) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const product = products.find(p => p.id === productId);
+        if (!product) return;
 
-    productsContainer.innerHTML = ""; // Önce temizle
+        cart.push(product);
+        localStorage.setItem("cart", JSON.stringify(cart));
+    }
 
-    products.forEach(product => {
-        const productItem = document.createElement("div");
-        productItem.classList.add("product-item");
+    function addToFavorites(productId) {
+        let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        const product = products.find(p => p.id === productId);
+        if (!product) return;
 
-        productItem.innerHTML = `
-            <img src="${product.image}" alt="${product.name}" class="product-image">
-            <h3>${product.name}</h3>
-            <p>Fiyat: ${product.price} TL</p>
-            <button class="add-to-favorites" data-id="${product.id}"><i class="fas fa-heart"></i></button>
-            <button class="add-to-cart" data-id="${product.id}"><i class="fas fa-shopping-cart"></i></button>
-<button class="view-details" data-id="1">Ürün Detaylarý</button>
-        `;
+        favorites.push(product);
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+    }
 
-        productsContainer.appendChild(productItem);
-    });
-
-    // Butonlara týklanma olaylarýný ekleyelim
-    document.querySelectorAll(".add-to-cart").forEach(button => {
+    document.querySelectorAll(".details-btn").forEach(button => {
         button.addEventListener("click", function () {
-            addToCart(this.getAttribute("data-id"));
+            const productId = parseInt(this.getAttribute("data-id"));
+            openModal(productId);
         });
     });
 
-    document.querySelectorAll(".add-to-favorites").forEach(button => {
-        button.addEventListener("click", function () {
-            addToFavorites(this.getAttribute("data-id"));
-        });
+    document.querySelector(".close-modal").addEventListener("click", closeModal);
+
+    window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            closeModal();
+        }
     });
 
-    document.addEventListener("DOMContentLoaded", function () {
-	document.querySelectorAll(".view-details").forEach(button => {
-	    button.addEventListener("click", function () {
-		const productId = this.getAttribute("data-id");
-		window.location.href = `product-detail.html?id=${productId}`;
-	    });
-	});
+    addToCartBtn.addEventListener("click", function () {
+        if (modalProductId) addToCart(modalProductId);
     });
 
-}
-
-// Sepete ekleme fonksiyonu (localStorage ile saklama)
-function addToCart(productId) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let product = products.find(p => p.id == productId);
-
-    if (product) {
-	cart.push(product);
-	localStorage.setItem("cart", JSON.stringify(cart));
-	alert(`${product.name} sepete eklendi!`);
-    }
-}
-
-// Favorilere ekleme fonksiyonu
-function addToFavorites(productId) {
-    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    let product = products.find(p => p.id == productId);
-
-    if (product) {
-	favorites.push(product);
-	localStorage.setItem("favorites", JSON.stringify(favorites));
-	alert(`${product.name} favorilere eklendi!`);
-    }
-}
+    addToFavoritesBtn.addEventListener("click", function () {
+        if (modalProductId) addToFavorites(modalProductId);
+    });
+});

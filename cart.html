@@ -102,7 +102,7 @@
                       itemElement.innerHTML = `
                     <img src="${item.image}" alt="${item.name}" class="cart-item-image">
                     <h3>${item.name}</h3>
-                    <p>${item.price} TL</p>
+                    <p>${item.price}</p>
                     <button class="remove-from-cart" data-index="${index}">Remove</button>
                 `;
                       cartItemsContainer.appendChild(itemElement);
@@ -110,7 +110,7 @@
 		  });
               }
 
-              cartTotalPrice.textContent = total + " TL";
+              cartTotalPrice.textContent = total;
               localStorage.setItem("cart", JSON.stringify(cart));
 	  }
 
