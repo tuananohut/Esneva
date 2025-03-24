@@ -1,25 +1,26 @@
 document.addEventListener('keydown', function(event) {    
     switch (event.key) {
-    case '1': // Ana Sayfa
+    case '1': 
         window.location.href = "index.html";
         break;
-    case '2': // Ürünler
+    case '2': 
         window.location.href = "products.html";
         break;
-    case '3': // İletişim
+    case '3': 
         window.location.href = "contact.html";
         break;
-    case '4': // Hakkında
+    case '4': 
         window.location.href = "about.html";
         break;
-    case '5': // Favoriler
+    case '5': 
         window.location.href = "favorites.html";
         break;
-    case '6': // Sepet
+    case '6': 
         window.location.href = "cart.html";
         break;
-    case '7': // Dil Seçenekleri
-        // window.location.href = "partnerships.html";
+    case 'f':
+    case 'F': 
+	window.location.href = "products.html";
         break;
     default:
         break;
@@ -34,12 +35,10 @@ categories.forEach(category => {
     });
 });
 
-// Slayt gösterisi için
 let slideIndex = 0;
 function showSlides() {
     let slides = document.getElementsByClassName("mySlides");
 
-    // Tüm slaytları gizle
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }

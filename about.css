@@ -1,6 +1,11 @@
+.gap {
+    padding: 25px 10px;
+}
+
 .about {
     display: flex;
-    align-items: flex-start;  
+    flex-direction: column;
+    align-items: center;  
     justify-content: center;
     padding: 50px 20px;
 }
@@ -23,16 +28,21 @@
 .about-text {
     flex: 1;
     max-width: 600px;
+    font-size: 22px;
+}
+
+.about-text h2{
+    font-size: 28px;
 }
 
 .about h1 {
-    font-size: 56px; 
+    font-size: 60px; 
     color: var(--black);
     margin-bottom: 20px;
 }
 
 .about p {
-    font-size: 18px;
+    font-size: 20px;
     color: var(--black);
     margin-bottom: 30px;
 }
@@ -40,11 +50,11 @@
 .vision {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the content horizontally */
-    justify-content: center; /* Center the content vertically */
+    align-items: center;
+    justify-content: center; 
     margin-top: 50px;
     width: 100%;
-    min-height: 200px; /* Ensure there's enough space */
+    min-height: 200px;
 }
 
 .vision h2 {
@@ -59,9 +69,9 @@
 }
 
 .vision li {
-    font-size: 18px;
+    font-size: 22px;
     color: var(--black);
     line-height: 1.6;
     margin-bottom: 10px;
-    text-align: left; 
+    text-align: center; 
 }

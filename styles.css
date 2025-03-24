@@ -803,7 +803,7 @@ footer {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
+    // display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
@@ -853,49 +853,51 @@ footer {
 
 #modal-product-features {
     list-style-type: none; 
-    padding: 0;  /* Boşlukları kaldırdık */-
-    margin: 0;  /* Margin'i sıfırladık */
-    display: grid;  /* Daha düzenli bir şekilde listeyi hizalamak için grid kullanıyoruz */
-    grid-template-columns: 1fr; /* 2 sütunlu bir yapı */
-    gap: 10px;  /* Elemanlar arasındaki boşluk */
+    padding: 0;  
+    margin: 0;  
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 10px; 
 }
 
 #modal-product-features li {
     font-size: 16px;
-    color: #555;  /* Yazı rengini biraz daha açık yaptık */
-    line-height: 1.6;  /* Satır yüksekliğini arttırarak okunabilirliği artırdık */
+    color: var(--black);
+    line-height: 1.6; 
     display: flex;
     align-items: center;
 }
 
 #modal-product-features li:before {
-    content: "-";  /* Her özelliğin önüne bir onay işareti ekledik */
-    margin-right: 10px;  /* Onay işaretinden sonra bir boşluk bıraktık */
-    color: #4CAF50;  /* Onay işaretinin rengini yeşil yaptık */
-    font-size: 18px;  /* İşareti biraz büyüttük */
+    content: "-"; 
+    margin-right: 10px; 
+    color: #4CAF50; 
+    font-size: 18px;  
 }
 
 @media (max-width: 600px) {
     #modal-product-features {
-        grid-template-columns: 1fr;  /* Küçük ekranlarda listeyi tek sütuna indiriyoruz */
+        grid-template-columns: 1fr; 
     }
 }
+
 
 .modal-buttons {
     display: flex;
     flex-direction: row;
     gap: 10px;
     width: 100%;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-buttons button {
-    padding: 12px; /* Butonların içini biraz daha genişlet */
+    padding: 12px; 
     font-size: 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: auto; /* Buton genişliğini içerikle uyumlu hale getir */
+    width: auto;
 }
 
 .close-modal {

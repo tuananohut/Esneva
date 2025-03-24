@@ -22,18 +22,21 @@
         </ul>
       </nav>
       <div class="header-extras">
-        <!-- Using Font Awesome Icons for Cart, Favorites, and Login -->
         <button class="favorites" onclick="location.href='favorites.html';">
-          <i class="fas fa-heart"></i>
+          <strong>5</strong>
+          <i class='fas fa-heart'></i>
         </button>
         <button class="cart" onclick="location.href='cart.html';">
-          <i class="fas fa-shopping-cart"></i>
+          <strong>6</strong>
+          <i class='fas fa-shopping-cart'></i>
         </button>
         <button class="login" onclick="location.href='login.html';">
+          <strong>7</strong>
           <i class="fas fa-user"></i>
         </button>
       </div>
     </header>
+
 
     <!-- Main Content -->
     <main>
@@ -108,7 +111,7 @@
 	</div>
       </div>
     </div>
-
+    
     <!-- Footer -->
     <footer>
       <div class="footer-content">
@@ -187,8 +190,25 @@
 		  careInstructions: "Machine Washable – Made of 95% Modal - 5% Spandex, breathable, and durable. Wrinkle-Resistant & Soft – Maintains shape and comfort through repeated washing.",
 		  medicalNotice: ""
               },
-              {
+	      {
 		  id: 3,
+		  name: "Esneva Adaptive Open-Front Underwear",
+		  price: "149 TL",
+		  image: "images/products/underwear/image1.jpg",
+		  description: "Effortlessly designed adaptive underwear with a front-opening closure, providing comfort, convenience, and accessibility.",
+		  features: [
+                      "Front-Opening Design – Fully opens at the front for effortless dressing and a perfect fit.",
+                      "Easy Touch Closures – Secure and simple-to-use fasteners allow for quick on and off.",
+                      "Super Soft Elastic Waistband – Ensures a comfortable, snug fit without pressure points.",
+                      "Light Absorbency Layer – Added discreet absorbent layer for extra dryness and confidence.",
+                      "Enhanced Grip Features – Loops near the waistband and closures provide a better grip for easy handling.",
+                      "Tactile Markers – Subtle raised details to help visually impaired individuals identify the garment effortlessly."
+		  ],
+		  careInstructions: "Machine Washable & Dryer Friendly – Easy care for everyday wear. 95% Cotton / 5% Polyester – Soft, breathable, and durable.",
+		  medicalNotice: "",
+	      },
+              {
+		  id: 4,
 		  name: "Adaptive Front-Closure Bra – Easy & Comfortable",
 		  price: "299 TL",
 		  image: "images/products/bra/image2.jpg",
@@ -243,7 +263,7 @@
               modalMedicalNotice.textContent = product.medicalNotice;
 
               modalProductId = productId;
-              modal.style.display = "flex";  // Open modal
+              modal.style.display = "flex"; 
 	  }
 
 	  function closeModal() {
@@ -275,5 +295,5 @@
       });
 
     </script>
-</body>
+  </body>
 </html>
