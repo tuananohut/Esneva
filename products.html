@@ -21,6 +21,7 @@
           <li><strong>4</strong><a href="about.html" tabindex="4" accesskey="4">About</a></li>
         </ul>
       </nav>
+
       <div class="header-extras">
         <button class="favorites" onclick="location.href='favorites.html';">
           <strong>5</strong>
@@ -37,12 +38,28 @@
       </div>
     </header>
 
-
-    <!-- Main Content -->
-    <main>
+    <main class="container">
       <h1 class="products-header">Products</h1>
+      <aside class="filters">
+	<h3>Filters</h3>
+	<div class="filter-group">
+          <h4>Category</h4>
+          <label><input type="checkbox" data-filter="category" value="tops"> Tops</label>
+          <label><input type="checkbox" data-filter="category" value="pants"> Pants</label>
+          <label><input type="checkbox" data-filter="category" value="underwear"> Underwear</label>
+          <label><input type="checkbox" data-filter="category" value="bras"> Bras</label>
+	</div>
+	<div class="filter-group">
+          <h4>Size</h4>
+          <label><input type="checkbox" data-filter="size" value="xs"> XS</label>
+          <label><input type="checkbox" data-filter="size" value="s"> S</label>
+          <label><input type="checkbox" data-filter="size" value="m"> M</label>
+          <label><input type="checkbox" data-filter="size" value="l"> L</label>
+          <label><input type="checkbox" data-filter="size" value="xl"> XL</label>
+	</div>
+      </aside>
+      
       <div class="products-container">
-	
 	<div class="product-card" id="product-1">
 	  <img src="images/products/top/image1.jpg" alt="Adaptive Snap-On Top">
 	  <h2>Adaptive Snap-On Top – Versatile & Comfortable</h2>
@@ -86,9 +103,109 @@
             <button class="details-btn" data-id="4"><i class="fas fa-info-circle"></i></button>
 	  </div>
 	</div>
+
+	<div class="product-card" id="product-5">
+	  <img src="images/products/prosthetics/image1.jpg" alt="Prosthetic Silicone Liner-Secure & Comfortable Seal">
+	  <h2>Prosthetic Silicone Liner-Secure & Comfortable Seal</h2>
+	  <p class="product-price">300 TL</p>
+	  <div class="product-actions">
+            <button class="wishlist-btn" onclick="addToFavorites(5)"><i class="fas fa-heart"></i></button>
+            <button class="cart-btn" onclick="addToCart(5)"><i class="fas fa-shopping-cart"></i></button>
+            <button class="details-btn" data-id="5"><i class="fas fa-info-circle"></i></button>
+	  </div>
+	</div>
+
+	<div class="product-card" id="product-6">
+	  <img src="images/products/cups/image1.jpg" alt="Cup Level Indicator – Spill-Free Pouring Aid">
+	  <h2>Cup Level Indicator – Spill-Free Pouring Aid</h2>
+	  <p class="product-price">300 TL</p>
+	  <div class="product-actions">
+            <button class="wishlist-btn" onclick="addToFavorites(6)"><i class="fas fa-heart"></i></button>
+            <button class="cart-btn" onclick="addToCart(6)"><i class="fas fa-shopping-cart"></i></button>
+            <button class="details-btn" data-id="6"><i class="fas fa-info-circle"></i></button>
+	  </div>
+	</div>
+
+	<div class="product-card" id="product-7">
+	  <img src="images/products/socks/image1.jpg" alt="Prosthetic Sock – Soft & Supportive Liner">
+	  <h2>Prosthetic Sock – Soft & Supportive Liner</h2>
+	  <p class="product-price">300 TL</p>
+	  <div class="product-actions">
+            <button class="wishlist-btn" onclick="addToFavorites(7)"><i class="fas fa-heart"></i></button>
+            <button class="cart-btn" onclick="addToCart(7)"><i class="fas fa-shopping-cart"></i></button>
+            <button class="details-btn" data-id="7"><i class="fas fa-info-circle"></i></button>
+	  </div>
+	</div>
+
+	<div class="product-card" id="product-8">
+	  <img src="images/products/color/image1.jpg" alt="Color Identifier Device – Hear the Colors">
+	  <h2>Color Identifier Device – Hear the Colors</h2>
+	  <p class="product-price">300 TL</p>
+	  <div class="product-actions">
+            <button class="wishlist-btn" onclick="addToFavorites(8)"><i class="fas fa-heart"></i></button>
+            <button class="cart-btn" onclick="addToCart(8)"><i class="fas fa-shopping-cart"></i></button>
+            <button class="details-btn" data-id="8"><i class="fas fa-info-circle"></i></button>
+	  </div>
+	</div>
+
+	<div class="product-card" id="product-9">
+	  <img src="images/products/hook/image1.jpg" alt="Dressing Hook for Pants – Hassle-Free Dressing Aid">
+	  <h2>Dressing Hook for Pants – Hassle-Free Dressing Aid</h2>
+	  <p class="product-price">300 TL</p>
+	  <div class="product-actions">
+            <button class="wishlist-btn" onclick="addToFavorites(9)"><i class="fas fa-heart"></i></button>
+            <button class="cart-btn" onclick="addToCart(9)"><i class="fas fa-shopping-cart"></i></button>
+            <button class="details-btn" data-id="9"><i class="fas fa-info-circle"></i></button>
+	  </div>
+	</div>
+	
+	<div class="product-card" id="product-10">
+	  <img src="images/products/forearm_crutch/image1.jpg" alt="Forearm Crutch – Stable & Lightweight Support">
+	  <h2>Forearm Crutch – Stable & Lightweight Support</h2>
+	  <p class="product-price">300 TL</p>
+	  <div class="product-actions">
+            <button class="wishlist-btn" onclick="addToFavorites(10)"><i class="fas fa-heart"></i></button>
+            <button class="cart-btn" onclick="addToCart(10)"><i class="fas fa-shopping-cart"></i></button>
+            <button class="details-btn" data-id="10"><i class="fas fa-info-circle"></i></button>
+	  </div>
+	</div>
+
+	<div class="product-card" id="product-11">
+	  <img src="images/products/cane/image1.jpg" alt="Walking Cane – Adjustable & Comfortable">
+	  <h2>Walking Cane – Adjustable & Comfortable</h2>
+	  <p class="product-price">300 TL</p>
+	  <div class="product-actions">
+            <button class="wishlist-btn" onclick="addToFavorites(11)"><i class="fas fa-heart"></i></button>
+            <button class="cart-btn" onclick="addToCart(11)"><i class="fas fa-shopping-cart"></i></button>
+            <button class="details-btn" data-id="11"><i class="fas fa-info-circle"></i></button>
+	  </div>
+	</div>
+
+	<div class="product-card" id="product-12">
+	  <img src="images/products/orthopedic/image1.jpg" alt="Orthopedic Insole – Cushioned Support for Every Step">
+	  <h2>Orthopedic Insole – Cushioned Support for Every Step</h2>
+	  <p class="product-price">300 TL</p>
+	  <div class="product-actions">
+            <button class="wishlist-btn" onclick="addToFavorites(12)"><i class="fas fa-heart"></i></button>
+            <button class="cart-btn" onclick="addToCart(12)"><i class="fas fa-shopping-cart"></i></button>
+            <button class="details-btn" data-id="12"><i class="fas fa-info-circle"></i></button>
+	  </div>
+	</div>
+
+	<div class="product-card" id="product-13">
+	  <img src="images/products/footwear/image1.jpg" alt="Adaptive Footwear – Easy-On Comfort Shoes">
+	  <h2>Adaptive Footwear – Easy-On Comfort Shoes</h2>
+	  <p class="product-price">300 TL</p>
+	  <div class="product-actions">
+            <button class="wishlist-btn" onclick="addToFavorites(13)"><i class="fas fa-heart"></i></button>
+            <button class="cart-btn" onclick="addToCart(13)"><i class="fas fa-shopping-cart"></i></button>
+            <button class="details-btn" data-id="13"><i class="fas fa-info-circle"></i></button>
+	  </div>
+	</div>
 	
       </div>
     </main>
+
 
     <!-- Product Details Modal -->
     <div id="product-modal" class="modal">
@@ -112,28 +229,29 @@
       </div>
     </div>
     
+    
     <!-- Footer -->
     <footer>
       <div class="footer-content">
         <div class="footer-section">
           <h3>Contact</h3>
           <ul>
-            <li><a href="#">Phone: 123-456-7890</a></li>
-            <li><a href="#">Email: info@adaptiveclothing.com</a></li>
-            <li><a href="#">Address: Sample Street No:123, Istanbul</a></li>
+	    <li><a href="#">Phone: 123-456-7890</a></li>
+	    <li><a href="#">Email: info@adaptiveclothing.com</a></li>
+	    <li><a href="#">Address: Sample Street No:123, Istanbul</a></li>
           </ul>
         </div>
         <div class="footer-links">
           <div class="payment-logos">
-            <i class="fab fa-cc-visa payment-logo"></i>
-            <i class="fab fa-cc-mastercard payment-logo"></i>
-            <i class="fab fa-cc-paypal payment-logo"></i>
+	    <i class="fab fa-cc-visa payment-logo"></i>
+	    <i class="fab fa-cc-mastercard payment-logo"></i>
+	    <i class="fab fa-cc-paypal payment-logo"></i>
           </div>
           <div class="social-media">
-            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+	    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+	    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+	    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+	    <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
       </div>
@@ -147,8 +265,10 @@
       </div>
     </footer>
     <script src="script.js"></script>
-    <script src="products.js"></script>
+    <!-- <script src="products.js"></script> -->
     <script>
+
+      
       document.addEventListener("DOMContentLoaded", function () {
 	  const products = [
               {
@@ -225,7 +345,148 @@
 		  ],
 		  careInstructions: "Machine Washable – Made of 95% Polyester, 5% Spandex. Durable – Maintains shape & comfort through multiple washes.",
 		  medicalNotice: "⚠ Magnetic closures should not be worn by individuals with pacemakers or implanted medical devices."
-              }
+              },
+	      {
+		  id: 5,
+		  name: "Prosthetic Silicone Liner – Secure & Comfortable Seal",
+		  price: "300 TL",
+		  image: "images/products/prosthetics/image1.jpg",
+		  description: " ",
+		  features: [
+                      "Medical-Grade Silicone - Skin-friendly and durable",
+		      "Cushioned Support – Reduces impact and enhances comfort",
+		      "Snug Fit – Designed to improve suspension and minimize movement",
+		      "Easy Maintenance – Easy to clean and quick to dry"
+		  ],
+		  careInstructions: "Hand wash with mild soap, air dry",
+		  medicalNotice: " "
+	      },
+	      {
+		  id: 6,
+		  name: "Cup Level Indicator – Spill-Free Pouring Aid",
+		  price: "300 TL",
+		  image: "images/products/cups/image1.jpg",
+		  description: " ",
+		  features: [
+                      "Audible Alerts – Beeps when liquid nears the top of the cup",
+		      "Compact & Portable – Lightweight design for home or travel use",
+		      "Universal Fit – Works with most cup and mug sizes",
+		      "Ideal for Low Vision – Makes independent pouring easier"
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+	      },
+	      {
+		  id: 7,
+		  name: "Prosthetic Sock – Soft & Supportive Liner",
+		  price: "300 TL",
+		  image: "images/products/socks/image1.jpg",
+		  description: " ",
+		  features: [
+                      "Gentle Fabric – Designed to reduce friction and enhance comfort",
+		      "Seamless Construction – Minimizes skin irritation and pressure points",
+		      "Moisture-Wicking – Keeps the limb cool and dry all day",
+		      "Stretchable Fit – Adapts to residual limb size and movement",
+		      "Ideal for Everyday Use – Compatible with most prosthetic liners"
+		  ],
+		  careInstructions: "Machine washable, air dry recommended",
+		  medicalNotice: " "
+	      },
+	      {
+		  id: 8,
+		  name: "Color Identifier Device – Hear the Colors",
+		  price: "300 TL",
+		  image: "images/products/color/image1.jpg",
+		  description: " ",
+		  features: [
+                      "Voice Output – Reads colors aloud for visually impaired users",
+		      "Compact & Handheld – Easy to carry in pockets or bags",
+		      "Multi-Surface Detection – Works on fabrics, papers, plastics, etc.",
+		      "Simple Operation – One-button use for instant feedback"
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+              },
+      	      {
+		  id: 9,
+		  name: "Dressing Hook for Pants – Hassle-Free Dressing Aid",
+		  price: "300 TL",
+		  image: "images/products/hook/image1.jpg",
+		  description: " ",
+		  features: [
+                      "Easy Pull Tool – Helps individuals with limited hand mobility",
+		      "Sturdy Grip Handle – Designed for users with weak grip",
+		      "Compact & Lightweight – Simple to store and carry",
+		      "Great for One-Handed Use – Enables independent dressing"
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+               },
+               {
+		  id: 10,
+		  name: "Forearm Crutch – Stable & Lightweight Support",
+		  price: "300 TL",
+		  image: "images/products/forearm_crutch/image1.jpg",
+		  description: " ",
+		  features: [
+                      "Ergonomic Grip – Reduces pressure on hands and wrists",
+		      "Adjustable Height – Customizable for individual comfort",
+		      "Anti-Slip Rubber Tip – Ensures safe movement on various surfaces",
+                      "Lightweight Frame – Easy to maneuver indoors and outdoors",
+                      "Durable Build – Designed for long-term use"
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+                },
+                {
+		  id: 11,
+		  name: "Walking Cane – Adjustable & Comfortable",
+		  price: "300 TL",
+		  image: "images/products/cane/image1.jpg",
+		  description: " ",
+		  features: [
+                      "Lightweight & Durable – Easy to handle with a non-metal frame.",
+		      "Adjustable Height – Customizable to fit individual needs.",
+		      "Ergonomic Handle – Comfortable grip for extended use.",
+                      "Stable & Supportive – Provides reliable assistance for walking.",
+                      "Compact & Portable – Easy to carry and store."
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+                },
+                {
+		  id: 12,
+		  name: "Orthopedic Insole – Cushioned Support for Every Step",
+		  price: "300 TL",
+		  image: "images/products/orthopedic/image1.jpg",
+		  description: " ",
+		  features: [
+                      "Arch Support – Relieves pressure and promotes balance",
+		      "Shock-Absorbing Layer – Reduces impact on joints",
+		      "Trimmable Edges – Fits various shoe sizes",
+                      "Breathable Material – Keeps feet cool and dry",
+                      "Suitable for Daily Use – Ideal for foot fatigue or deformities"
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+                },
+                {    
+		  id: 13,
+		  name: "Adaptive Footwear – Easy-On Comfort Shoes",
+		  price: "300 TL",
+		  image: "images/products/footwear/image1.jpg",
+		  description: " ",
+		  features: [
+                      "Wide Opening – Simplifies foot insertion",
+		      "Velcro Closures – Secure and adjustable fit",
+		      "Non-Slip Sole – Designed for safety and stability",
+                      "Soft Inner Padding – Enhances overall comfort",
+                      "Diabetes-Friendly Design – Reduces risk of irritation and sores"
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+	        }
+      
 	  ];
 
 	  const modal = document.getElementById("product-modal");
@@ -294,6 +555,8 @@
 	  });
       });
 
+
+      
     </script>
   </body>
 </html>
