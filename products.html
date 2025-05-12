@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products - Esneva</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="products.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   </head>
   <body>
@@ -43,13 +44,6 @@
       <aside class="filters">
 	<h3>Filters</h3>
 	<div class="filter-group">
-          <h4>Category</h4>
-          <label><input type="checkbox" data-filter="category" value="tops"> Tops</label>
-          <label><input type="checkbox" data-filter="category" value="pants"> Pants</label>
-          <label><input type="checkbox" data-filter="category" value="underwear"> Underwear</label>
-          <label><input type="checkbox" data-filter="category" value="bras"> Bras</label>
-	</div>
-	<div class="filter-group">
           <h4>Size</h4>
           <label><input type="checkbox" data-filter="size" value="xs"> XS</label>
           <label><input type="checkbox" data-filter="size" value="s"> S</label>
@@ -57,10 +51,24 @@
           <label><input type="checkbox" data-filter="size" value="l"> L</label>
           <label><input type="checkbox" data-filter="size" value="xl"> XL</label>
 	</div>
+
+
       </aside>
+
+      <section class="product-filter-menu">
+	<button class="filter-btn" data-need="all">All Products</button>
+	<button class="filter-btn" data-need="everyday">Adaptive Everyday Wear</button>
+	<button class="filter-btn" data-need="intimates">Inclusive Intimates</button>
+	<button class="filter-btn" data-need="mobility">Mobility-Friendly</button>
+	<button class="filter-btn" data-need="vision">Vision-Accessible</button>
+	<button class="filter-btn" data-need="orthopedic">Support & Orthopedic</button>
+	<button class="filter-btn" data-need="footwear">Comfort Footwear</button>
+	<button class="filter-btn" data-need="hygiene">Self-Care</button>
+	<button class="filter-btn" data-need="balance">Walking & Balance Aids</button>
+      </section>
       
       <div class="products-container">
-	<div class="product-card" id="product-1">
+	<div class="product-card" id="product-1" data-need="everyday">
 	  <img src="images/products/top/image1.jpg" alt="Adaptive Snap-On Top">
 	  <h2>Adaptive Snap-On Top – Versatile & Comfortable</h2>
 	  <p class="product-price">199 TL</p>
@@ -71,7 +79,7 @@
 	  </div>
 	</div>
 
-	<div class="product-card" id="product-2">
+	<div class="product-card" id="product-2" data-need="everyday">
 	  <img src="images/products/pants/image1.jpg" alt="Adaptive Elastic Waist Pants – Comfortable & Accessible">
 	  <h2>Adaptive Elastic Waist Pants – Comfortable & Accessible</h2>
 	  <p class="product-price">299 TL</p>
@@ -82,7 +90,7 @@
 	  </div>
 	</div>
 
-	<div class="product-card" id="product-3">
+	<div class="product-card" id="product-3" data-need="intimates">
 	  <img src="images/products/underwear/image4.jpg" alt="Esneva Adaptive Open-Front Underwear">
 	  <h2>Esneva Adaptive Open-Front Underwear</h2>
 	  <p class="product-price">299 TL</p>
@@ -93,7 +101,7 @@
 	  </div>
 	</div>
 
-	<div class="product-card" id="product-4">
+	<div class="product-card" id="product-4" data-need="intimates">
 	  <img src="images/products/bra/image2.jpg" alt="Adaptive Front-Closure Bra – Easy & Comfortable">
 	  <h2>Adaptive Front-Closure Bra – Easy & Comfortable</h2>
 	  <p class="product-price">299 TL</p>
@@ -104,7 +112,7 @@
 	  </div>
 	</div>
 
-	<div class="product-card" id="product-5">
+	<div class="product-card" id="product-5" data-need="mobility">
 	  <img src="images/products/prosthetics/image1.jpg" alt="Prosthetic Silicone Liner-Secure & Comfortable Seal">
 	  <h2>Prosthetic Silicone Liner-Secure & Comfortable Seal</h2>
 	  <p class="product-price">300 TL</p>
@@ -115,7 +123,7 @@
 	  </div>
 	</div>
 
-	<div class="product-card" id="product-6">
+	<div class="product-card" id="product-6" data-need="vision">
 	  <img src="images/products/cups/image1.jpg" alt="Cup Level Indicator – Spill-Free Pouring Aid">
 	  <h2>Cup Level Indicator – Spill-Free Pouring Aid</h2>
 	  <p class="product-price">300 TL</p>
@@ -126,7 +134,7 @@
 	  </div>
 	</div>
 
-	<div class="product-card" id="product-7">
+	<div class="product-card" id="product-7" data-need="mobility">
 	  <img src="images/products/socks/image1.jpg" alt="Prosthetic Sock – Soft & Supportive Liner">
 	  <h2>Prosthetic Sock – Soft & Supportive Liner</h2>
 	  <p class="product-price">300 TL</p>
@@ -137,7 +145,7 @@
 	  </div>
 	</div>
 
-	<div class="product-card" id="product-8">
+	<div class="product-card" id="product-8" data-need="vision">
 	  <img src="images/products/color/image1.jpg" alt="Color Identifier Device – Hear the Colors">
 	  <h2>Color Identifier Device – Hear the Colors</h2>
 	  <p class="product-price">300 TL</p>
@@ -148,7 +156,7 @@
 	  </div>
 	</div>
 
-	<div class="product-card" id="product-9">
+	<div class="product-card" id="product-9" data-need="mobility">
 	  <img src="images/products/hook/image1.jpg" alt="Dressing Hook for Pants – Hassle-Free Dressing Aid">
 	  <h2>Dressing Hook for Pants – Hassle-Free Dressing Aid</h2>
 	  <p class="product-price">300 TL</p>
@@ -159,7 +167,7 @@
 	  </div>
 	</div>
 	
-	<div class="product-card" id="product-10">
+	<div class="product-card" id="product-10" data-need="balance">
 	  <img src="images/products/forearm_crutch/image1.jpg" alt="Forearm Crutch – Stable & Lightweight Support">
 	  <h2>Forearm Crutch – Stable & Lightweight Support</h2>
 	  <p class="product-price">300 TL</p>
@@ -170,7 +178,7 @@
 	  </div>
 	</div>
 
-	<div class="product-card" id="product-11">
+	<div class="product-card" id="product-11" data-need="balance">
 	  <img src="images/products/cane/image1.jpg" alt="Walking Cane – Adjustable & Comfortable">
 	  <h2>Walking Cane – Adjustable & Comfortable</h2>
 	  <p class="product-price">300 TL</p>
@@ -181,7 +189,7 @@
 	  </div>
 	</div>
 
-	<div class="product-card" id="product-12">
+	<div class="product-card" id="product-12" data-need="orthopedic">
 	  <img src="images/products/orthopedic/image1.jpg" alt="Orthopedic Insole – Cushioned Support for Every Step">
 	  <h2>Orthopedic Insole – Cushioned Support for Every Step</h2>
 	  <p class="product-price">300 TL</p>
@@ -192,7 +200,7 @@
 	  </div>
 	</div>
 
-	<div class="product-card" id="product-13">
+	<div class="product-card" id="product-13" data-need="footwear">
 	  <img src="images/products/footwear/image1.jpg" alt="Adaptive Footwear – Easy-On Comfort Shoes">
 	  <h2>Adaptive Footwear – Easy-On Comfort Shoes</h2>
 	  <p class="product-price">300 TL</p>
@@ -203,7 +211,7 @@
 	  </div>
 	</div>
 
-	<div class="product-card" id="product-14">
+	<div class="product-card" id="product-14" data-need="hygiene">
 	  <img src="images/products/bag/image1.jpg" alt="Ostomy Bag Cover – Comfortable & Stylish Protection">
 	  <h2>Ostomy Bag Cover – Comfortable & Stylish Protection</h2>
 	  <p class="product-price">300 TL</p>
@@ -214,7 +222,7 @@
 	  </div>
 	</div>
 
-	<div class="product-card" id="product-15">
+	<div class="product-card" id="product-15" data-need="hygiene">
 	  <img src="images/products/spoon/image1.jpg" alt="Spill-Proof Spoon – Steady Eating Aid">
 	  <h2>Spill-Proof Spoon – Steady Eating Aid</h2>
 	  <p class="product-price">300 TL</p>
@@ -225,7 +233,7 @@
 	  </div>
 	</div>
 
-	<div class="product-card" id="product-16">
+	<div class="product-card" id="product-16" data-need="hygiene">
 	  <img src="images/products/spill_proof_cup/image1.jpg" alt="Spill-Proof Cup – No Mess, More Independence">
 	  <h2>Spill-Proof Cup – No Mess, More Independence</h2>
 	  <p class="product-price">300 TL</p>
@@ -236,7 +244,7 @@
 	  </div>
 	</div>
 
-	<div class="product-card" id="product-17">
+	<div class="product-card" id="product-17" data-need="mobility">
 	  <img src="images/products/wheelchair/blanket/image1.jpg" alt="Wheelchair Blanket – Warmth & Coverage On-the-Go">
 	  <h2>Wheelchair Blanket – Warmth & Coverage On-the-Go</h2>
 	  <p class="product-price">300 TL</p>
@@ -247,7 +255,7 @@
 	  </div>
 	</div>
 
-	<div class="product-card" id="product-18">
+	<div class="product-card" id="product-18" data-need="orthopedic">
 	  <img src="images/products/knee/image1.jpg" alt="Knee & Wrist Support – Targeted Compression & Stability">
 	  <h2>Knee & Wrist Support – Targeted Compression & Stability</h2>
 	  <p class="product-price">300 TL</p>
@@ -258,7 +266,7 @@
 	  </div>
 	</div>
 
-	<div class="product-card" id="product-19">
+	<div class="product-card" id="product-19" data-need="orthopedic">
 	  <img src="images/products/arm/image1.jpg" alt="Arm Sling – Comfortable Support for Injured Limbs">
 	  <h2>Arm Sling – Comfortable Support for Injured Limbs</h2>
 	  <p class="product-price">300 TL</p>
@@ -269,7 +277,7 @@
 	  </div>
 	</div>
 	
-	<div class="product-card" id="product-20">
+	<div class="product-card" id="product-20" data-need="mobility">
 	  <img src="images/products/wheelchair/bag/image1.jpg" alt="Wheelchair Side Bag – Practical & Accessible Storage">
 	  <h2>Wheelchair Side Bag – Practical & Accessible Storage</h2>
 	  <p class="product-price">300 TL</p>
@@ -280,7 +288,7 @@
 	  </div>
 	</div>
 
-	<div class="product-card" id="product-21">
+	<div class="product-card" id="product-21" data-need="hygiene">
 	  <img src="images/products/handwarmer/image1.jpg" alt="Hand Warmer – Portable Heat for Cold-Sensitive Users">
 	  <h2>Hand Warmer – Portable Heat for Cold-Sensitive Users</h2>
 	  <p class="product-price">300 TL</p>
@@ -291,7 +299,7 @@
 	  </div>
 	</div>
 
-	<div class="product-card" id="product-22">
+	<div class="product-card" id="product-22" data-need="orthopedic">
 	  <img src="images/products/glove/image1.jpg" alt="Carpal Tunnel Gloves – Targeted Support for Wrist & Hand">
 	  <h2>Carpal Tunnel Gloves – Targeted Support for Wrist & Hand</h2>
 	  <p class="product-price">300 TL</p>
@@ -302,7 +310,7 @@
 	  </div>
 	</div>
 
-	<div class="product-card" id="product-23">
+	<div class="product-card" id="product-23" data-need="orthopedic">
 	  <img src="images/products/belt/image1.jpg" alt="Adaptive Belt – Easy-Fasten Support for Everyday Wear">
 	  <h2>Adaptive Belt – Easy-Fasten Support for Everyday Wear</h2>
 	  <p class="product-price">300 TL</p>
@@ -313,7 +321,7 @@
 	  </div>
 	</div>
 
-	<div class="product-card" id="product-24">
+	<div class="product-card" id="product-24" data-need="orthopedic">
 	  <img src="images/products/corset/image1.jpg" alt="Adaptive Corset – Supportive & Easy to Wear for All Body Types">
 	  <h2>Adaptive Corset – Supportive & Easy to Wear for All Body Types</h2>
 	  <p class="product-price">300 TL</p>
@@ -324,7 +332,7 @@
 	  </div>
 	</div>
 
-	<div class="product-card" id="product-25">
+	<div class="product-card" id="product-25" data-need="hygiene">
 	  <img src="images/products/cap/image1.jpg" alt="Shampoo Cap – Waterless Hair Cleaning for Bedridden Users">
 	  <h2>Shampoo Cap – Waterless Hair Cleaning for Bedridden Users</h2>
 	  <p class="product-price">300 TL</p>
@@ -335,7 +343,7 @@
 	  </div>
 	</div>
 	
-	<div class="product-card" id="product-26">
+	<div class="product-card" id="product-26" data-need="intimates">
 	  <img src="images/products/compression/image1.jpg" alt="Compression Stockings – Support for Circulation & Comfort">
 	  <h2>Compression Stockings – Support for Circulation & Comfort</h2>
 	  <p class="product-price">300 TL</p>
@@ -347,6 +355,7 @@
 	</div>
 	
       </div>
+ 
     </main>
 
     <!-- Product Details Modal -->
@@ -407,9 +416,7 @@
     </footer>
     <script src="script.js"></script>
     <!-- <script src="products.js"></script> -->
-    <script>
-
-      
+    <script>   
       document.addEventListener("DOMContentLoaded", function () {
 	  const products = [
               {
@@ -418,6 +425,7 @@
 		  price: "299 TL",
 		  image: "images/products/pants/image1.jpg",
 		  description: "Designed for ease, accessibility, and everyday comfort, these adaptive pants make dressing simple while offering style and practicality.",
+		  need: "everyday",
 		  features: [
                       "Easy Pull-On Design – Perfect for individuals with limited dexterity or mobility",
                       "Internal Pull-Up Loops – Two discreet inner loops for an easier grip when pulling up",
@@ -439,470 +447,570 @@
 		  price: "199 TL",
 		  image: "images/products/top/image1.jpg",
 		  description: "Designed for maximum comfort, accessibility, and style, this adaptive top is perfect for post-surgery recovery, medical use, and independent dressing.",
+		  need: "everyday",
 		  features: [
                       "3 Wearing Options – Available in sleeved, short-sleeved, and sleeveless styles",
                       "Easy Dressing – Snap closures on shoulders and sides allow for effortless dressing from the bottom up",
                       "Modular Sleeve Design – Sleeves can be attached or detached using snap buttons, creating customizable styles",
-      "Medical Access Made Simple – Shoulder snaps open for IV lines & medical procedures without full removal",
-      "Seamless & Ultra-Soft Fabric – Ideal for sensitive skin & all-day comfort",
-      "Tactile Markers for Accessibility – Small raised details on the collar and cuffs help visually impaired users distinguish clothing",
-      "Enhanced Grip Loops – Loops on shoulders and closures for easier handling and dressing"
-      ],
-      careInstructions: "Machine Washable – Made of 95% Modal - 5% Spandex, breathable, and durable. Wrinkle-Resistant & Soft – Maintains shape and comfort through repeated washing.",
-      medicalNotice: ""
-      },
-      {
-      id: 3,
-      name: "Esneva Adaptive Open-Front Underwear",
-      price: "149 TL",
-      image: "images/products/underwear/image1.jpg",
-      description: "Effortlessly designed adaptive underwear with a front-opening closure, providing comfort, convenience, and accessibility.",
-      features: [
-      "Front-Opening Design – Fully opens at the front for effortless dressing and a perfect fit.",
-      "Easy Touch Closures – Secure and simple-to-use fasteners allow for quick on and off.",
-      "Super Soft Elastic Waistband – Ensures a comfortable, snug fit without pressure points.",
-      "Light Absorbency Layer – Added discreet absorbent layer for extra dryness and confidence.",
-      "Enhanced Grip Features – Loops near the waistband and closures provide a better grip for easy handling.",
-      "Tactile Markers – Subtle raised details to help visually impaired individuals identify the garment effortlessly."
-      ],
-      careInstructions: "Machine Washable & Dryer Friendly – Easy care for everyday wear. 95% Cotton / 5% Polyester – Soft, breathable, and durable.",
-      medicalNotice: "",
-      },
-      {
-      id: 4,
-      name: "Adaptive Front-Closure Bra – Easy & Comfortable",
-      price: "299 TL",
-      image: "images/products/bra/image2.jpg",
-      description: "Designed for ease, accessibility, and ultimate comfort, this adaptive bra supports independent dressing while ensuring a secure and stylish fit.",
-      features: [
-      "Magnetic Front Closure – Effortless dressing with secure magnetic fasteners",
-      "Quick & Struggle-Free Dressing – Reduces dressing time and upper body strain",
-      "Easy Access Design – Ideal for individuals with limited arm mobility",
-      "Tactile Markers for Accessibility – Small raised details help visually impaired users distinguish clothing",
-      "Enhanced Grip Loops – Loops near closure points for better handling and independence",
-      "No Pressure Points – Wide adjustable straps for extra support & comfort",
-      "Seamless & Soft Fabric – Perfect for sensitive skin and all-day wear",
-      "Full Coverage & Adaptive Fit – Designed for comfort, security, and style"
-      ],
-      careInstructions: "Machine Washable – Made of 95% Polyester, 5% Spandex. Durable – Maintains shape & comfort through multiple washes.",
-      medicalNotice: "⚠ Magnetic closures should not be worn by individuals with pacemakers or implanted medical devices."
-      },
-      {
-      id: 5,
-      name: "Prosthetic Silicone Liner – Secure & Comfortable Seal",
-      price: "300 TL",
-      image: "images/products/prosthetics/image1.jpg",
-      description: " ",
-      features: [
-      "Medical-Grade Silicone - Skin-friendly and durable",
-      "Cushioned Support – Reduces impact and enhances comfort",
-      "Snug Fit – Designed to improve suspension and minimize movement",
-      "Easy Maintenance – Easy to clean and quick to dry"
-      ],
-      careInstructions: "Hand wash with mild soap, air dry",
-      medicalNotice: " "
-      },
-      {
-      id: 6,
-      name: "Cup Level Indicator – Spill-Free Pouring Aid",
-      price: "300 TL",
-      image: "images/products/cups/image1.jpg",
-      description: " ",
-      features: [
-      "Audible Alerts – Beeps when liquid nears the top of the cup",
-      "Compact & Portable – Lightweight design for home or travel use",
-      "Universal Fit – Works with most cup and mug sizes",
-      "Ideal for Low Vision – Makes independent pouring easier"
-      ],
-      careInstructions: " ",
-      medicalNotice: " "
-      },
-      {
-      id: 7,
-      name: "Prosthetic Sock – Soft & Supportive Liner",
-      price: "300 TL",
-      image: "images/products/socks/image1.jpg",
-      description: " ",
-      features: [
-      "Gentle Fabric – Designed to reduce friction and enhance comfort",
-      "Seamless Construction – Minimizes skin irritation and pressure points",
-      "Moisture-Wicking – Keeps the limb cool and dry all day",
-      "Stretchable Fit – Adapts to residual limb size and movement",
-      "Ideal for Everyday Use – Compatible with most prosthetic liners"
-      ],
-      careInstructions: "Machine washable, air dry recommended",
-      medicalNotice: " "
-      },
-      {
-      id: 8,
-      name: "Color Identifier Device – Hear the Colors",
-      price: "300 TL",
-      image: "images/products/color/image1.jpg",
-      description: " ",
-      features: [
-      "Voice Output – Reads colors aloud for visually impaired users",
-      "Compact & Handheld – Easy to carry in pockets or bags",
-      "Multi-Surface Detection – Works on fabrics, papers, plastics, etc.",
-      "Simple Operation – One-button use for instant feedback"
-      ],
-      careInstructions: " ",
-      medicalNotice: " "
-      },
-      {
-      id: 9,
-      name: "Dressing Hook for Pants – Hassle-Free Dressing Aid",
-      price: "300 TL",
-      image: "images/products/hook/image1.jpg",
-      description: " ",
-      features: [
-      "Easy Pull Tool – Helps individuals with limited hand mobility",
-      "Sturdy Grip Handle – Designed for users with weak grip",
-      "Compact & Lightweight – Simple to store and carry",
-      "Great for One-Handed Use – Enables independent dressing"
-      ],
-      careInstructions: " ",
-      medicalNotice: " "
-      },
-      {
-      id: 10,
-      name: "Forearm Crutch – Stable & Lightweight Support",
-      price: "300 TL",
-      image: "images/products/forearm_crutch/image1.jpg",
-      description: " ",
-      features: [
-      "Ergonomic Grip – Reduces pressure on hands and wrists",
-      "Adjustable Height – Customizable for individual comfort",
-      "Anti-Slip Rubber Tip – Ensures safe movement on various surfaces",
-      "Lightweight Frame – Easy to maneuver indoors and outdoors",
-      "Durable Build – Designed for long-term use"
-      ],
-      careInstructions: " ",
-      medicalNotice: " "
-      },
-      {
-      id: 11,
-      name: "Walking Cane – Adjustable & Comfortable",
-      price: "300 TL",
-      image: "images/products/cane/image1.jpg",
-      description: " ",
-      features: [
-      "Lightweight & Durable – Easy to handle with a non-metal frame.",
-      "Adjustable Height – Customizable to fit individual needs.",
-      "Ergonomic Handle – Comfortable grip for extended use.",
-      "Stable & Supportive – Provides reliable assistance for walking.",
-      "Compact & Portable – Easy to carry and store."
-      ],
-      careInstructions: " ",
-      medicalNotice: " "
-      },
-      {
-      id: 12,
-      name: "Orthopedic Insole – Cushioned Support for Every Step",
-      price: "300 TL",
-      image: "images/products/orthopedic/image1.jpg",
-      description: " ",
-      features: [
-      "Arch Support – Relieves pressure and promotes balance",
-      "Shock-Absorbing Layer – Reduces impact on joints",
-      "Trimmable Edges – Fits various shoe sizes",
-      "Breathable Material – Keeps feet cool and dry",
-      "Suitable for Daily Use – Ideal for foot fatigue or deformities"
-      ],
-      careInstructions: " ",
-      medicalNotice: " "
-      },
-      {    
-      id: 13,
-      name: "Adaptive Footwear – Easy-On Comfort Shoes",
-      price: "300 TL",
-      image: "images/products/footwear/image1.jpg",
-      description: " ",
-      features: [
-      "Wide Opening – Simplifies foot insertion",
-      "Velcro Closures – Secure and adjustable fit",
-      "Non-Slip Sole – Designed for safety and stability",
-      "Soft Inner Padding – Enhances overall comfort",
-      "Diabetes-Friendly Design – Reduces risk of irritation and sores"
-      ],
-      careInstructions: " ",
-      medicalNotice: " "
-      },
-      {    
-      id: 14,
-      name: "Ostomy Bag Cover – Comfortable & Stylish Protection",
-      price: "300 TL",
-      image: "images/products/bag/image1.jpg",
-      description: " ",
-      features: [
-      "Soft Fabric – Reduces skin irritation",
-      "Discreet Look – Helps maintain confidence in daily life",
-      "Easy Slip-On – Quick to attach and remove",
-      "Machine Washable – Simple to maintain",
-      "Various Colors – Allows personal expression"
-      ],
-      careInstructions: " ",
-      medicalNotice: " "
-      },
-      {    
-      id: 15,
-      name: "Spill-Proof Spoon – Steady Eating Aid",
-      price: "300 TL",
-      image: "images/products/spoon/image1.jpg",
-      description: " ",
-      features: [
-      "Stabilizing Technology – Minimizes hand tremor movement",
-      "Ergonomic Handle – Comfortable and easy to grip",
-      "Dishwasher Safe – Convenient to clean",
-      "Lightweight Design – Easy to use for extended periods",
-      "Ideal for Tremor Conditions – Supports independence during meals"
-      ],
-      careInstructions: " ",
-      medicalNotice: " "
-      },
-      {    
-      id: 16,
-      name: "Spill-Proof Cup – No Mess, More Independence",
-      price: "300 TL",
-      image: "images/products/spill_proof_cup/image1.jpg",
-      description: " ",
-      features: [
-      "Anti-Spill Lid – Prevents accidental leaks",
-      "Ergonomic Shape – Easy to grip and hold",
-      "Transparent Design – Easily monitor fluid level",
-      "Microwave & Dishwasher Safe – Practical for daily use",
-      "Suitable for All Ages – Great for people with motor challenges"
-      ],
-      careInstructions: " ",
-      medicalNotice: " "
-      },
-      {    
-      id: 18,
-      name: "Knee & Wrist Support – Targeted Compression & Stability",
-      price: "300 TL",
-      image: "images/products/knee/image1.jpg",
-      description: " ",
-      features: [
-      "Adjustable Straps – Customizable fit for all-day comfort",
-      "Breathable Fabric – Keeps skin dry and cool",
-      "Compression Design – Supports circulation and reduces pain",
-      "Easy to Wear – Suitable for one-handed application",
-      "Lightweight & Flexible – Comfortable for long use"
-      ],
-      careInstructions: " ",
-      medicalNotice: " "
-      },
-      {    
-      id: 17,
-      name: "Wheelchair Blanket – Warmth & Coverage On-the-Go",
-      price: "300 TL",
-      image: "images/products/wheelchair/blanket/image1.jpg",
-      description: " ",
-      features: [
-      "Contoured Fit – Designed specifically for seated users",
-      "Easy-Fasten Straps – Stays securely in place without slipping",
-      "Plush Inner Layer – Provides maximum warmth and softness",
-      "Water-Resistant Outer Shell – Keeps you dry outdoors",
-      "Machine Washable – Convenient for daily use"
-      ],
-      careInstructions: " ",
-      medicalNotice: " "
-      },
-      {    
-      id: 19,
-      name: "Arm Sling – Comfortable Support for Injured Limbs",
-      price: "300 TL",
-      image: "images/products/arm/image1.jpg",
-      description: " ",
-      features: [
-      "Soft Shoulder Strap – Prevents neck strain",
-      "Easy-On Design – Slip-on style for independent or assisted use",
-      "Breathable Mesh – Keeps the arm cool and comfortable",
-      "Adjustable Fit – Suitable for both left and right arms",
-      "Lightweight Build – Ideal for everyday mobility"
-      ],
-      careInstructions: " ",
-      medicalNotice: " "
-      },
-      {    
-      id: 20,
-      name: "Wheelchair Side Bag – Practical & Accessible Storage",
-      price: "300 TL",
-      image: "images/products/wheelchair/bag/image1.jpg",
-      description: " ",
-      features: [
-      "Easy Attachment – Hooks or Velcros securely to wheelchair arms",
-      "Multiple Compartments – Keeps essentials organized and reachable",
-      "Durable Fabric – Water-resistant and long-lasting",
-      "Universal Fit – Compatible with most wheelchair models",
-      "Lightweight & Stylish – Adds function without bulk"
-      ],
-      careInstructions: " ",
-      medicalNotice: " "
-      },
-      {    
-      id: 21,
-      name: "Hand Warmer – Portable Heat for Cold-Sensitive Users",
-      price: "300 TL",
-      image: "images/products/handwarmer/image1.jpg",
-      description: " ",
-      features: [
-      "Compact Size – Fits easily in pockets or gloves",
-      "Long-Lasting Heat – Provides warmth for extended periods",
-      "Ideal for Raynaud’s, Arthritis, or Circulation Issues",
-      "Soft Exterior – Gentle on skin"
-      ],
-      careInstructions: " ",
-      medicalNotice: " "
-      },
-      {
-      id: 22,
-      name: "Carpal Tunnel Gloves – Targeted Support for Wrist & Hand",
-      price: "300 TL",
-      image: "images/products/glove/image1.jpg",
-      description: " ",
-      features: [
-      "Compression Fit – Helps reduce swelling and pain",
-      "Breathable & Stretchy Material – All-day comfort",
-      "Fingerless Design – Full hand mobility",
-      "Easy to Slip On – Suitable for independent use",
-      "Ideal for Daily Activities – From typing to housework"
-      ],
-      careInstructions: " ",
-      medicalNotice: " "
-      },
-      {
-      id: 23,
-      name: "Adaptive Belt – Easy-Fasten Support for Everyday Wear",
-      price: "300 TL",
-      image: "images/products/belt/image1.jpg",
-      description: " ",
-      features: [
-      "Velcro or Magnetic Closure – Simple to fasten for limited dexterity",
-      "Stretchable Fit – Adjusts comfortably to waist shape",
-      "No Holes Design – Smooth adjustments without fine motor effort",
-      "Lightweight & Discreet – Wears comfortably under clothing",
-      "Durable Material – Long-lasting use with daily wear"
-      ],
-      careInstructions: " ",
-      medicalNotice: " "
-      },
-      {
-      id: 24,
-      name: "Adaptive Corset – Supportive & Easy to Wear for All Body Types",
-      price: "300 TL",
-      image: "images/products/corset/image1.jpg",
-      description: " ",
-      features: [
-      "Front-Closure System – Easier to wear for mobility-challenged users",
-      "Adjustable Fit – Conforms to body shape for optimal support",
-      "Breathable Fabric – Reduces sweat and discomfort",
-      "Lightweight Structure – Suitable for extended use",
-      "Discreet Under Clothing – Offers support without visibility"
-      ],
-      careInstructions: " ",
-      medicalNotice: " "
-      },
-      {
-      id: 25,
-      name: "Shampoo Cap – Waterless Hair Cleaning for Bedridden Users",
-      price: "300 TL",
-      image: "images/products/cap/image1.jpg",
-      description: " ",
-      features: [
-      "Pre-Moistened Interior – Cleans and conditions without water",
-      "One-Step Use – No rinsing required",
-      "Gentle on Skin – Safe for sensitive scalps",
-      "Microwaveable – For warm and soothing application",
-      "Ideal for Post-Surgery or Limited Mobility Use"
-      ],
-      careInstructions: " ",
-      medicalNotice: " "
-      },
-      {
-      id: 26,
-      name: "Compression Stockings – Support for Circulation & Comfort",
-      price: "300 TL",
-      image: "images/products/compression/image1.jpg",
-      description: " ",
-      features: [
-      "Graduated Compression – Helps reduce swelling and fatigue",
-      "Easy to Pull On – Flexible material for independent dressing",
-      "Breathable & Soft – Suitable for all-day wear",
-      "Reinforced Heel & Toe – Enhances durability",
-      "Machine Washable – Easy care for daily use"
-      ],
-      careInstructions: " ",
-      medicalNotice: " "
-      }];
+		      "Medical Access Made Simple – Shoulder snaps open for IV lines & medical procedures without full removal",
+		      "Seamless & Ultra-Soft Fabric – Ideal for sensitive skin & all-day comfort",
+		      "Tactile Markers for Accessibility – Small raised details on the collar and cuffs help visually impaired users distinguish clothing",
+		      "Enhanced Grip Loops – Loops on shoulders and closures for easier handling and dressing"
+		  ],
+		  careInstructions: "Machine Washable – Made of 95% Modal - 5% Spandex, breathable, and durable. Wrinkle-Resistant & Soft – Maintains shape and comfort through repeated washing.",
+		  medicalNotice: ""
+	      },
+	      {
+		  id: 3,
+		  name: "Esneva Adaptive Open-Front Underwear",
+		  price: "299 TL",
+		  image: "images/products/underwear/image1.jpg",
+		  description: "Effortlessly designed adaptive underwear with a front-opening closure, providing comfort, convenience, and accessibility.",
+		  need: "intimates",
+		  features: [
+		      "Front-Opening Design – Fully opens at the front for effortless dressing and a perfect fit.",
+		      "Easy Touch Closures – Secure and simple-to-use fasteners allow for quick on and off.",
+		      "Super Soft Elastic Waistband – Ensures a comfortable, snug fit without pressure points.",
+		      "Light Absorbency Layer – Added discreet absorbent layer for extra dryness and confidence.",
+		      "Enhanced Grip Features – Loops near the waistband and closures provide a better grip for easy handling.",
+		      "Tactile Markers – Subtle raised details to help visually impaired individuals identify the garment effortlessly."
+		  ],
+		  careInstructions: "Machine Washable & Dryer Friendly – Easy care for everyday wear. 95% Cotton / 5% Polyester – Soft, breathable, and durable.",
+		  medicalNotice: "",
+	      },
+	      {
+		  id: 4,
+		  name: "Adaptive Front-Closure Bra – Easy & Comfortable",
+		  price: "299 TL",
+		  image: "images/products/bra/image2.jpg",
+		  description: "Designed for ease, accessibility, and ultimate comfort, this adaptive bra supports independent dressing while ensuring a secure and stylish fit.",
+		  need: "intimates",
+		  features: [
+		      "Magnetic Front Closure – Effortless dressing with secure magnetic fasteners",
+		      "Quick & Struggle-Free Dressing – Reduces dressing time and upper body strain",
+		      "Easy Access Design – Ideal for individuals with limited arm mobility",
+		      "Tactile Markers for Accessibility – Small raised details help visually impaired users distinguish clothing",
+		      "Enhanced Grip Loops – Loops near closure points for better handling and independence",
+		      "No Pressure Points – Wide adjustable straps for extra support & comfort",
+		      "Seamless & Soft Fabric – Perfect for sensitive skin and all-day wear",
+		      "Full Coverage & Adaptive Fit – Designed for comfort, security, and style"
+		  ],
+		  careInstructions: "Machine Washable – Made of 95% Polyester, 5% Spandex. Durable – Maintains shape & comfort through multiple washes.",
+		  medicalNotice: "⚠ Magnetic closures should not be worn by individuals with pacemakers or implanted medical devices."
+	      },
+	      {
+		  id: 5,
+		  name: "Prosthetic Silicone Liner – Secure & Comfortable Seal",
+		  price: "300 TL",
+		  image: "images/products/prosthetics/image1.jpg",
+		  description: " ",
+		  need: "mobility",
+		  features: [
+		      "Medical-Grade Silicone - Skin-friendly and durable",
+		      "Cushioned Support – Reduces impact and enhances comfort",
+		      "Snug Fit – Designed to improve suspension and minimize movement",
+		      "Easy Maintenance – Easy to clean and quick to dry"
+		  ],
+		  careInstructions: "Hand wash with mild soap, air dry",
+		  medicalNotice: " "
+	      },
+	      {
+		  id: 6,
+		  name: "Cup Level Indicator – Spill-Free Pouring Aid",
+		  price: "300 TL",
+		  image: "images/products/cups/image1.jpg",
+		  description: " ",
+		  need: "vision",
+		  features: [
+		      "Audible Alerts – Beeps when liquid nears the top of the cup",
+		      "Compact & Portable – Lightweight design for home or travel use",
+		      "Universal Fit – Works with most cup and mug sizes",
+		      "Ideal for Low Vision – Makes independent pouring easier"
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+	      },
+	      {
+		  id: 7,
+		  name: "Prosthetic Sock – Soft & Supportive Liner",
+		  price: "300 TL",
+		  image: "images/products/socks/image1.jpg",
+		  description: " ",
+		  need: "mobility",
+		  features: [
+		      "Gentle Fabric – Designed to reduce friction and enhance comfort",
+		      "Seamless Construction – Minimizes skin irritation and pressure points",
+		      "Moisture-Wicking – Keeps the limb cool and dry all day",
+		      "Stretchable Fit – Adapts to residual limb size and movement",
+		      "Ideal for Everyday Use – Compatible with most prosthetic liners"
+		  ],
+		  careInstructions: "Machine washable, air dry recommended",
+		  medicalNotice: " "
+	      },
+	      {
+		  id: 8,
+		  name: "Color Identifier Device – Hear the Colors",
+		  price: "300 TL",
+		  image: "images/products/color/image1.jpg",
+		  description: " ",
+		  need: "vision",
+		  features: [
+		      "Voice Output – Reads colors aloud for visually impaired users",
+		      "Compact & Handheld – Easy to carry in pockets or bags",
+		      "Multi-Surface Detection – Works on fabrics, papers, plastics, etc.",
+		      "Simple Operation – One-button use for instant feedback"
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+	      },
+	      {
+		  id: 9,
+		  name: "Dressing Hook for Pants – Hassle-Free Dressing Aid",
+		  price: "300 TL",
+		  image: "images/products/hook/image1.jpg",
+		  description: " ",
+		  need: "mobility",
+		  features: [
+		      "Easy Pull Tool – Helps individuals with limited hand mobility",
+		      "Sturdy Grip Handle – Designed for users with weak grip",
+		      "Compact & Lightweight – Simple to store and carry",
+		      "Great for One-Handed Use – Enables independent dressing"
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+	      },
+	      {
+		  id: 10,
+		  name: "Forearm Crutch – Stable & Lightweight Support",
+		  price: "300 TL",
+		  image: "images/products/forearm_crutch/image1.jpg",
+		  description: " ",
+		  need: "balance",
+		  features: [
+		      "Ergonomic Grip – Reduces pressure on hands and wrists",
+		      "Adjustable Height – Customizable for individual comfort",
+		      "Anti-Slip Rubber Tip – Ensures safe movement on various surfaces",
+		      "Lightweight Frame – Easy to maneuver indoors and outdoors",
+		      "Durable Build – Designed for long-term use"
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+	      },
+	      {
+		  id: 11,
+		  name: "Walking Cane – Adjustable & Comfortable",
+		  price: "300 TL",
+		  image: "images/products/cane/image1.jpg",
+		  description: " ",
+		  need: "balance",
+		  features: [
+		      "Lightweight & Durable – Easy to handle with a non-metal frame.",
+		      "Adjustable Height – Customizable to fit individual needs.",
+		      "Ergonomic Handle – Comfortable grip for extended use.",
+		      "Stable & Supportive – Provides reliable assistance for walking.",
+		      "Compact & Portable – Easy to carry and store."
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+	      },
+	      {
+		  id: 12,
+		  name: "Orthopedic Insole – Cushioned Support for Every Step",
+		  price: "300 TL",
+		  image: "images/products/orthopedic/image1.jpg",
+		  description: " ",
+		  need: "orthopedic",
+		  features: [
+		      "Arch Support – Relieves pressure and promotes balance",
+		      "Shock-Absorbing Layer – Reduces impact on joints",
+		      "Trimmable Edges – Fits various shoe sizes",
+		      "Breathable Material – Keeps feet cool and dry",
+		      "Suitable for Daily Use – Ideal for foot fatigue or deformities"
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+	      },
+	      {    
+		  id: 13,
+		  name: "Adaptive Footwear – Easy-On Comfort Shoes",
+		  price: "300 TL",
+		  image: "images/products/footwear/image1.jpg",
+		  description: " ",
+		  need: "footwear",
+		  features: [
+		      "Wide Opening – Simplifies foot insertion",
+		      "Velcro Closures – Secure and adjustable fit",
+		      "Non-Slip Sole – Designed for safety and stability",
+		      "Soft Inner Padding – Enhances overall comfort",
+		      "Diabetes-Friendly Design – Reduces risk of irritation and sores"
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+	      },
+	      {    
+		  id: 14,
+		  name: "Ostomy Bag Cover – Comfortable & Stylish Protection",
+		  price: "300 TL",
+		  image: "images/products/bag/image1.jpg",
+		  description: " ",
+		  need: "hygiene",
+		  features: [
+		      "Soft Fabric – Reduces skin irritation",
+		      "Discreet Look – Helps maintain confidence in daily life",
+		      "Easy Slip-On – Quick to attach and remove",
+		      "Machine Washable – Simple to maintain",
+		      "Various Colors – Allows personal expression"
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+	      },
+	      {    
+		  id: 15,
+		  name: "Spill-Proof Spoon – Steady Eating Aid",
+		  price: "300 TL",
+		  image: "images/products/spoon/image1.jpg",
+		  description: " ",
+		  need: "hygiene",
+		  features: [
+		      "Stabilizing Technology – Minimizes hand tremor movement",
+		      "Ergonomic Handle – Comfortable and easy to grip",
+		      "Dishwasher Safe – Convenient to clean",
+		      "Lightweight Design – Easy to use for extended periods",
+		      "Ideal for Tremor Conditions – Supports independence during meals"
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+	      },
+	      {    
+		  id: 16,
+		  name: "Spill-Proof Cup – No Mess, More Independence",
+		  price: "300 TL",
+		  image: "images/products/spill_proof_cup/image1.jpg",
+		  description: " ",
+		  need: "hygiene",
+		  features: [
+		      "Anti-Spill Lid – Prevents accidental leaks",
+		      "Ergonomic Shape – Easy to grip and hold",
+		      "Transparent Design – Easily monitor fluid level",
+		      "Microwave & Dishwasher Safe – Practical for daily use",
+		      "Suitable for All Ages – Great for people with motor challenges"
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+	      },
+	      {    
+		  id: 18,
+		  name: "Knee & Wrist Support – Targeted Compression & Stability",
+		  price: "300 TL",
+		  image: "images/products/knee/image1.jpg",
+		  description: " ",
+		  need: "orthopedic",
+		  features: [
+		      "Adjustable Straps – Customizable fit for all-day comfort",
+		      "Breathable Fabric – Keeps skin dry and cool",
+		      "Compression Design – Supports circulation and reduces pain",
+		      "Easy to Wear – Suitable for one-handed application",
+		      "Lightweight & Flexible – Comfortable for long use"
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+	      },
+	      {    
+		  id: 17,
+		  name: "Wheelchair Blanket – Warmth & Coverage On-the-Go",
+		  price: "300 TL",
+		  image: "images/products/wheelchair/blanket/image1.jpg",
+		  description: " ",
+		  need: "mobility",
+		  features: [
+		      "Contoured Fit – Designed specifically for seated users",
+		      "Easy-Fasten Straps – Stays securely in place without slipping",
+		      "Plush Inner Layer – Provides maximum warmth and softness",
+		      "Water-Resistant Outer Shell – Keeps you dry outdoors",
+		      "Machine Washable – Convenient for daily use"
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+	      },
+	      {    
+		  id: 19,
+		  name: "Arm Sling – Comfortable Support for Injured Limbs",
+		  price: "300 TL",
+		  image: "images/products/arm/image1.jpg",
+		  description: " ",
+		  need: "orthopedic",
+		  features: [
+		      "Soft Shoulder Strap – Prevents neck strain",
+		      "Easy-On Design – Slip-on style for independent or assisted use",
+		      "Breathable Mesh – Keeps the arm cool and comfortable",
+		      "Adjustable Fit – Suitable for both left and right arms",
+		      "Lightweight Build – Ideal for everyday mobility"
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+	      },
+	      {    
+		  id: 20,
+		  name: "Wheelchair Side Bag – Practical & Accessible Storage",
+		  price: "300 TL",
+		  image: "images/products/wheelchair/bag/image1.jpg",
+		  description: " ",
+		  need: "mobility",
+		  features: [
+		      "Easy Attachment – Hooks or Velcros securely to wheelchair arms",
+		      "Multiple Compartments – Keeps essentials organized and reachable",
+		      "Durable Fabric – Water-resistant and long-lasting",
+		      "Universal Fit – Compatible with most wheelchair models",
+		      "Lightweight & Stylish – Adds function without bulk"
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+	      },
+	      {    
+		  id: 21,
+		  name: "Hand Warmer – Portable Heat for Cold-Sensitive Users",
+		  price: "300 TL",
+		  image: "images/products/handwarmer/image1.jpg",
+		  description: " ",
+		  need: "hygiene",
+		  features: [
+		      "Compact Size – Fits easily in pockets or gloves",
+		      "Long-Lasting Heat – Provides warmth for extended periods",
+		      "Ideal for Raynaud’s, Arthritis, or Circulation Issues",
+		      "Soft Exterior – Gentle on skin"
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+	      },
+	      {
+		  id: 22,
+		  name: "Carpal Tunnel Gloves – Targeted Support for Wrist & Hand",
+		  price: "300 TL",
+		  image: "images/products/glove/image1.jpg",
+		  description: " ",
+		  need: "orthopedic",
+		  features: [
+		      "Compression Fit – Helps reduce swelling and pain",
+		      "Breathable & Stretchy Material – All-day comfort",
+		      "Fingerless Design – Full hand mobility",
+		      "Easy to Slip On – Suitable for independent use",
+		      "Ideal for Daily Activities – From typing to housework"
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+	      },
+	      {
+		  id: 23,
+		  name: "Adaptive Belt – Easy-Fasten Support for Everyday Wear",
+		  price: "300 TL",
+		  image: "images/products/belt/image1.jpg",
+		  description: " ",
+		  need: "orthopedic",
+		  features: [
+		      "Velcro or Magnetic Closure – Simple to fasten for limited dexterity",
+		      "Stretchable Fit – Adjusts comfortably to waist shape",
+		      "No Holes Design – Smooth adjustments without fine motor effort",
+		      "Lightweight & Discreet – Wears comfortably under clothing",
+		      "Durable Material – Long-lasting use with daily wear"
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+	      },
+	      {
+		  id: 24,
+		  name: "Adaptive Corset – Supportive & Easy to Wear for All Body Types",
+		  price: "300 TL",
+		  image: "images/products/corset/image1.jpg",
+		  description: " ",
+		  need: "orthopedic",
+		  features: [
+		      "Front-Closure System – Easier to wear for mobility-challenged users",
+		      "Adjustable Fit – Conforms to body shape for optimal support",
+		      "Breathable Fabric – Reduces sweat and discomfort",
+		      "Lightweight Structure – Suitable for extended use",
+		      "Discreet Under Clothing – Offers support without visibility"
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+	      },
+	      {
+		  id: 25,
+		  name: "Shampoo Cap – Waterless Hair Cleaning for Bedridden Users",
+		  price: "300 TL",
+		  image: "images/products/cap/image1.jpg",
+		  description: " ",
+		  need: "hygiene",
+		  features: [
+		      "Pre-Moistened Interior – Cleans and conditions without water",
+		      "One-Step Use – No rinsing required",
+		      "Gentle on Skin – Safe for sensitive scalps",
+		      "Microwaveable – For warm and soothing application",
+		      "Ideal for Post-Surgery or Limited Mobility Use"
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+	      },
+	      {
+		  id: 26,
+		  name: "Compression Stockings – Support for Circulation & Comfort",
+		  price: "300 TL",
+		  image: "images/products/compression/image1.jpg",
+		  description: " ",
+		  need: "intimates",
+		  features: [
+		      "Graduated Compression – Helps reduce swelling and fatigue",
+		      "Easy to Pull On – Flexible material for independent dressing",
+		      "Breathable & Soft – Suitable for all-day wear",
+		      "Reinforced Heel & Toe – Enhances durability",
+		      "Machine Washable – Easy care for daily use"
+		  ],
+		  careInstructions: " ",
+		  medicalNotice: " "
+	      }];
 
-      const modal = document.getElementById("product-modal");
-      const modalImage = document.getElementById("modal-product-image");
-      const modalName = document.getElementById("modal-product-name");
-      const modalPrice = document.getElementById("modal-product-price");
-      const modalDescription = document.getElementById("modal-product-description");
-      const modalFeatures = document.getElementById("modal-product-features");
-      const modalCareInstructions = document.getElementById("modal-product-care-instructions");
-      const modalMedicalNotice = document.getElementById("modal-product-medical-notice");
-      const addToCartBtn = document.querySelector(".cart-btn");
-      const addToFavoritesBtn = document.querySelector(".add-to-favorites");
+	  const modal = document.getElementById("product-modal");
+	  const modalImage = document.getElementById("modal-product-image");
+	  const modalName = document.getElementById("modal-product-name");
+	  const modalPrice = document.getElementById("modal-product-price");
+	  const modalDescription = document.getElementById("modal-product-description");
+	  const modalFeatures = document.getElementById("modal-product-features");
+	  const modalCareInstructions = document.getElementById("modal-product-care-instructions");
+	  const modalMedicalNotice = document.getElementById("modal-product-medical-notice");
+	  const addToCartBtn = document.querySelector(".cart-btn");
+	  const addToFavoritesBtn = document.querySelector(".add-to-favorites");
+	  
+	  let modalProductId = null;
+	  modal.style.display = "none";
 
-      let modalProductId = null;
-      modal.style.display = "none";
+	  function openModal(productId) {
+	      const product = products.find(p => p.id === productId);
+              if (!product) return;
 
-      function openModal(productId) {
-      const product = products.find(p => p.id === productId);
-        if (!product) return;
+              modalImage.src = product.image;
+              modalName.textContent = product.name;
+              modalPrice.textContent = `Price: ${product.price}`;
+              modalDescription.textContent = product.description;
+              
+              // Clear any previous features and care instructions
+              modalFeatures.innerHTML = '';
+              product.features.forEach(feature => {
+		  const li = document.createElement('li');
+		  li.textContent = feature;
+		  modalFeatures.appendChild(li);
+	      });
 
-        modalImage.src = product.image;
-        modalName.textContent = product.name;
-        modalPrice.textContent = `Price: ${product.price}`;
-        modalDescription.textContent = product.description;
-        
-        // Clear any previous features and care instructions
-        modalFeatures.innerHTML = '';
-        product.features.forEach(feature => {
-		const li = document.createElement('li');
-		li.textContent = feature;
-		modalFeatures.appendChild(li);
-		});
+	      modalCareInstructions.textContent = product.careInstructions;
+	      modalMedicalNotice.textContent = product.medicalNotice;
 
-		modalCareInstructions.textContent = product.careInstructions;
-		modalMedicalNotice.textContent = product.medicalNotice;
+	      modalProductId = productId;
+	      modal.style.display = "flex"; 
+	  }
 
-		modalProductId = productId;
-		modal.style.display = "flex"; 
-		}
+	  function closeModal() {
+	      modal.style.display = "none";
+	  }
 
-		function closeModal() {
-		modal.style.display = "none";
-		}
+	  document.querySelectorAll(".details-btn").forEach(button => {
+              button.addEventListener("click", function () {
+		  const productId = parseInt(this.getAttribute("data-id"));
+		  openModal(productId);
+              });
+	  });
 
-		document.querySelectorAll(".details-btn").forEach(button => {
-        button.addEventListener("click", function () {
-	const productId = parseInt(this.getAttribute("data-id"));
-	openModal(productId);
-        });
-	});
+	  document.querySelector(".close-modal").addEventListener("click", closeModal);
 
-	document.querySelector(".close-modal").addEventListener("click", closeModal);
+	  window.addEventListener("click", function (event) {
+              if (event.target === modal) {
+		  closeModal();
+              }
 
-	window.addEventListener("click", function (event) {
-        if (event.target === modal) {
-	closeModal();
-        }
-	});
+	      const hash = window.location.hash.replace("#", ""); // örn: #intimates → intimates
+	      const validNeeds = ["everyday", "intimates", "mobility", "vision", "orthopedic", "footwear", "hygiene", "balance"];
 
-	addToCartBtn.addEventListener("click", function () {
-        if (modalProductId) addToCart(modalProductId);
-	});
+	      if (validNeeds.includes(hash)) {
+		  const filtered = products.filter(p => p.need === hash);
+		  renderProducts(filtered);
+	      } else {
+		  renderProducts(products); // hepsini göster
+	      }
+	      
+	  });
 
-	addToFavoritesBtn.addEventListener("click", function () {
-        if (modalProductId) addToFavorites(modalProductId);
-	});
-	});
+	  
+	  
+	  const container = document.querySelector(".products-container");
+	  const validNeeds = ["everyday", "intimates", "mobility", "vision", "orthopedic", "footwear", "hygiene", "balance"];
+	  const hash = window.location.hash.replace("#", "");
+
+	  function renderProducts(filteredProducts) {
+	      container.innerHTML = '';
+	      filteredProducts.forEach(product => {
+		  const card = document.createElement('div');
+		  card.classList.add("product-card");
+		  card.setAttribute("data-need", product.need);
+		  card.innerHTML = `
+        <img src="${product.image}" alt="${product.name}">
+        <h2>${product.name}</h2>
+        <p class="product-price">${product.price}</p>
+        <div class="product-actions">
+          <button class="wishlist-btn" onclick="addToFavorites(${product.id})"><i class="fas fa-heart"></i></button>
+          <button class="cart-btn" onclick="addToCart(${product.id})"><i class="fas fa-shopping-cart"></i></button>
+          <button class="details-btn" data-id="${product.id}"><i class="fas fa-info-circle"></i></button>
+</div>
+`;
+		  container.appendChild(card);
 
 
-	
-    </script>
+		  card.querySelector(".details-btn").addEventListener("click", function () {
+		      openModal(product.id);
+		  });
+	      });
+	  }
+
+	  // sayfa açıldığında filtre uygula
+	  if (validNeeds.includes(hash)) {
+	      const filtered = products.filter(p => p.need === hash);
+	      renderProducts(filtered);
+	  } else {
+	      renderProducts(products);
+	  }
+
+	  // modal dışına tıklayınca kapansın
+	  window.addEventListener("click", function (event) {
+	      if (event.target === modal) {
+		  closeModal();
+	      }
+	  });
+
+	  document.querySelectorAll(".filter-btn").forEach(btn => {
+	      btn.addEventListener("click", function () {
+		  document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+		  this.classList.add("active");
+
+		  const selected = this.getAttribute("data-need");
+		  if (selected === "all") {
+		      renderProducts(products);
+		  } else {
+		      const filtered = products.filter(p => p.need === selected);
+		      renderProducts(filtered);
+		  }
+	      });
+	  });
+
+
+
+	  
+	  addToCartBtn.addEventListener("click", function () {
+              if (modalProductId) addToCart(modalProductId);
+	  });
+
+	  addToFavoritesBtn.addEventListener("click", function () {
+              if (modalProductId) addToFavorites(modalProductId);
+	  });
+      });
+      
+
+
+      </script>
   </body>
 </html>

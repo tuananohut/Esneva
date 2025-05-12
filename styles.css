@@ -391,7 +391,7 @@ footer {
 
 /* Slideshow */
 .slideshow-container {
-    max-width: 100%;
+    max-width: 48%;
     position: relative;
     margin: auto;
     text-align: center;
