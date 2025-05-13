@@ -38,6 +38,11 @@ header {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+h1 {
+    font-size: 50px;
+    color: #202020;
+}
+
 header .logo img {
     height: 50px;
     cursor: pointer;
