@@ -109,7 +109,7 @@ header nav ul li a:hover::after {
     position: absolute;
     top: -8px;
     right: -5px;
-    background-color: var(--accent-earth);
+    color: var(--cool);
     color: var(--cool);
     font-size: 12px;
     padding: 2px 5px;
