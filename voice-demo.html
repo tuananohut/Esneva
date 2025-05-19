@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Esneva Sesli Yardım</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    button { padding: 1rem 2rem; margin: 1rem; font-size: 1rem; cursor: pointer; }
+    #output { margin-top: 2rem; font-size: 1.2rem; }
+  </style>
+</head>
+<body>
+
+  <h1>Esneva Sesli Yardım</h1>
+
+  <button id="speak-button">Merhaba De</button>
+  <button id="mic-button">🎙️ Sesli Komut</button>
+  <button id="toggle-voice">Sesli Yardım: Açık</button>
+
+  <div id="output">Yardım için konuşabilirsiniz...</div>
+
+  <script>
+    let voiceEnabled = true;
+
+    const speakText = (text) => {
+      if (!voiceEnabled) return;
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'tr-TR';
+      speechSynthesis.speak(utterance);
+      document.getElementById("output").innerText = `🔊 ${text}`;
+    };
+
+    document.getElementById("speak-button").addEventListener("click", () => {
+      speakText("Merhaba! Esneva'ya hoş geldiniz. Size nasıl yardımcı olabilirim?");
+    });
+
+    document.getElementById("toggle-voice").addEventListener("click", () => {
+      voiceEnabled = !voiceEnabled;
+      document.getElementById("toggle-voice").innerText = `Sesli Yardım: ${voiceEnabled ? "Açık" : "Kapalı"}`;
+    });
+
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    recognition.lang = 'tr-TR';
+    recognition.continuous = false;
+    recognition.interimResults = false;
+
+    recognition.onresult = function(event) {
+      const transcript = event.results[0][0].transcript.toLowerCase();
+      document.getElementById("output").innerText = `🎧 Komut: ${transcript}`;
+
+      // Anahtar kelimeye göre tepki
+      if (transcript.includes("bacağım yok")) {
+        speakText("Esneva'nın tek bacak kullanıcılar için önerdiği pantolonlar şunlardır: Esneva Mono, Esneva Flex.");
+      } else if (transcript.includes("soğuk")) {
+        speakText("Soğuk hava için içi yumuşak polar kaplamalı ceketimizi öneriyorum.");
+      } else {
+        speakText("Tam anlayamadım, tekrar edebilir misiniz?");
+      }
+    };
+
+    document.getElementById("mic-button").addEventListener("click", () => {
+      recognition.start();
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ürün Sliderı</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+
+    .slider-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slider-track {
+      display: flex;
+      transition: transform 0.3s ease;
+    }
+
+    .product {
+      flex: 0 0 25%; /* 100% / 4 ürün */
+      box-sizing: border-box;
+      padding: 10px;
+    }
+
+    .product img {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      background: white;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      z-index: 1;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      border-radius: 50%;
+    }
+
+    .nav-button:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .prev-btn {
+      left: 0;
+    }
+
+    .next-btn {
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="slider-container">
+  <button class="nav-button prev-btn" id="prevBtn">&#8592;</button>
+  <div class="slider-track" id="sliderTrack">
+    <!-- Ürünler -->
+    <div class="product"><img src="https://via.placeholder.com/200?text=1" alt="Ürün 1"></div>
+    <div class="product"><img src="https://via.placeholder.com/200?text=2" alt="Ürün 2"></div>
+    <div class="product"><img src="https://via.placeholder.com/200?text=3" alt="Ürün 3"></div>
+    <div class="product"><img src="https://via.placeholder.com/200?text=4" alt="Ürün 4"></div>
+    <div class="product"><img src="https://via.placeholder.com/200?text=5" alt="Ürün 5"></div>
+    <div class="product"><img src="https://via.placeholder.com/200?text=6" alt="Ürün 6"></div>
+    <div class="product"><img src="https://via.placeholder.com/200?text=7" alt="Ürün 7"></div>
+    <div class="product"><img src="https://via.placeholder.com/200?text=8" alt="Ürün 8"></div>
+  </div>
+  <button class="nav-button next-btn" id="nextBtn">&#8594;</button>
+</div>
+
+<script>
+  const track = document.getElementById('sliderTrack');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  const totalItems = track.children.length;
+  const itemsPerPage = 4;
+  let currentIndex = 0;
+
+  function updateSlider() {
+    const slideWidth = track.children[0].offsetWidth;
+    const offset = currentIndex * slideWidth;
+    track.style.transform = `translateX(-${offset}px)`;
+
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex >= totalItems - itemsPerPage;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSlider();
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentIndex < totalItems - itemsPerPage) {
+      currentIndex++;
+      updateSlider();
+    }
+  });
+
+  window.addEventListener('load', updateSlider);
+  window.addEventListener('resize', updateSlider);
+</script>
+
+</body>
+</html>

@@ -23,6 +23,20 @@ document.addEventListener('keydown', function(event) {
     }    
 });
 
+function speakText(text) {
+    alert('Valla çalışıyorum. ');
+    
+    if ('speechSynthesis' in window) {
+	speechSynthesis.cancel();
+
+	const utterance = new SpeechSynthesisUtterance(text);
+	utterance.lang = 'en-US'; 
+	speechSynthesis.speak(utterance);
+    } else {
+	alert('This browser does not support text to voice.');
+    }
+}
+
 const categories = document.querySelectorAll('.category');
 categories.forEach(category => {
     category.addEventListener('click', function() {
@@ -50,12 +64,55 @@ function showSlides() {
     setTimeout(showSlides, 3000); // 3 saniyelik gecikme
 }
 
-// Sayfa yüklendiğinde slayt gösterisini başlat
+function startVoiceReading() {
+    document.getElementById('voice-permission-modal').style.display = 'none';
+
+    const synth = window.speechSynthesis;
+
+    if (!synth) {
+	alert("Tarayıcınız sesli okuma özelliğini desteklemiyor.");
+	return;
+    }
+
+    const contentElements = document.querySelectorAll('h1, h2, h3, p'); 
+    const textsToRead = [];
+
+    contentElements.forEach(el => {
+	const text = el.textContent.trim();
+	if (text.length > 0) {
+	    textsToRead.push(text);
+	}
+    });
+
+    // Teker teker oku
+    function speakNext(index) {
+	if (index >= textsToRead.length) return;
+
+	const utterance = new SpeechSynthesisUtterance(textsToRead[index]);
+	utterance.lang = "en-US";
+
+	utterance.onend = () => speakNext(index + 1);
+	synth.speak(utterance);
+    }
+
+    speakNext(0);
+}
+
 window.onload = () => {
     showSlides();
-    renderProducts(products);
+
+    const modal = document.getElementById("voice-permission-modal");
+    modal.style.display = "flex";
+
+    document.getElementById("voice-yes").addEventListener("click", () => {
+        modal.style.display = "none";
+	startVoiceReading();
+    });
+
+    document.getElementById("voice-no").addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    
 };
 
-renderProducts();
-
-document.addEventListener("DOMContentLoaded", renderProducts);
