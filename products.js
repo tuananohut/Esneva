@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "299 TL",
 	    image: "images/products/pants/image1.jpg",
 	    description: "Designed for ease, accessibility, and everyday comfort, these adaptive pants make dressing simple while offering style and practicality.",
-	    need: "everyday",
+	    need: ["everyday", "clothes"],
 	    features: [
                 "Easy Pull-On Design – Perfect for individuals with limited dexterity or mobility",
                 "Internal Pull-Up Loops – Two discreet inner loops for an easier grip when pulling up",
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "199 TL",
 	    image: "images/products/top/image1.jpg",
 	    description: "Designed for maximum comfort, accessibility, and style, this adaptive top is perfect for post-surgery recovery, medical use, and independent dressing.",
-	    need: "everyday",
+	    need: ["everyday", "clothes"],
 	    features: [
                 "3 Wearing Options – Available in sleeved, short-sleeved, and sleeveless styles",
                 "Easy Dressing – Snap closures on shoulders and sides allow for effortless dressing from the bottom up",
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "299 TL",
 	    image: "images/products/underwear/image1.jpg",
 	    description: "Effortlessly designed adaptive underwear with a front-opening closure, providing comfort, convenience, and accessibility.",
-	    need: "intimates",
+	    need: ["intimates", "clothes"],
 	    features: [
 		"Front-Opening Design – Fully opens at the front for effortless dressing and a perfect fit.",
 		"Easy Touch Closures – Secure and simple-to-use fasteners allow for quick on and off.",
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "299 TL",
 	    image: "images/products/bra/image2.jpg",
 	    description: "Designed for ease, accessibility, and ultimate comfort, this adaptive bra supports independent dressing while ensuring a secure and stylish fit.",
-	    need: "intimates",
+	    need: ["intimates", "clothes"],
 	    features: [
 		"Magnetic Front Closure – Effortless dressing with secure magnetic fasteners",
 		"Quick & Struggle-Free Dressing – Reduces dressing time and upper body strain",
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "300 TL",
 	    image: "images/products/prosthetics/image1.jpg",
 	    description: " ",
-	    need: "mobility",
+	    need: ["mobility"],
 	    features: [
 		"Medical-Grade Silicone - Skin-friendly and durable",
 		"Cushioned Support – Reduces impact and enhances comfort",
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "300 TL",
 	    image: "images/products/cups/image1.jpg",
 	    description: " ",
-	    need: "vision",
+	    need: ["vision"],
 	    features: [
 		"Audible Alerts – Beeps when liquid nears the top of the cup",
 		"Compact & Portable – Lightweight design for home or travel use",
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "300 TL",
 	    image: "images/products/socks/image1.jpg",
 	    description: " ",
-	    need: "mobility",
+	    need: ["mobility"],
 	    features: [
 		"Gentle Fabric – Designed to reduce friction and enhance comfort",
 		"Seamless Construction – Minimizes skin irritation and pressure points",
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "300 TL",
 	    image: "images/products/color/image1.jpg",
 	    description: " ",
-	    need: "vision",
+	    need: ["vision"],
 	    features: [
 		"Voice Output – Reads colors aloud for visually impaired users",
 		"Compact & Handheld – Easy to carry in pockets or bags",
@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "300 TL",
 	    image: "images/products/hook/image1.jpg",
 	    description: " ",
-	    need: "mobility",
+	    need: ["mobility"],
 	    features: [
 		"Easy Pull Tool – Helps individuals with limited hand mobility",
 		"Sturdy Grip Handle – Designed for users with weak grip",
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "300 TL",
 	    image: "images/products/forearm_crutch/image1.jpg",
 	    description: " ",
-	    need: "balance",
+	    need: ["balance"],
 	    features: [
 		"Ergonomic Grip – Reduces pressure on hands and wrists",
 		"Adjustable Height – Customizable for individual comfort",
@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "300 TL",
 	    image: "images/products/cane/image1.jpg",
 	    description: " ",
-	    need: "balance",
+	    need: ["balance"],
 	    features: [
 		"Lightweight & Durable – Easy to handle with a non-metal frame.",
 		"Adjustable Height – Customizable to fit individual needs.",
@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "300 TL",
 	    image: "images/products/orthopedic/image1.jpg",
 	    description: " ",
-	    need: "orthopedic",
+	    need: ["orthopedic"],
 	    features: [
 		"Arch Support – Relieves pressure and promotes balance",
 		"Shock-Absorbing Layer – Reduces impact on joints",
@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "300 TL",
 	    image: "images/products/footwear/image1.jpg",
 	    description: " ",
-	    need: "footwear",
+	    need: ["footwear"],
 	    features: [
 		"Wide Opening – Simplifies foot insertion",
 		"Velcro Closures – Secure and adjustable fit",
@@ -234,7 +234,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "300 TL",
 	    image: "images/products/bag/image1.jpg",
 	    description: " ",
-	    need: "hygiene",
+	    need: ["hygiene"],
 	    features: [
 		"Soft Fabric – Reduces skin irritation",
 		"Discreet Look – Helps maintain confidence in daily life",
@@ -251,7 +251,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "300 TL",
 	    image: "images/products/spoon/image1.jpg",
 	    description: " ",
-	    need: "hygiene",
+	    need: ["hygiene"],
 	    features: [
 		"Stabilizing Technology – Minimizes hand tremor movement",
 		"Ergonomic Handle – Comfortable and easy to grip",
@@ -268,7 +268,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "300 TL",
 	    image: "images/products/spill_proof_cup/image1.jpg",
 	    description: " ",
-	    need: "hygiene",
+	    need: ["hygiene"],
 	    features: [
 		"Anti-Spill Lid – Prevents accidental leaks",
 		"Ergonomic Shape – Easy to grip and hold",
@@ -285,7 +285,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "300 TL",
 	    image: "images/products/knee/image1.jpg",
 	    description: " ",
-	    need: "orthopedic",
+	    need: ["orthopedic"],
 	    features: [
 		"Adjustable Straps – Customizable fit for all-day comfort",
 		"Breathable Fabric – Keeps skin dry and cool",
@@ -302,7 +302,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "300 TL",
 	    image: "images/products/wheelchair/blanket/image1.jpg",
 	    description: " ",
-	    need: "mobility",
+	    need: ["mobility"],
 	    features: [
 		"Contoured Fit – Designed specifically for seated users",
 		"Easy-Fasten Straps – Stays securely in place without slipping",
@@ -319,7 +319,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "300 TL",
 	    image: "images/products/arm/image1.jpg",
 	    description: " ",
-	    need: "orthopedic",
+	    need: ["orthopedic"],
 	    features: [
 		"Soft Shoulder Strap – Prevents neck strain",
 		"Easy-On Design – Slip-on style for independent or assisted use",
@@ -336,7 +336,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "300 TL",
 	    image: "images/products/wheelchair/bag/image1.jpg",
 	    description: " ",
-	    need: "mobility",
+	    need: ["mobility"],
 	    features: [
 		"Easy Attachment – Hooks or Velcros securely to wheelchair arms",
 		"Multiple Compartments – Keeps essentials organized and reachable",
@@ -353,7 +353,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "300 TL",
 	    image: "images/products/handwarmer/image1.jpg",
 	    description: " ",
-	    need: "hygiene",
+	    need: ["hygiene"],
 	    features: [
 		"Compact Size – Fits easily in pockets or gloves",
 		"Long-Lasting Heat – Provides warmth for extended periods",
@@ -369,7 +369,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "300 TL",
 	    image: "images/products/glove/image1.jpg",
 	    description: " ",
-	    need: "orthopedic",
+	    need: ["orthopedic"],
 	    features: [
 		"Compression Fit – Helps reduce swelling and pain",
 		"Breathable & Stretchy Material – All-day comfort",
@@ -386,7 +386,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "300 TL",
 	    image: "images/products/belt/image1.jpg",
 	    description: " ",
-	    need: "orthopedic",
+	    need: ["orthopedic"],
 	    features: [
 		"Velcro or Magnetic Closure – Simple to fasten for limited dexterity",
 		"Stretchable Fit – Adjusts comfortably to waist shape",
@@ -403,7 +403,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "300 TL",
 	    image: "images/products/corset/image1.jpg",
 	    description: " ",
-	    need: "orthopedic",
+	    need: ["orthopedic"],
 	    features: [
 		"Front-Closure System – Easier to wear for mobility-challenged users",
 		"Adjustable Fit – Conforms to body shape for optimal support",
@@ -420,7 +420,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "300 TL",
 	    image: "images/products/cap/image1.jpg",
 	    description: " ",
-	    need: "hygiene",
+	    need: ["hygiene"],
 	    features: [
 		"Pre-Moistened Interior – Cleans and conditions without water",
 		"One-Step Use – No rinsing required",
@@ -437,7 +437,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    price: "300 TL",
 	    image: "images/products/compression/image1.jpg",
 	    description: " ",
-	    need: "intimates",
+	    need: ["intimates"],
 	    features: [
 		"Graduated Compression – Helps reduce swelling and fatigue",
 		"Easy to Pull On – Flexible material for independent dressing",
@@ -463,7 +463,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let modalProductId = null;
     modal.style.display = "none";
 
-    const validNeeds = ["everyday", "intimates", "mobility", "vision", "orthopedic", "footwear", "hygiene", "balance"];
+    const validNeeds = ["everyday", "intimates", "mobility", "vision", "orthopedic", "footwear", "hygiene", "balance", "clothes"];
     const container = document.querySelector(".products-container");
 
     function renderProducts(filteredProducts) {
@@ -471,7 +471,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	filteredProducts.forEach(product => {
 	    const card = document.createElement('div');
 	    card.classList.add("product-card");
-	    card.setAttribute("data-need", product.need);
+	    card.setAttribute("data-need", product.need.join(" "));
 	    card.innerHTML = `
         <img src="${product.image}" alt="${product.name}">
         <h2>${product.name}</h2>
@@ -553,7 +553,13 @@ document.addEventListener("DOMContentLoaded", function () {
 	    if (selected === "all") {
 		renderProducts(products);
 	    } else {
-		const filtered = products.filter(p => p.need === selected);
+		// const filtered = products.filter(p => Array.isArray(p.need) ? p.need.includes(selected) : p.need === selected);
+
+		const filtered = products.filter(p =>
+		    Array.isArray(p.need) ? p.need.includes(hash) : p.need === hash
+		);
+
+		
 		renderProducts(filtered);
 	    }
 
@@ -563,7 +569,10 @@ document.addEventListener("DOMContentLoaded", function () {
     
     const hash = window.location.hash.replace("#", "");
     if (validNeeds.includes(hash)) {
-	const filtered = products.filter(p => p.need === hash);
+	const filtered = products.filter(p =>
+	    Array.isArray(p.need) ? p.need.includes(hash) : p.need === hash
+	);
+
 	renderProducts(filtered);
 	document.querySelector(`.filter-btn[data-need="${hash}"]`)?.classList.add("active");
     } else {
