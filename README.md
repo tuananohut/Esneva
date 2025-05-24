@@ -10,27 +10,36 @@ This is an educational project for Engineering Project 3 Industrial Engineering.
 
 ## About Us
 
-#### Accessible Fashion, Real Comfort
+### Accessible Fashion, Real Comfort
 
 At Esneva, we create clothing that makes everyone feel comfortable and free. Our designs cater to individuals with limited mobility, seniors, visually impaired individuals, and anyone seeking extra comfort in their daily wear. With our adaptive fashion approach, we make dressing more practical, stylish, and effortless.
 
 To bring our vision to life, we have also developed a user-friendly website where customers can easily explore and purchase our adaptive clothing.
 
-#### Our Vision
+### Adaptive Website for Adaptive Clothing Brand
 
-Comfortable & Stylish – Trendy and practical everyday outfits
+Esneva is not only about adaptive clothing - it's also about adaptive experience.
+This project was developed with accessibility as its core, ensuring usability for individuals with:
 
-Easy to Wear – Innovative designs that simplify dressing
+- Visual impairments (screen reader support, ARIA roles, voice reading)
 
-Fashion for Everyone – Inclusive and accessible clothing
+- Mobility limitations (keyboard navigation, access keys)
 
-Social Responsibility – A brand that actively employs individuals with disabilities
+- Cognitive or sensory sensitivities (clear layout, readable fonts, contrast-safe color palette)
 
-#### Adaptive Website for Adaptive Clothing Brand
+### Accessibility Features Included:
 
-Our target audience consists of individuals who cannot independently manage their personal care in daily life. One of the biggest challenges they face is the inability to dress themselves. To address this issue, we have designed specialized clothing tailored to their needs. To ensure they can easily access these garments, we have developed a user-friendly website. Navigating our site is incredibly simple! Easily navigate our site by pressing the symbol next to the button on your keyboard.
+- Semantic HTML5 structure and ARIA roles
 
-### We’re not just creating clothes—we’re leading a movement.
+- Keyboard-only navigation with access keys and skip links
+
+- Voice reading support via Web Speech API
+
+- WCAG 2.1 AA compliance considerations
+
+- Responsive design with large click targets and logical tab order
+
+- Focus-visible outlines and color contrast improvements
 
 ##### Explore Esneva now: 
 
