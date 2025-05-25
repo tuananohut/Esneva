@@ -1,4 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
     const products = [
         {
 	    id: 2,
@@ -448,6 +447,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	    careInstructions: " ",
 	    medicalNotice: " "
 	}];
+    
+
+document.addEventListener("DOMContentLoaded", function () {
 
     const modal = document.getElementById("product-modal");
     const modalImage = document.getElementById("modal-product-image");
@@ -459,16 +461,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalMedicalNotice = document.getElementById("modal-product-medical-notice");
     const addToCartBtn = document.querySelector(".cart-btn");
     const addToFavoritesBtn = document.querySelector(".add-to-favorites");
-    
+
     let modalProductId = null;
     modal.style.display = "none";
 
     const validNeeds = ["everyday", "intimates", "mobility", "vision", "orthopedic", "footwear", "hygiene", "balance", "clothes"];
     const container = document.querySelector(".products-container");
 
-    function renderProducts(filteredProducts) {
+    let currentPage = 0;
+    const itemsPerPage = 4;
+    let currentProductList = [...products]; 
+    
+    function renderProductsPage(productList, page = 0) {
 	container.innerHTML = '';
-	filteredProducts.forEach(product => {
+	const start = page * itemsPerPage;
+	const end = start + itemsPerPage;
+	const pageItems = productList.slice(start, end);
+	      
+	pageItems.forEach(product => {
+	    const needList = Array.isArray(product.need) ? product.need : [product.need];
 	    const card = document.createElement('div');
 	    card.classList.add("product-card");
 	    card.setAttribute("data-need", product.need.join(" "));
@@ -484,13 +495,24 @@ document.addEventListener("DOMContentLoaded", function () {
 `;
 	    container.appendChild(card);
 
-
 	    card.querySelector(".details-btn").addEventListener("click", function () {
 		openModal(product.id);
 	    });
 	});
     }
 
+    function updateNavigationButtons(productList) {
+	const prevBtn = document.getElementById("prev-products");
+	const nextBtn = document.getElementById("next-products");
+
+	prevBtn.disabled = currentPage === 0;
+	nextBtn.disabled = (currentPage + 1) * itemsPerPage >= productList.length;
+    }
+
+    function loadPage(productList, page = 0) {
+	renderProductsPage(productList, page);
+    }
+    
     function goToCart() {
 	location.href = 'cart.html';
     }
@@ -551,32 +573,46 @@ document.addEventListener("DOMContentLoaded", function () {
 	    this.classList.add("active");
 
 	    if (selected === "all") {
-		renderProducts(products);
+		// renderProducts(products);
+		currentProductList = [...products];
 	    } else {
-		// const filtered = products.filter(p => Array.isArray(p.need) ? p.need.includes(selected) : p.need === selected);
-
-		const filtered = products.filter(p =>
-		    Array.isArray(p.need) ? p.need.includes(hash) : p.need === hash
-		);
-
+		currentProductList = products.filter(p => Array.isArray(p.need) ? p.need.includes(selected) : p.need === selected);
 		
-		renderProducts(filtered);
+		// renderProducts(filtered);
 	    }
-
-	    window.history.replaceState(null, null, " ");
+	    
+	    
+	    currentPage = 0;
+	    loadPage(currentProductList, currentPage);
+	    window.history.replaceState(null, "", "#" + selected);
+	    
 	});
     });
     
     const hash = window.location.hash.replace("#", "");
     if (validNeeds.includes(hash)) {
-	const filtered = products.filter(p =>
-	    Array.isArray(p.need) ? p.need.includes(hash) : p.need === hash
-	);
-
-	renderProducts(filtered);
+	currentProductList = products.filter(p =>
+	    Array.isArray(p.need) ? p.need.includes(hash) : p.need === hash);
+	
+	//renderProducts(filtered);
 	document.querySelector(`.filter-btn[data-need="${hash}"]`)?.classList.add("active");
     } else {
-	renderProducts(products);
+	currentProductList = [...products];
+	//renderProducts(products);
 	document.querySelector(`.filter-btn[data-need="all"]`)?.classList.add("active");
     }
+
+    loadPage(currentProductList, currentPage);
+
+    document.getElementById("prev-products").addEventListener("click", () => {
+	currentPage--;
+	console.log("Previous clicked, page:", currentPage);
+	loadPage(currentProductList, currentPage);
+    });
+    
+    document.getElementById("next-products").addEventListener("click", () => {
+	currentPage++;
+	console.log("Next clicked, page:", currentPage);
+	loadPage(currentProductList, currentPage);
+    });
 });
