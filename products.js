@@ -1,4 +1,6 @@
-    const products = [
+const voiceConsent = localStorage.getItem("esneva-voice-consent") === "true";
+
+const products = [
         {
 	    id: 2,
 	    name: "Adaptive Elastic Waist Pants – Comfortable & Accessible",
@@ -504,9 +506,14 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateNavigationButtons(productList) {
 	const prevBtn = document.getElementById("prev-products");
 	const nextBtn = document.getElementById("next-products");
+	const pageIndicator = document.getElementById("page-indicator");
 
-	prevBtn.disabled = currentPage === 0;
-	nextBtn.disabled = (currentPage + 1) * itemsPerPage >= productList.length;
+	const totalPages = Math.ceil(productList.length / itemsPerPage);
+	
+	prevBtn.disabled = currentPage <= 0;
+	nextBtn.disabled = currentPage >= totalPages - 1;
+
+	pageIndicator.textContent = `Page ${currentPage + 1} of ${totalPages}`;
     }
 
     function loadPage(productList, page = 0) {
@@ -520,6 +527,47 @@ document.addEventListener("DOMContentLoaded", function () {
     function goToFavorites() {
 	location.href = 'favorites.html';
     }
+
+    function speakEnglish(text) {
+	if (!('speechSynthesis' in window)) return;
+
+	const utterance = new SpeechSynthesisUtterance(text);
+	utterance.lang = 'en-US';
+
+	const voices = speechSynthesis.getVoices().filter(v => v.lang === 'en-US');
+	if (voices.length > 0) {
+	    utterance.voice = voices[0];
+	}
+
+	speechSynthesis.cancel(); 
+	speechSynthesis.speak(utterance);
+    }
+
+    // Butonlar
+    const btnReadAgain = document.getElementById("btn-read-again");
+    const btnStop = document.getElementById("btn-stop-reading");
+
+    btnReadAgain.addEventListener("click", () => {
+	if (modalProductId !== null) {
+	    const product = products.find(p => p.id === modalProductId);
+	    if (!product) return;
+
+	    const speechContent = `
+      ${product.name}.
+      Price: ${product.price}.
+      ${product.description}.
+      Features include: ${product.features.join(", ")}.
+      Care instructions: ${product.careInstructions}.
+      Medical notice: ${product.medicalNotice}.
+    `;
+
+	    speakEnglish(speechContent);
+	}
+    });
+
+    btnStop.addEventListener("click", () => {
+	speechSynthesis.cancel();
+    });
 
     
     function openModal(productId) {
@@ -551,10 +599,24 @@ document.addEventListener("DOMContentLoaded", function () {
 	addToFavoritesBtn.onclick = () => {
 	    addToFavorites(product.id);
 	};
+
+	if (voiceConsent) {
+	const speechContent = `
+  ${product.name}.
+  Price: ${product.price}.
+  ${product.description}.
+  Features include: ${product.features.join(", ")}.
+  Care instructions: ${product.careInstructions}.
+  Medical notice: ${product.medicalNotice}.
+`;
+
+	speakEnglish(speechContent);
+	}
     }
 
     function closeModal() {
 	modal.style.display = "none";
+	speechSynthesis.cancel();
     }
 
     document.querySelector(".close-modal").addEventListener("click", closeModal);
@@ -580,8 +642,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		
 		// renderProducts(filtered);
 	    }
-	    
-	    
+	      
 	    currentPage = 0;
 	    loadPage(currentProductList, currentPage);
 	    window.history.replaceState(null, "", "#" + selected);
@@ -605,14 +666,17 @@ document.addEventListener("DOMContentLoaded", function () {
     loadPage(currentProductList, currentPage);
 
     document.getElementById("prev-products").addEventListener("click", () => {
-	currentPage--;
-	console.log("Previous clicked, page:", currentPage);
-	loadPage(currentProductList, currentPage);
+	if (currentPage > 0) {
+	    currentPage--;
+	    loadPage(currentProductList, currentPage);
+	}
     });
     
     document.getElementById("next-products").addEventListener("click", () => {
-	currentPage++;
-	console.log("Next clicked, page:", currentPage);
-	loadPage(currentProductList, currentPage);
+	const totalPages = Math.ceil(currentProductList.length / itemsPerPage);
+	if (currentPage < totalPages - 1) {
+	    currentPage++;
+	    loadPage(currentProductList, currentPage);
+	}
     });
 });

@@ -884,8 +884,25 @@ footer {
     #modal-product-features {
         grid-template-columns: 1fr; 
     }
+
+    .voice-panel {
+	flex-direction: column;
+	align-items: center;
+    }
+
+    .voice-panel button {
+	width: 80%;
+    }
 }
 
+.modal-left {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
 
 .modal-buttons {
     display: flex;
@@ -905,12 +922,55 @@ footer {
     width: auto;
 }
 
+.voice-panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+/*
+.voice-panel button {
+  padding: 10px 16px;
+  font-size: 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+
+.voice-panel button:hover {
+  background-color: #ddd;
+}
+*/
+
 .close-modal {
     position: absolute;
     top: 10px;
     right: 15px;
     font-size: 24px;
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    flex-direction: column;
+  }
+
+  .modal-left, .modal-details {
+    width: 100%;
+  }
+
+  .voice-panel {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .voice-panel button {
+    width: 80%;
+  }
 }
 
 .add-to-cart {

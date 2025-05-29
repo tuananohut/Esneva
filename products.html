@@ -56,6 +56,7 @@
 
       <section class="product-navigation">
 	<button id="prev-products" aria-label="Previous products">← Previous</button>
+	<span id="page-indicator" aria-live="polite">Page 1</span>
 	<button id="next-products" aria-label="Next products">Next →</button>
       </section>
 
@@ -71,6 +72,12 @@
 	<div class="modal-image-container">
 	  <img id="modal-product-image" src="" alt="Product Image">
 	</div>
+	
+	<div id="voice-controls" class="voice-panel">
+	  <button id="btn-read-again">Read</button>
+	  <button id="btn-stop-reading">Stop</button>
+	</div>
+
 	<div class="modal-details">
 	  <h2 id="modal-product-name"></h2>
 	  <p id="modal-product-price"></p>

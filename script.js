@@ -105,14 +105,14 @@ window.onload = () => {
     modal.style.display = "flex";
 
     document.getElementById("voice-yes").addEventListener("click", () => {
+	localStorage.setItem("esneva-voice-consent", "true");
         modal.style.display = "none";
 	startVoiceReading();
     });
 
     document.getElementById("voice-no").addEventListener("click", () => {
-        modal.style.display = "none";
+	localStorage.setItem("esneva-voice-consent", "false");
+	modal.style.display = "none";
     });
-
-    
 };
 
