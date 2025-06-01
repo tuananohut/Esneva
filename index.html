@@ -10,40 +10,42 @@
   </head>
 
   <body>
-    <header>
-      <div class="logo">
-        <img src="logo.png" alt="Esneva Adaptive Clothing Company Logo">
-      </div>
-      <nav role="navigation" aria-label="Main Navigation">
-        <ul class="nav">
-          <li>1<a href="index.html" tabindex="1"
-				   accesskey="1">Home</a></li>
-          <li>2<a href="products.html" tabindex="2"
-				   accesskey="2">Products</a></li>
-          <li>3<a href="contact.html" tabindex="3"
-				   accesskey="3">Contact</a></li>
-          <li>4<a href="about.html" tabindex="4"
-				   accesskey="4">About</a></li>
-        </ul>
-      </nav>
-      <div class="header-extras">
-        <button class="favorites" onclick="location.href='favorites.html';" aria-label="Go to Favorites">
-          5
-          <i class='fas fa-heart'></i>
-        </button>
-        <button class="cart" onclick="location.href='cart.html';" aria-label="Go to Carts">
-          6
-          <i class='fas fa-shopping-cart'></i>
-        </button>
-        <button class="login" onclick="location.href='login.html';" aria-label="Go to Login">
-          7
-          <i class="fas fa-user"></i>
-        </button>
+    <header class="header">
+      <div class="header-container">
+	<div class="logo">
+	  <a href="index.html">
+            <img src="logo.png" alt="Esneva Adaptive Clothing Company Logo">
+	  </a>
+	</div>
+	
+	<nav role="navigation" aria-label="Main Navigation">
+          <a href="index.html" tabindex="1"
+	     accesskey="1" class="nav-link">1 Home</a>
+	  <a href="products.html" tabindex="2"
+	     accesskey="2" class="nav-link">2 Products</a>
+	  <a href="contact.html" tabindex="3"
+	     accesskey="3" class="nav-link">3 Contact</a>
+	  <a href="about.html" tabindex="4"
+	     accesskey="4" class="nav-link">4 About</a>
+	</nav>
+	
+	<div class="header-actions">
+          <button class="favorites" onclick="location.href='favorites.html';" aria-label="Go to Favorites">
+            5
+            <i class='fas fa-heart'></i>
+          </button>
+          <button class="cart" onclick="location.href='cart.html';" aria-label="Go to Carts">
+            6
+            <i class='fas fa-shopping-cart'></i>
+          </button>
+          <button class="login" onclick="location.href='login.html';" aria-label="Go to Login">
+            7
+            <i class="fas fa-user"></i>
+          </button>
+	</div>
       </div>
     </header>
-
-    <div class="d-none d-md-block vgap"></div>
-
+<!--
     <div id="voice-permission-modal" role="dialog" aria-labelledby="voice-modal-title" aria-describedby="voice-modal-desc" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); z-index: 1000; display: flex; justify-content: center; align-items: center;">
       <div style="background: white; padding: 20px; border-radius: 10px; text-align: center; max-width: 400px;">
 	<p>Esneva wants to read web site content.</p>
@@ -51,17 +53,72 @@
 	<button id="voice-no">No</button>
       </div>
     </div>
-    
-    <div class="d-none d-md-block vgap"></div>
+  -->  
+    <section class="hero-section">
+      <div class="container">
+        <!-- Hero Title -->
+        <div class="hero-title">
+          <h1>Breaking Barriers with Comfort: Innovative Adaptive Clothing</h1>
+        </div>
 
-     <h1>Breaking Barriers with Comfort: Innovative Adaptive Clothing</h1>
+        <!-- Shop by Needs -->
+        <div class="shop-by-needs">
+          <h2>Shop by Needs</h2>
+          <div class="categories-grid">
+            <div class="category-card" data-category="everyday">
+	      <i class="fas fa-tshirt category-icon"></i>
+	      <h3>Adaptive Everyday Wear</h3>
+	      <span class="category-label">(A)</span>
+	    </div>
+            <div class="category-card" data-category="intimates">
+              <i class="fas fa-user-friends category-icon"></i>
+              <h3>Inclusive Intimates</h3>
+              <span class="category-label">(B)</span>
+            </div>
+            <div class="category-card" data-category="mobility">
+              <i class="fas fa-wheelchair category-icon"></i>
+              <h3>Mobility-Friendly</h3>
+              <span class="category-label">(C)</span>
+            </div>
+            <div class="category-card" data-category="vision">
+              <i class="fas fa-braille category-icon"></i>
+              <h3>Vision-Accessible</h3>
+              <span class="category-label">(D)</span>
+            </div>
+            <div class="category-card" data-category="orthopedic">
+              <i class="fas fa-hand-holding-medical category-icon"></i>
+              <h3>Support & Orthopedic</h3>
+              <span class="category-label">(E)</span>
+            </div>
+            <div class="category-card" data-category="footwear">
+              <i class="fas fa-shoe-prints category-icon"></i>
+              <h3>Comfort Footwear</h3>
+              <span class="category-label">(F)</span>
+            </div>
+            <div class="category-card" data-category="hygiene">
+              <i class="fas fa-bath category-icon"></i>
+              <h3>Self-Care</h3>
+              <span class="category-label">(G)</span>
+            </div>
+            <div class="category-card" data-category="balance">
+              <i class="fas fa-walking category-icon"></i>
+              <h3>Walking & Balance Aids</h3>
+              <span class="category-label">(H)</span>
+            </div>
+            <div class="category-card" data-category="clothes">
+              <i class="fas fa-tshirt category-icon"></i>
+              <h3>Clothes</h3>
+              <span class="category-label">(I)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-     <div class="d-none d-md-block vgap"></div>
-     
     <!-- Slideshow Section -->
-    <section class="gallery">
-      <div class="slideshow-container">
-        <div class="mySlides fade">
+    <section class="slideshow-section">
+      <div class="container">
+	<div class="mySlides fade">
           <img src="images/slides/image1.jpg" alt="Slide 1" class="gallery-image">
         </div>
         <div class="mySlides fade">
@@ -72,57 +129,9 @@
         </div>
       </div>
     </section>
+
     
-    <div class="d-none d-md-block vgap"></div>
-    
-    <!-- Shop by Needs Section -->
-    <section class="shop-by-needs">
-      <h2>Shop by Needs</h2>
-      <div class="needs-grid">
-	<a href="products.html#everyday" class="need-card" >	 
-	  <i class="fas fa-tshirt"></i>
-	  <span>Adaptive Everyday Wear</span>
-	  <strong>(A)</strong>
-	</a>
-	<a href="products.html#intimates" class="need-card">
-	  <i class="fas fa-user-friends"></i>
-	  <span>Inclusive Intimates</span>
-	  <strong>(B)</strong>
-	</a>
-	<a href="products.html#mobility" class="need-card">
-	  <i class="fas fa-wheelchair-move"></i>
-	  <span>Mobility-Friendly</span>
-	  <strong>(C)</strong>
-	</a>
-	<a href="products.html#vision" class="need-card">
-	  <i class="fas fa-braille"></i>
-	  <span>Vision-Accessible</span>
-	  <strong>(D)</strong>
-	</a>
-	<a href="products.html#orthopedic" class="need-card">
-	  <i class="fas fa-hand-holding-medical"></i>
-	  <span>Support & Orthopedic</span>
-	  <strong>(E)</strong>
-	</a>
-	<a href="products.html#footwear" class="need-card">
-	  <i class="fas fa-shoe-prints"></i>
-	  <span>Comfort Footwear</span>
-	  <strong>(F)</strong>
-	</a>
-	<a href="products.html#hygiene" class="need-card"> 
-	  <i class="fas fa-bath"></i>
-	  <span>Self-Care</span>
-	  <strong>(G)</strong>  
-	</a>
-	<a href="products.html#balance" class="need-card">
-	  <i class="fas fa-person-cane"></i>
-	  <span>Walking & Balance Aids</span>
-	  <strong>(H)</strong>
-	</a>
-      </div>
-    </section>
-    
-    <div class="d-none d-md-block vgap"></div>
+   
     
     <section>
       <section class="features">

@@ -6,120 +6,199 @@
     <title>Products - Esneva</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="products.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   </head>
+  
   <body>
-    <!-- Header Section -->
-    <header>
-      <div class="logo">
-        <img src="logo.png" alt="Adaptive Clothing Logo">
-      </div>
-      <nav>
-        <ul class="nav">
-          <li><strong>1</strong><a href="index.html" tabindex="1" accesskey="1">Home</a></li>
-          <li><strong>2</strong><a href="products.html" tabindex="2" accesskey="2">Products</a></li>
-          <li><strong>3</strong><a href="contact.html" tabindex="3" accesskey="3">Contact</a></li>
-          <li><strong>4</strong><a href="about.html" tabindex="4" accesskey="4">About</a></li>
-        </ul>
-      </nav>
-
-      <div class="header-extras">
-        <button class="favorites" onclick="location.href='favorites.html';">
-          <strong>5</strong>
-          <i class='fas fa-heart'></i>
-        </button>
-        <button class="cart" onclick="location.href='cart.html';">
-          <strong>6</strong>
-          <i class='fas fa-shopping-cart'></i>
-        </button>
-        <button class="login" onclick="location.href='login.html';">
-          <strong>7</strong>
-          <i class="fas fa-user"></i>
-        </button>
-      </div>
-    </header>
-
-    <main class="container">
-      <h1 class="products-header">Products</h1>
-      <section class="product-filter-menu">
-	<button class="filter-btn" data-need="all">All Products</button>
-	<button class="filter-btn" data-need="everyday">Adaptive Everyday Wear</button>
-	<button class="filter-btn" data-need="clothes">Clothes</button>
-	<button class="filter-btn" data-need="intimates">Inclusive Intimates</button>
-	<button class="filter-btn" data-need="mobility">Mobility-Friendly</button>
-	<button class="filter-btn" data-need="vision">Vision-Accessible</button>
-	<button class="filter-btn" data-need="orthopedic">Support & Orthopedic</button>
-	<button class="filter-btn" data-need="footwear">Comfort Footwear</button>
-	<button class="filter-btn" data-need="hygiene">Self-Care</button>
-	<button class="filter-btn" data-need="balance">Walking & Balance Aids</button>
-      </section>
-
-      <section class="product-navigation">
-	<button id="prev-products" aria-label="Previous products">← Previous</button>
-	<span id="page-indicator" aria-live="polite">Page 1</span>
-	<button id="next-products" aria-label="Next products">Next →</button>
-      </section>
-
-      <div class="products-container">
-      </div>
-      
-    </main>
-
-    <!-- Product Details Modal -->
-    <div id="product-modal" class="modal">
-      <div class="modal-content">
-	<span class="close-modal">&times;</span>
-	<div class="modal-image-container">
-	  <img id="modal-product-image" src="" alt="Product Image">
-	</div>
-	
-	<div id="voice-controls" class="voice-panel">
-	  <button id="btn-read-again">Read</button>
-	  <button id="btn-stop-reading">Stop</button>
-	</div>
-
-	<div class="modal-details">
-	  <h2 id="modal-product-name"></h2>
-	  <p id="modal-product-price"></p>
-	  <p id="modal-product-description"></p>
-	  <ul id="modal-product-features"></ul>
-	  <p id="modal-product-care-instructions"></p>
-	  <p id="modal-product-medical-notice"></p>
-	  <div class="product-actions">
-            <button class="add-to-favorites"><i class="fas fa-heart"></i></button>
-            <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+    <!-- Header -->
+    <header class="header">
+      <header class="header">
+	<div class="header-container">
+	  <div class="logo">
+	    <a href="index.html">
+              <img src="logo.png" alt="Esneva Adaptive Clothing Company Logo">
+	    </a>
+	  </div>
+	  
+	  <nav role="navigation" aria-label="Main Navigation">
+            <a href="index.html" tabindex="1"
+	       accesskey="1" class="nav-link">1 Home</a>
+	    <a href="products.html" tabindex="2"
+	       accesskey="2" class="nav-link">2 Products</a>
+	    <a href="contact.html" tabindex="3"
+	       accesskey="3" class="nav-link">3 Contact</a>
+	    <a href="about.html" tabindex="4"
+	       accesskey="4" class="nav-link">4 About</a>
+	  </nav>
+	  
+	  <div class="header-actions">
+            <button class="favorites" onclick="location.href='favorites.html';" aria-label="Go to Favorites">
+              5
+              <i class='fas fa-heart'></i>
+            </button>
+            <button class="cart" onclick="location.href='cart.html';" aria-label="Go to Carts">
+              6
+              <i class='fas fa-shopping-cart'></i>
+            </button>
+            <button class="login" onclick="location.href='login.html';" aria-label="Go to Login">
+              7
+              <i class="fas fa-user"></i>
+            </button>
 	  </div>
 	</div>
+      </header>
+      
+      <div class="products-container">
+        <h1 class="products-title">Products</h1>
+
+        <div class="products-layout">
+          <!-- Sidebar with Categories -->
+          <aside class="categories-sidebar">
+            <div class="sidebar-content">
+              <h2>Categories</h2>
+              <nav class="category-nav">
+                <button class="category-btn active" data-category="all">
+                  <span>All Products</span>
+                  <span class="count" id="count-all">10</span>
+                </button>
+                <button class="category-btn" data-category="everyday">
+                  <span>Adaptive Everyday Wear</span>
+                  <span class="count" id="count-everyday">2</span>
+                </button>
+                <button class="category-btn" data-category="clothes">
+                  <span>Clothes</span>
+                  <span class="count" id="count-clothes">1</span>
+                </button>
+                <button class="category-btn" data-category="intimates">
+                  <span>Inclusive Intimates</span>
+                  <span class="count" id="count-intimates">1</span>
+                </button>
+                <button class="category-btn" data-category="mobility">
+                  <span>Mobility-Friendly</span>
+                  <span class="count" id="count-mobility">1</span>
+                </button>
+                <button class="category-btn" data-category="vision">
+                  <span>Vision-Accessible</span>
+                  <span class="count" id="count-vision">1</span>
+                </button>
+                <button class="category-btn" data-category="orthopedic">
+                  <span>Support & Orthopedic</span>
+                  <span class="count" id="count-orthopedic">1</span>
+                </button>
+                <button class="category-btn" data-category="footwear">
+                  <span>Comfort Footwear</span>
+                  <span class="count" id="count-footwear">1</span>
+                </button>
+                <button class="category-btn" data-category="hygiene">
+                  <span>Self-Care</span>
+                  <span class="count" id="count-hygiene">1</span>
+                </button>
+                <button class="category-btn" data-category="balance">
+                  <span>Walking & Balance Aids</span>
+                  <span class="count" id="count-balance">1</span>
+                </button>
+              </nav>
+            </div>
+          </aside>
+
+          <!-- Main Content -->
+          <main class="products-main">
+            <!-- Products Grid with Navigation -->
+            <div class="products-grid-container">
+              <!-- Previous Button -->
+              <button class="nav-btn prev-btn" id="prevBtn" aria-label="Previous products">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+
+              <!-- Products Grid -->
+              <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically inserted here -->
+              </div>
+
+              <!-- Next Button -->
+              <button class="nav-btn next-btn" id="nextBtn" aria-label="Next products">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+
+            <!-- Page Indicator -->
+            <div class="page-indicator">
+              <span id="pageInfo">Page 1 of 1 • Showing 0 of 0 products</span>
+            </div>
+
+            <!-- No Products Message -->
+            <div class="no-products" id="noProducts" style="display: none;">
+              <p>No products found in this category.</p>
+            </div>
+          </main>
+        </div>
       </div>
-    </div>   
-    
-    <!-- Footer -->
-    <footer>
-      <div class="footer-content">
-        <div class="footer-links">
-          <div class="payment-logos">
-	    <i class="fab fa-cc-visa payment-logo"></i>
-	    <i class="fab fa-cc-mastercard payment-logo"></i>
-	    <i class="fab fa-cc-paypal payment-logo"></i>
-          </div>
-          <div class="social-media">
-	    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-	    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-	    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-	    <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+
+      <!-- Product Details Modal -->
+      <div id="productModal" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <div class="modal-body">
+            <div class="modal-image">
+              <img id="modalImage" src="/placeholder.svg" alt="Product Image">
+            </div>
+            <div class="modal-details">
+              <h2 id="modalTitle"></h2>
+              <p class="modal-price" id="modalPrice"></p>
+              <p class="modal-description" id="modalDescription"></p>
+              
+              <h3>Features:</h3>
+              <ul id="modalFeatures"></ul>
+              
+              <p id="modalCare"></p>
+              <p id="modalMedical"></p>
+              
+              <div class="modal-actions">
+                <button class="modal-btn favorite-btn">
+                  <i class="fas fa-heart"></i> Add to Favorites
+                </button>
+                <button class="modal-btn cart-btn">
+                  <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+              </div>
+
+	      <div class="voice-controls">
+		<button id="btn-read-again">🔁 Read Again</button>
+		<button id="btn-stop-reading">🛑 Stop</button>
+	      </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Adaptive Clothing | All Rights Reserved</p>
-        <ul>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Use</a></li>
-          <li><a href="#">Returns & Exchanges</a></li>
-        </ul>
-      </div>
-    </footer>
-    <script src="script.js"></script>
-    <script src="products.js"></script>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="payment-logos">
+              <i class="fab fa-cc-visa"></i>
+              <i class="fab fa-cc-mastercard"></i>
+              <i class="fab fa-cc-paypal"></i>
+            </div>
+            <div class="social-media">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2025 Adaptive Clothing | All Rights Reserved</p>
+            <div class="footer-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Use</a>
+              <a href="#">Returns & Exchanges</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <script src="script.js"></script>
+      <script src="products.js"></script>
   </body>
 </html>

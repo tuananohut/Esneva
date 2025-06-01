@@ -37,11 +37,11 @@ function speakText(text) {
     }
 }
 
-const categories = document.querySelectorAll('.category');
-categories.forEach(category => {
-    category.addEventListener('click', function() {
-        alert('Kategori: ' + category.querySelector('h2').innerText);
-    });
+document.querySelectorAll(".category-card").forEach(card => {
+  card.addEventListener("click", () => {
+    const cat = card.getAttribute("data-category");
+    window.location.href = `products.html#${cat}`;
+  });
 });
 
 let slideIndex = 0;
