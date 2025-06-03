@@ -1,4 +1,4 @@
-import url('https://fonts.googleapis.com/css2?family=TeX+Gyre+Termes:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=TeX+Gyre+Termes:wght@400;700&display=swap');
 
 :root {
     --primary-blue: #3498db; 
@@ -95,27 +95,25 @@ body {
 }
 
 button {
-    background-color: var(--black); 
+    /*background-color: var(--black);*/ 
     font-size: 16px;
     color: #111827;
     padding: 10px 20px;
     border-radius: 25px;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
 }
 
 /* Buton Hover Efekti */
 button:hover {
     background-color: var(--text-color);
-    color: white; 
-    transform: scale(1.05);
+    color: gray; 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Gölgeler */
 }
 
 /* İkonların Boyutu */
 button i {
-    font-size: 24px;
+    font-size: 20px;
     margin-right: 10px; /* İkonun sağında biraz boşluk bırak */
 }
 
@@ -163,7 +161,7 @@ button:active {
 
 .start-shopping-btn {
   padding: 15px 30px;
-  background-color: var(--black);
+  background-color: #1E293B;
   color: white;
   font-size: 25px;
   font-weight: bold;
@@ -173,8 +171,8 @@ button:active {
 }
 
 .start-shopping-btn:hover {
-  background-color: var(--cool);
-  transform: scale(1.05);
+    background-color: #ddd;
+    color: #1e293b;
 }
 
 .feature-highlight {
@@ -182,7 +180,7 @@ button:active {
     justify-content: space-between;
     align-items: center;
     padding: 40px;
-    background: var(--neutral-light);
+    background: white;
     flex-wrap: wrap;
 }
 
@@ -231,11 +229,12 @@ button:active {
 .feature-text {
     max-width: 750px;
     margin: 0 auto;
-    color: var(--text-color);
+    color: var(--black);
 }
 
 .feature-text h2 {
-    font-size: 36px; /* Daha büyük başlık */
+    font-size: 36px;
+    text-align: center;
     margin-bottom: 15px;
     color: #333;
     font-weight: bold;
@@ -573,8 +572,8 @@ footer {
 
 .contact button {
     padding: 10px 20px;
-    background-color: var(--black);
-    color: white;
+    background-color: #1e293b;
+    color: #fff;
     border: none;
     font-size: 18px;
     border-radius: 5px;
@@ -583,7 +582,8 @@ footer {
 }
 
 .contact button:hover {
-    background-color: var(--cool);
+    background-color: #ddd;
+    color: #1e293b;
 }
 
 .contact button:active {
@@ -646,7 +646,7 @@ footer {
     margin: 10px;
     padding: 10px;
     cursor: pointer;
-    background-color: #6c5ce7;
+    background-color: #1e293b;
     color: white;
     border: none;
     border-radius: 5px;
@@ -654,14 +654,15 @@ footer {
 }
 
 .product-item button:hover {
-    background-color: #4834d4;
+    background-color: #ddd;
+    color: #1e293b;
 }
 
 .cart-item, .favorite-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #fff;
+    background-color: #1e293b;
     padding: 10px;
     margin: 10px 0;
     border-radius: 10px;
@@ -704,7 +705,7 @@ footer {
 
 .add-to-cart {
     padding: 10px 20px;
-    background-color: var(--black);
+    background-color: #1e293b;
     color: white;
     border: none;
     border-radius: 25px;

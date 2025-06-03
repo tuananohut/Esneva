@@ -6,48 +6,72 @@
     <title>Products - Esneva</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="accessible-styles.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   </head>
   
   <body>
-    <!-- Header -->
     <header class="header">
-      <header class="header">
-	<div class="header-container">
-	  <div class="logo">
-	    <a href="index.html">
-              <img src="logo.png" alt="Esneva Adaptive Clothing Company Logo">
-	    </a>
-	  </div>
-	  
-	  <nav role="navigation" aria-label="Main Navigation">
-            <a href="index.html" tabindex="1"
-	       accesskey="1" class="nav-link">1 Home</a>
-	    <a href="products.html" tabindex="2"
-	       accesskey="2" class="nav-link">2 Products</a>
-	    <a href="contact.html" tabindex="3"
-	       accesskey="3" class="nav-link">3 Contact</a>
-	    <a href="about.html" tabindex="4"
-	       accesskey="4" class="nav-link">4 About</a>
-	  </nav>
-	  
-	  <div class="header-actions">
-            <button class="favorites" onclick="location.href='favorites.html';" aria-label="Go to Favorites">
-              5
-              <i class='fas fa-heart'></i>
-            </button>
-            <button class="cart" onclick="location.href='cart.html';" aria-label="Go to Carts">
-              6
-              <i class='fas fa-shopping-cart'></i>
-            </button>
-            <button class="login" onclick="location.href='login.html';" aria-label="Go to Login">
-              7
-              <i class="fas fa-user"></i>
-            </button>
-	  </div>
+      <div class="header-container">
+	<div class="logo">
+	  <a href="index.html">
+            <img src="logo.png" alt="Esneva Adaptive Clothing Company Logo">
+	  </a>
 	</div>
-      </header>
-      
+	
+	<nav role="navigation" aria-label="Main Navigation">
+          <a href="index.html" tabindex="1"
+	     accesskey="1" class="nav-link">1 Home</a>
+	  <a href="products.html" tabindex="2"
+	     accesskey="2" class="nav-link">2 Products</a>
+	  <a href="community.html" tabindex="3"
+	     accesskey="3" class="nav-link">3 Community</a>
+	  <a href="contact.html" tabindex="4"
+	     accesskey="4" class="nav-link">4 Contact</a>
+	  <a href="about.html" tabindex="5"
+	     accesskey="5" class="nav-link">5 About</a>
+	</nav>
+	
+	<div class="header-actions">
+          <button class="favorites" onclick="location.href='favorites.html';" aria-label="Go to Favorites">
+            6
+            <i class='fas fa-heart'></i>
+          </button>
+          <button class="cart" onclick="location.href='cart.html';" aria-label="Go to Carts">
+            7
+            <i class='fas fa-shopping-cart'></i>
+          </button>
+          <button class="login" onclick="location.href='login.html';" aria-label="Go to Login">
+            8
+            <i class="fas fa-user"></i>
+          </button>
+	</div>
+      </div>
+    </header>
+    
+    <!-- accessibility-toolbar.html -->
+    <div class="accessibility-toolbar">
+      <div id="accessibility-toolbar" class="accessibility-toolbar">
+	<button id="contrast-toggle" aria-label="Toggle high contrast">
+	  <span id="contrast-label">&#9681; Normal</span>
+	</button>
+
+	<button id="read-toggle" aria-label="Toggle speech">
+	  <span id="read-label">&#9654;</span> <!-- Play icon -->
+	</button>
+
+	<button id="voice-toggle" aria-label="Activate microphone">
+	  <i class="fas fa-microphone"></i>
+	</button>
+	<button id="chatbot-toggle" aria-label="Toggle chat support">AI</button>
+      </div>
+    </div>
+
+    <!-- AI Chatbot (gerekirse iframe URL’yi değiştir) -->
+    <div id="chat-widget" style="display:none; position:fixed; bottom:1rem; right:1rem; z-index:999;">
+      <iframe src="https://chat.vercel.ai" width="300" height="400" style="border:none;"></iframe>
+    </div>
+    
       <div class="products-container">
         <h1 class="products-title">Products</h1>
 
@@ -59,43 +83,43 @@
               <nav class="category-nav">
                 <button class="category-btn active" data-category="all">
                   <span>All Products</span>
-                  <span class="count" id="count-all">10</span>
+                  <span class="count" id="count-all">R</span>
                 </button>
                 <button class="category-btn" data-category="everyday">
                   <span>Adaptive Everyday Wear</span>
-                  <span class="count" id="count-everyday">2</span>
+                  <span class="count" id="count-everyday">A</span>
                 </button>
                 <button class="category-btn" data-category="clothes">
                   <span>Clothes</span>
-                  <span class="count" id="count-clothes">1</span>
+                  <span class="count" id="count-clothes">I</span>
                 </button>
                 <button class="category-btn" data-category="intimates">
                   <span>Inclusive Intimates</span>
-                  <span class="count" id="count-intimates">1</span>
+                  <span class="count" id="count-intimates">B</span>
                 </button>
                 <button class="category-btn" data-category="mobility">
                   <span>Mobility-Friendly</span>
-                  <span class="count" id="count-mobility">1</span>
+                  <span class="count" id="count-mobility">C</span>
                 </button>
                 <button class="category-btn" data-category="vision">
                   <span>Vision-Accessible</span>
-                  <span class="count" id="count-vision">1</span>
+                  <span class="count" id="count-vision">D</span>
                 </button>
                 <button class="category-btn" data-category="orthopedic">
                   <span>Support & Orthopedic</span>
-                  <span class="count" id="count-orthopedic">1</span>
+                  <span class="count" id="count-orthopedic">E</span>
                 </button>
                 <button class="category-btn" data-category="footwear">
                   <span>Comfort Footwear</span>
-                  <span class="count" id="count-footwear">1</span>
+                  <span class="count" id="count-footwear">F</span>
                 </button>
                 <button class="category-btn" data-category="hygiene">
                   <span>Self-Care</span>
-                  <span class="count" id="count-hygiene">1</span>
+                  <span class="count" id="count-hygiene">G</span>
                 </button>
                 <button class="category-btn" data-category="balance">
                   <span>Walking & Balance Aids</span>
-                  <span class="count" id="count-balance">1</span>
+                  <span class="count" id="count-balance">H</span>
                 </button>
               </nav>
             </div>
@@ -171,34 +195,41 @@
         </div>
       </div>
 
-      <!-- Footer -->
-      <footer class="footer">
-        <div class="container">
-          <div class="footer-content">
+      <!-- Footer Section -->
+      <footer>
+	<div class="footer-content">	
+          <div class="footer-links">
             <div class="payment-logos">
-              <i class="fab fa-cc-visa"></i>
-              <i class="fab fa-cc-mastercard"></i>
-              <i class="fab fa-cc-paypal"></i>
+              <i class="fab fa-cc-visa payment-logo"></i>
+              <i class="fab fa-cc-mastercard payment-logo"></i>
+              <i class="fab fa-cc-paypal payment-logo"></i>
             </div>
+
             <div class="social-media">
-              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.facebook.com" aria-label="Facebook page"
+		 target="_blank"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com" aria-label="Instagram page"
+		 target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.twitter.com" aria-label="X page"
+		 target="_blank"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.linkedin.com" aria-label="LinkedIn page"
+		 target="_blank"><i class="fab fa-linkedin-in"></i></a>
             </div>
           </div>
-          <div class="footer-bottom">
-            <p>&copy; 2025 Adaptive Clothing | All Rights Reserved</p>
-            <div class="footer-links">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms of Use</a>
-              <a href="#">Returns & Exchanges</a>
-            </div>
-          </div>
-        </div>
+	</div>
+	
+	<div class="footer-bottom">
+          <p>&copy; 2025 Adaptive Clothing | All Rights Reserved</p>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+          </ul>
+	</div>
       </footer>
 
       <script src="script.js"></script>
       <script src="products.js"></script>
+      <script src="accessibility.js"></script>
   </body>
 </html>

@@ -22,7 +22,7 @@
 
 /* Shop by Needs */
 .shop-by-needs {
-    background: #f9fafb;
+    background: #1E293B;
     border-radius: 1rem;
     padding: 2rem;
 }
@@ -31,7 +31,7 @@
     font-size: 1.875rem;
     font-weight: 700;
     text-align: center;
-    color: #111827;
+    color: #FFFFFF;
     margin-bottom: 2rem;
 }
 
@@ -60,17 +60,8 @@
 .category-icon {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    color: #3b82f6;
+    color: #1E293B;
 }
-
-.category-card:nth-child(2) .category-icon { color: #ec4899; }
-.category-card:nth-child(3) .category-icon { color: #10b981; }
-.category-card:nth-child(4) .category-icon { color: #8b5cf6; }
-.category-card:nth-child(5) .category-icon { color: #ef4444; }
-.category-card:nth-child(6) .category-icon { color: #f97316; }
-.category-card:nth-child(7) .category-icon { color: #14b8a6; }
-.category-card:nth-child(8) .category-icon { color: #6366f1; }
-.category-card:nth-child(9) .category-icon { color: #f59e0b; }
 
 .category-card h3 {
     font-size: 0.875rem;
@@ -105,33 +96,31 @@
 }
 
 .needs-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
 }
 
 .need-card {
-  background-color: white;
-  padding: 20px 30px;
-  border-radius: 15px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  text-align: center;
-  width: 180px;
-  text-decoration: none;
-  color: #333;
-  transition: transform 0.2s ease;
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 180px;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.2s ease;
 }
 
 .need-card i {
-  font-size: 2.5em;
-  color: #34495e;
-  margin-bottom: 10px;
+    font-size: 2.5em;
+    color: #34495e;
+    margin-bottom: 10px;
 }
 
 .need-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
-
-

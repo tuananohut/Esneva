@@ -37,7 +37,7 @@
 
 .about h1 {
     font-size: 60px; 
-    color: var(--black);
+    color: black;
     margin-bottom: 20px;
 }
 
@@ -74,4 +74,29 @@
     line-height: 1.6;
     margin-bottom: 10px;
     text-align: center; 
+}
+
+.accessibility-toolbar {
+    position: fixed;
+    top: 100px;
+    left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
+}
+
+.accessibility-toolbar button {
+    background-color: #f9fafb;
+    color: #111827;
+    border: 1px solid #d1d5db;
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.accessibility-toolbar button:hover {
+    background-color: #e5e7eb;
 }

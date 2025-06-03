@@ -1,0 +1,246 @@
+.high-contrast {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.high-contrast .shop-by-needs {
+    background: #1E293B;
+    border-radius: 1rem;
+    padding: 2rem;
+    border: 2px solid #fff;
+}
+
+.high-contrast .categories-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    border-color: #ffffff;
+}
+
+.high-contrast .product-card .view-details {
+  background-color: black !important; 
+  color: white;
+}
+
+.high-contrast .product-card .view-details:hover {
+  background-color: #aaa !important; 
+  color: black;
+}
+
+.high-contrast .products-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+
+.high-contrast .category-card {
+    background: #ffffff;
+    border-radius: 0.5rem;
+    border-color: #ffffff;
+    padding: 1rem;
+    width: 180px;
+    text-align: center;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.high-contrast .category-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #000;
+}
+
+.high-contrast .hero-section h1 {
+    color: white;
+}
+
+.high-contrast .header {
+    background: black;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.high-contrast .header-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.high-contrast button {
+    color: white;
+    background-color: #333;
+}
+
+.high-contrast button:hover {
+    background-color: gray;
+    color: black; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Gölgeler */
+}
+
+.high-contrast footer {
+    background-color: black;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.high-contrast .card {
+    background-color: white;
+    color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.high-contrast .card:hover {
+    transform: scale(1.03);
+    color: white;
+}
+
+.high-contrast .payment-logos {
+    color: white;
+}
+
+.high-contrast .category-card h3,
+.high-contrast .category-card span,
+.high-contrast footer {
+    color: black !important;
+}
+
+.high-contrast .feature-highlight {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background: #1E293B;
+    flex-wrap: wrap;
+}
+
+.high-contrast .features {
+    display: flex;
+    justify-content: center;
+    padding: 80px 20px;
+    background-color: black;
+}
+
+.accessibility-toolbar {
+    position: fixed;
+    top: 80px;
+    left: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    /*z-index: 1000;*/
+}
+
+.accessibility-toolbar button {
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0.375rem;
+    cursor: pointer;
+}
+
+.high-contrast .accessibility-toolbar button {
+    background: #111;
+    color: #fff;
+    border-color: #fff;
+}
+
+.high-contrast .feature-grid div {
+    background: black;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+    border: 2px solid #fff;
+}
+
+.accessibility-toolbar {
+    position: fixed;
+    top: 100px;
+    left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
+}
+
+.accessibility-toolbar button {
+    background-color: #f9fafb;
+    color: #111827;
+    border: 1px solid #d1d5db;
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.accessibility-toolbar button:hover {
+    background-color: #e5e7eb;
+}
+
+body.high-contrast {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.high-contrast .product-card h4 {
+    color: black;
+    text-align: center;
+    font-size: 18px;
+}
+
+.high-contrast .product-card p {
+    color: black !important;
+    text-align: center;
+    font-size: 18px;
+}
+
+body.high-contrast a,
+body.high-contrast p,
+body.high-contrast h1,
+body.high-contrast h2,
+body.high-contrast h3 {
+    color: #fff !important;
+}
+
+/*Modal*/
+.high-contrast .modal-content {
+    background-color: black;
+    color: white;
+    margin: 5% auto;
+    border-radius: 0.5rem;
+    width: 90%;
+    max-width: 768px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.high-contrast .sidebar-content {
+    background: black;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    border: 2px solid #fff;
+}
+
+.high-contrast .modal-details li {
+    color: #fff;
+    margin-bottom: 0.25rem;
+}

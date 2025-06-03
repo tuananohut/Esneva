@@ -506,9 +506,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		card.className = "product-card";
 		card.innerHTML = `
           <img src="${product.image}" alt="${product.name}">
-          <h3>${product.name}</h3>
+          <h4>${product.name}</h4>
           <p>${product.price}</p>
-          <button class="view-details" data-id="${product.id}">Details</button>
+          <button class="view-details" data-id="${product.id}">View Details</button>
         `;
 		productsGrid.appendChild(card);
 	    });
