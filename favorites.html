@@ -14,62 +14,70 @@
       <div class="header-container">
 	<div class="logo">
 	  <a href="index.html">
-            <img src="logo.png" alt="Esneva Adaptive Clothing Company Logo">
+            <img id="site-logo" src="logo.png" alt="Esneva Adaptive Clothing Company Logo">
 	  </a>
 	</div>
 	
 	<nav role="navigation" aria-label="Main Navigation">
-          <a href="index.html" tabindex="1"
+          <a href="index.html" tabindex="1" class="nav-link"
 	     accesskey="1" class="nav-link">1 Home</a>
-	  <a href="products.html" tabindex="2"
+	  <a href="products.html" tabindex="2" class="nav-link"
 	     accesskey="2" class="nav-link">2 Products</a>
-	  <a href="community.html" tabindex="3"
+	  <a href="community.html" tabindex="3" class="nav-link"
 	     accesskey="3" class="nav-link">3 Community</a>
-	  <a href="contact.html" tabindex="4"
+	  <a href="contact.html" tabindex="4" class="nav-link"
 	     accesskey="4" class="nav-link">4 Contact</a>
-	  <a href="about.html" tabindex="5"
+	  <a href="about.html" tabindex="5" class="nav-link"
 	     accesskey="5" class="nav-link">5 About</a>
+	  <a href="favorites.html" tabindex="6" class="nav-link"
+	     accesskey="6" class="nav-link">6<i class='fas fa-heart'></i></a>
+	  <a href="cart.html" tabindex="7" class="nav-link"
+	     accesskey="7" class="nav-link">7<i class='fas fa-shopping-cart'></i></a>
+	  <a href="login.html" tabindex="8" class="nav-link"
+	     accesskey="8" class="nav-link">8<i class='fas fa-user'></i></a>
 	</nav>
 	
-	<div class="header-actions">
-          <button class="favorites" onclick="location.href='favorites.html';" aria-label="Go to Favorites">
-            6
-            <i class='fas fa-heart'></i>
-          </button>
-          <button class="cart" onclick="location.href='cart.html';" aria-label="Go to Carts">
-            7
-            <i class='fas fa-shopping-cart'></i>
-          </button>
-          <button class="login" onclick="location.href='login.html';" aria-label="Go to Login">
-            8
-            <i class="fas fa-user"></i>
-          </button>
-	</div>
       </div>
     </header>
     
     <!-- accessibility-toolbar.html -->
-    <div class="accessibility-toolbar">
-      <div id="accessibility-toolbar" class="accessibility-toolbar">
-	<button id="contrast-toggle" aria-label="Toggle high contrast">
-	  <span id="contrast-label">&#9681; Normal</span>
-	</button>
+    <button id="menu-toggle" class="hamburger-btn" aria-label="Toggle Accessibility Menu">
+      <i class="fas fa-bars"></i>
+    </button>
 
-	<button id="read-toggle" aria-label="Toggle speech">
-	  <span id="read-label">&#9654;</span> <!-- Play icon -->
-	</button>
+    <!-- Accessibility Toolbar Çekmece -->
+    <div id="accessibility-drawer" class="accessibility-drawer hidden">
+      <button id="contrast-toggle" aria-label="Toggle high contrast">
+	<span id="contrast-label">&#9681</span>
+      </button>
 
-	<button id="voice-toggle" aria-label="Activate microphone">
-	  <i class="fas fa-microphone"></i>
-	</button>
-	<button id="chatbot-toggle" aria-label="Toggle chat support">AI</button>
-      </div>
+      <button id="read-toggle" aria-label="Read page">
+	<span id="read-label">&#9654</span>
+      </button>
+
+      <button id="voice-toggle" aria-label="Activate microphone">
+	<span id="microphone-label"><i class="fas fa-microphone"></i></span>
+      </button>
+
     </div>
 
-    <!-- AI Chatbot (gerekirse iframe URL’yi değiştir) -->
-    <div id="chat-widget" style="display:none; position:fixed; bottom:1rem; right:1rem; z-index:999;">
-      <iframe src="https://chat.vercel.ai" width="300" height="400" style="border:none;"></iframe>
+    <div>
+      <button id="chatbot-toggle" aria-label="Open AI chat">
+	<i class="fa fa-comment"></i>
+      </button>
     </div>
+
+    <!-- Chatbot iframe – sağ alt köşede -->
+    <div id="chat-widget" style="display: none; position: fixed; bottom: 1rem; right: 1rem; z-index: 999;">
+      <iframe 
+	src="https://huggingface.co/chat/"
+	width="320"
+	height="420"
+	style="border: none; border-radius: 10px;">
+      </iframe>
+    </div>
+
+
     
     <!-- Main Content -->
     <main>

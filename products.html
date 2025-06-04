@@ -15,221 +15,230 @@
       <div class="header-container">
 	<div class="logo">
 	  <a href="index.html">
-            <img src="logo.png" alt="Esneva Adaptive Clothing Company Logo">
+            <img id="site-logo" src="logo.png" alt="Esneva Adaptive Clothing Company Logo">
 	  </a>
 	</div>
 	
 	<nav role="navigation" aria-label="Main Navigation">
-          <a href="index.html" tabindex="1"
+          <a href="index.html" tabindex="1" class="nav-link"
 	     accesskey="1" class="nav-link">1 Home</a>
-	  <a href="products.html" tabindex="2"
+	  <a href="products.html" tabindex="2" class="nav-link"
 	     accesskey="2" class="nav-link">2 Products</a>
-	  <a href="community.html" tabindex="3"
+	  <a href="community.html" tabindex="3" class="nav-link"
 	     accesskey="3" class="nav-link">3 Community</a>
-	  <a href="contact.html" tabindex="4"
+	  <a href="contact.html" tabindex="4" class="nav-link"
 	     accesskey="4" class="nav-link">4 Contact</a>
-	  <a href="about.html" tabindex="5"
+	  <a href="about.html" tabindex="5" class="nav-link"
 	     accesskey="5" class="nav-link">5 About</a>
+	  <a href="favorites.html" tabindex="6" class="nav-link"
+	     accesskey="6" class="nav-link">6<i class='fas fa-heart'></i></a>
+	  <a href="cart.html" tabindex="7" class="nav-link"
+	     accesskey="7" class="nav-link">7<i class='fas fa-shopping-cart'></i></a>
+	  <a href="login.html" tabindex="8" class="nav-link"
+	     accesskey="8" class="nav-link">8<i class='fas fa-user'></i></a>
 	</nav>
 	
-	<div class="header-actions">
-          <button class="favorites" onclick="location.href='favorites.html';" aria-label="Go to Favorites">
-            6
-            <i class='fas fa-heart'></i>
-          </button>
-          <button class="cart" onclick="location.href='cart.html';" aria-label="Go to Carts">
-            7
-            <i class='fas fa-shopping-cart'></i>
-          </button>
-          <button class="login" onclick="location.href='login.html';" aria-label="Go to Login">
-            8
-            <i class="fas fa-user"></i>
-          </button>
-	</div>
       </div>
     </header>
     
     <!-- accessibility-toolbar.html -->
-    <div class="accessibility-toolbar">
-      <div id="accessibility-toolbar" class="accessibility-toolbar">
-	<button id="contrast-toggle" aria-label="Toggle high contrast">
-	  <span id="contrast-label">&#9681; Normal</span>
-	</button>
+    <button id="menu-toggle" class="hamburger-btn" aria-label="Toggle Accessibility Menu">
+      <i class="fas fa-bars"></i>
+    </button>
 
-	<button id="read-toggle" aria-label="Toggle speech">
-	  <span id="read-label">&#9654;</span> <!-- Play icon -->
-	</button>
+    <!-- Accessibility Toolbar Çekmece -->
+    <div id="accessibility-drawer" class="accessibility-drawer hidden">
+      <button id="contrast-toggle" aria-label="Toggle high contrast">
+	<span id="contrast-label">&#9681</span>
+      </button>
 
-	<button id="voice-toggle" aria-label="Activate microphone">
-	  <i class="fas fa-microphone"></i>
-	</button>
-	<button id="chatbot-toggle" aria-label="Toggle chat support">AI</button>
-      </div>
+      <button id="read-toggle" aria-label="Read page">
+	<span id="read-label">&#9654</span>
+      </button>
+
+      <button id="voice-toggle" aria-label="Activate microphone">
+	<span id="microphone-label"><i class="fas fa-microphone"></i></span>
+      </button>
+
     </div>
 
-    <!-- AI Chatbot (gerekirse iframe URL’yi değiştir) -->
-    <div id="chat-widget" style="display:none; position:fixed; bottom:1rem; right:1rem; z-index:999;">
-      <iframe src="https://chat.vercel.ai" width="300" height="400" style="border:none;"></iframe>
+    <div>
+      <button id="chatbot-toggle" aria-label="Open AI chat">
+	<i class="fa fa-comment"></i>
+      </button>
     </div>
+
+    <!-- Chatbot iframe – sağ alt köşede -->
+    <div id="chat-widget" style="display: none; position: fixed; bottom: 1rem; right: 1rem; z-index: 999;">
+      <iframe 
+	src="https://huggingface.co/chat/"
+	width="320"
+	height="420"
+	style="border: none; border-radius: 10px;">
+      </iframe>
+    </div>
+
     
-      <div class="products-container">
-        <h1 class="products-title">Products</h1>
+    <div class="products-container">
+      <h1 class="products-title">Products</h1>
 
-        <div class="products-layout">
-          <!-- Sidebar with Categories -->
-          <aside class="categories-sidebar">
-            <div class="sidebar-content">
-              <h2>Categories</h2>
-              <nav class="category-nav">
-                <button class="category-btn active" data-category="all">
-                  <span>All Products</span>
-                  <span class="count" id="count-all">R</span>
-                </button>
-                <button class="category-btn" data-category="everyday">
-                  <span>Adaptive Everyday Wear</span>
-                  <span class="count" id="count-everyday">A</span>
-                </button>
-                <button class="category-btn" data-category="clothes">
-                  <span>Clothes</span>
-                  <span class="count" id="count-clothes">I</span>
-                </button>
-                <button class="category-btn" data-category="intimates">
-                  <span>Inclusive Intimates</span>
-                  <span class="count" id="count-intimates">B</span>
-                </button>
-                <button class="category-btn" data-category="mobility">
-                  <span>Mobility-Friendly</span>
-                  <span class="count" id="count-mobility">C</span>
-                </button>
-                <button class="category-btn" data-category="vision">
-                  <span>Vision-Accessible</span>
-                  <span class="count" id="count-vision">D</span>
-                </button>
-                <button class="category-btn" data-category="orthopedic">
-                  <span>Support & Orthopedic</span>
-                  <span class="count" id="count-orthopedic">E</span>
-                </button>
-                <button class="category-btn" data-category="footwear">
-                  <span>Comfort Footwear</span>
-                  <span class="count" id="count-footwear">F</span>
-                </button>
-                <button class="category-btn" data-category="hygiene">
-                  <span>Self-Care</span>
-                  <span class="count" id="count-hygiene">G</span>
-                </button>
-                <button class="category-btn" data-category="balance">
-                  <span>Walking & Balance Aids</span>
-                  <span class="count" id="count-balance">H</span>
-                </button>
-              </nav>
-            </div>
-          </aside>
-
-          <!-- Main Content -->
-          <main class="products-main">
-            <!-- Products Grid with Navigation -->
-            <div class="products-grid-container">
-              <!-- Previous Button -->
-              <button class="nav-btn prev-btn" id="prevBtn" aria-label="Previous products">
-                <i class="fas fa-chevron-left"></i>
+      <div class="products-layout">
+        <!-- Sidebar with Categories -->
+        <aside class="categories-sidebar">
+          <div class="sidebar-content">
+            <h2>Categories</h2>
+            <nav class="category-nav">
+              <button class="category-btn active" data-category="all">
+                <span>All Products</span>
+                <span class="count" id="count-all">R</span>
               </button>
-
-              <!-- Products Grid -->
-              <div class="products-grid" id="productsGrid">
-                <!-- Products will be dynamically inserted here -->
-              </div>
-
-              <!-- Next Button -->
-              <button class="nav-btn next-btn" id="nextBtn" aria-label="Next products">
-                <i class="fas fa-chevron-right"></i>
+              <button class="category-btn" data-category="everyday">
+                <span>Adaptive Everyday Wear</span>
+                <span class="count" id="count-everyday">A</span>
               </button>
+              <button class="category-btn" data-category="clothes">
+                <span>Clothes</span>
+                <span class="count" id="count-clothes">I</span>
+              </button>
+              <button class="category-btn" data-category="intimates">
+                <span>Inclusive Intimates</span>
+                <span class="count" id="count-intimates">B</span>
+              </button>
+              <button class="category-btn" data-category="mobility">
+                <span>Mobility-Friendly</span>
+                <span class="count" id="count-mobility">C</span>
+              </button>
+              <button class="category-btn" data-category="vision">
+                <span>Vision-Accessible</span>
+                <span class="count" id="count-vision">D</span>
+              </button>
+              <button class="category-btn" data-category="orthopedic">
+                <span>Support & Orthopedic</span>
+                <span class="count" id="count-orthopedic">E</span>
+              </button>
+              <button class="category-btn" data-category="footwear">
+                <span>Comfort Footwear</span>
+                <span class="count" id="count-footwear">F</span>
+              </button>
+              <button class="category-btn" data-category="hygiene">
+                <span>Self-Care</span>
+                <span class="count" id="count-hygiene">G</span>
+              </button>
+              <button class="category-btn" data-category="balance">
+                <span>Walking & Balance Aids</span>
+                <span class="count" id="count-balance">H</span>
+              </button>
+            </nav>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="products-main">
+          <!-- Products Grid with Navigation -->
+          <div class="products-grid-container">
+            <!-- Previous Button -->
+            <button class="nav-btn prev-btn" id="prevBtn" aria-label="Previous products">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid">
+              <!-- Products will be dynamically inserted here -->
             </div>
 
-            <!-- Page Indicator -->
-            <div class="page-indicator">
-              <span id="pageInfo">Page 1 of 1 • Showing 0 of 0 products</span>
-            </div>
+            <!-- Next Button -->
+            <button class="nav-btn next-btn" id="nextBtn" aria-label="Next products">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
 
-            <!-- No Products Message -->
-            <div class="no-products" id="noProducts" style="display: none;">
-              <p>No products found in this category.</p>
-            </div>
-          </main>
-        </div>
+          <!-- Page Indicator -->
+          <div class="page-indicator">
+            <span id="pageInfo">Page 1 of 1 • Showing 0 of 0 products</span>
+          </div>
+
+          <!-- No Products Message -->
+          <div class="no-products" id="noProducts" style="display: none;">
+            <p>No products found in this category.</p>
+          </div>
+        </main>
       </div>
+    </div>
 
-      <!-- Product Details Modal -->
-      <div id="productModal" class="modal">
-        <div class="modal-content">
-          <span class="close-modal">&times;</span>
-          <div class="modal-body">
-            <div class="modal-image">
-              <img id="modalImage" src="/placeholder.svg" alt="Product Image">
-            </div>
-            <div class="modal-details">
-              <h2 id="modalTitle"></h2>
-              <p class="modal-price" id="modalPrice"></p>
-              <p class="modal-description" id="modalDescription"></p>
-              
-              <h3>Features:</h3>
-              <ul id="modalFeatures"></ul>
-              
-              <p id="modalCare"></p>
-              <p id="modalMedical"></p>
-              
-              <div class="modal-actions">
-                <button class="modal-btn favorite-btn">
-                  <i class="fas fa-heart"></i> Add to Favorites
-                </button>
-                <button class="modal-btn cart-btn">
-                  <i class="fas fa-shopping-cart"></i> Add to Cart
-                </button>
-              </div>
+    
+    
+    <div id="productModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-body">
+          <div class="modal-image">
+	    <img id="modalImage" src="/placeholder.svg" alt="Product Image">
+          </div>
+          <div class="modal-details">
+	    <h2 id="modalTitle"></h2>
+	    <p class="modal-price" id="modalPrice"></p>
+	    <p class="modal-description" id="modalDescription"></p>
+	    
+	    <h3>Features:</h3>
+	    <ul id="modalFeatures"></ul>
+	    
+	    <p id="modalCare"></p>
+	    <p id="modalMedical"></p>
+	    
+	    <div class="modal-actions">
+	      <button class="modal-btn favorite-btn">
+                <i class="fas fa-heart"></i> Add to Favorites
+	      </button>
+	      <button class="modal-btn cart-btn">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+	      </button>
+	    </div>
 
-	      <div class="voice-controls">
-		<button id="btn-read-again">🔁 Read Again</button>
-		<button id="btn-stop-reading">🛑 Stop</button>
-	      </div>
-            </div>
+	    <div class="voice-controls">
+	      <button id="btn-read-again">&#9654</button>
+	      <button id="btn-stop-reading">&#9632</button>
+	    </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Footer Section -->
-      <footer>
-	<div class="footer-content">	
-          <div class="footer-links">
-            <div class="payment-logos">
-              <i class="fab fa-cc-visa payment-logo"></i>
-              <i class="fab fa-cc-mastercard payment-logo"></i>
-              <i class="fab fa-cc-paypal payment-logo"></i>
-            </div>
+	 
+	 <!-- Footer Section -->
+	 <footer>
+	   <div class="footer-content">	
+             <div class="footer-links">
+               <div class="payment-logos">
+		 <i class="fab fa-cc-visa payment-logo"></i>
+		 <i class="fab fa-cc-mastercard payment-logo"></i>
+		 <i class="fab fa-cc-paypal payment-logo"></i>
+               </div>
 
-            <div class="social-media">
-              <a href="https://www.facebook.com" aria-label="Facebook page"
-		 target="_blank"><i class="fab fa-facebook-f"></i></a>
-              <a href="https://www.instagram.com" aria-label="Instagram page"
-		 target="_blank"><i class="fab fa-instagram"></i></a>
-              <a href="https://www.twitter.com" aria-label="X page"
-		 target="_blank"><i class="fab fa-twitter"></i></a>
-              <a href="https://www.linkedin.com" aria-label="LinkedIn page"
-		 target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-          </div>
-	</div>
-	
-	<div class="footer-bottom">
-          <p>&copy; 2025 Adaptive Clothing | All Rights Reserved</p>
-          <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Use</a></li>
-            <li><a href="#">Returns & Exchanges</a></li>
-          </ul>
-	</div>
-      </footer>
+               <div class="social-media">
+		 <a href="https://www.facebook.com" aria-label="Facebook page"
+		    target="_blank"><i class="fab fa-facebook-f"></i></a>
+		 <a href="https://www.instagram.com" aria-label="Instagram page"
+		    target="_blank"><i class="fab fa-instagram"></i></a>
+		 <a href="https://www.twitter.com" aria-label="X page"
+		    target="_blank"><i class="fab fa-twitter"></i></a>
+		 <a href="https://www.linkedin.com" aria-label="LinkedIn page"
+		    target="_blank"><i class="fab fa-linkedin-in"></i></a>
+               </div>
+             </div>
+	   </div>
+	   
+	   <div class="footer-bottom">
+             <p>&copy; 2025 Adaptive Clothing | All Rights Reserved</p>
+             <ul>
+               <li><a href="#">Privacy Policy</a></li>
+               <li><a href="#">Terms of Use</a></li>
+               <li><a href="#">Returns & Exchanges</a></li>
+             </ul>
+	   </div>
+	 </footer>
 
-      <script src="script.js"></script>
-      <script src="products.js"></script>
-      <script src="accessibility.js"></script>
+	 <script src="script.js"></script>
+	 <script src="products.js"></script>
+	 <script src="accessibility.js"></script>
   </body>
 </html>

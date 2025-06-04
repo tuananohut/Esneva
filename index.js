@@ -4,6 +4,7 @@ document.addEventListener('keydown', function(event) {
     case 'J': 
 	window.location.href = "products.html";
         break;
+	
     case 'a':
     case 'A':
 	window.location.href = "products.html#everyday";
@@ -36,6 +37,11 @@ document.addEventListener('keydown', function(event) {
     case 'H':
 	window.location.href = "products.html#balance";
 	break;
+    case 'i':
+    case 'I':
+	window.location.href = "products.html#clothes";
+	break;
+	
     default:
         break;
     }    

@@ -1,12 +1,36 @@
-<!-- accessibility-toolbar.html -->
-<div class="accessibility-toolbar">
-  <button id="high-contrast-toggle" aria-label="Toggle High Contrast">🌓 High Contrast</button>
-  <button id="text-reader" aria-label="Read page aloud">🔊 Read</button>
-  <button id="voice-command" aria-label="Activate voice commands">🎙️ Speak</button>
-  <button id="chatbot-toggle" aria-label="Toggle chat support">💬 Chat</button>
+<button id="menu-toggle" class="hamburger-btn" aria-label="Toggle Accessibility Menu">
+  <i class="fas fa-bars"></i>
+</button>
+
+<!-- Accessibility Toolbar Çekmece -->
+<div id="accessibility-drawer" class="accessibility-drawer hidden">
+  <button id="contrast-toggle" aria-label="Toggle high contrast">
+    <span id="contrast-label">&#9681</span>
+  </button>
+
+  <button id="read-toggle" aria-label="Read page">
+    <span id="read-label">&#9654</span>
+  </button>
+
+  <button id="voice-toggle" aria-label="Activate microphone">
+    <span id="microphone-label"><i class="fas fa-microphone"></i></span>
+  </button>
+
 </div>
 
-<!-- AI Chatbot (gerekirse iframe URL’yi değiştir) -->
-<div id="chat-widget" style="display:none; position:fixed; bottom:1rem; right:1rem; z-index:999;">
-  <iframe src="https://chat.vercel.ai" width="300" height="400" style="border:none;"></iframe>
+<div>
+  <button id="chatbot-toggle" aria-label="Open AI chat">
+    <i class="fa fa-comment"></i>
+  </button>
 </div>
+
+<!-- Chatbot iframe – sağ alt köşede -->
+<div id="chat-widget" style="display: none; position: fixed; bottom: 1rem; right: 1rem; z-index: 999;">
+  <iframe 
+    src="https://huggingface.co/chat/"
+    width="320"
+    height="420"
+    style="border: none; border-radius: 10px;">
+  </iframe>
+</div>
+

@@ -76,6 +76,7 @@
     text-align: center; 
 }
 
+/*
 .accessibility-toolbar {
     position: fixed;
     top: 100px;
@@ -99,4 +100,128 @@
 
 .accessibility-toolbar button:hover {
     background-color: #e5e7eb;
+}
+*/
+
+.hamburger-btn {
+  position: fixed;
+  left: 0;
+  top: 7rem;
+  z-index: 1001;
+  background: #1e293b;
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  border-radius: 0 6px 6px 0;
+}
+
+.accessibility-drawer {
+  position: fixed;
+  left: 0;
+  top: 10.5rem;
+  width: 80px;
+  border-radius: 0 6px 6px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: #1e293b;
+  color: white;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+}
+
+.high-contrast .accessibility-drawer {
+  background: white;
+  color: #1e293b;
+}
+
+.accessibility-drawer.open {
+  transform: translateX(0);
+}
+
+.accessibility-drawer button {
+  background: #1e253b;
+  color: white;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.high-contrast .accessibility-drawer button {
+    background: white;
+    color: 	#1e253b;
+}
+
+.drawer-toggle {
+  background-color: #eee;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.accessibility-toolbar {
+  display: flex;
+  flex-direction: column;
+  background: #f4f4f4;
+  padding: 0.5rem;
+  border-radius: 0 8px 8px 0;
+  transition: transform 0.3s ease;
+}
+
+.accessibility-toolbar.hidden {
+  transform: translateX(-100%);
+  display: none;
+}
+
+.accessibility-drawer.attention::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 10px;
+  height: 40px;
+  background-color: #444;
+  animation: shake-drawer 0.5s ease-in-out 3 alternate;
+  border-radius: 0 4px 4px 0;
+}
+
+body.high-contrast .accessibility-toolbar,
+body.high-contrast .drawer-toggle {
+  background-color: #fff;
+  color: #1e293b;
+  border: 1px solid #fff;
+}
+
+#chat-widget {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+#chatbot-toggle {
+  position: fixed;
+  bottom: 5rem;
+  right: 1.5rem;
+  background: #1e293b;
+  color: #fff;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  z-index: 10000;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+body.high-contrast #chatbot-toggle {
+  background: #fff;
+  color: #000;
 }

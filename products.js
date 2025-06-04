@@ -450,201 +450,222 @@ const products = [
 	medicalNotice: " "
     }];
 
+
 document.addEventListener("DOMContentLoaded", () => {
-    const productsGrid = document.getElementById("productsGrid");
-    const pageInfo = document.getElementById("pageInfo");
-    const noProducts = document.getElementById("noProducts");
+  const productsGrid = document.getElementById("productsGrid");
+  const pageInfo = document.getElementById("pageInfo");
+  const noProducts = document.getElementById("noProducts");
 
-    const categoryButtons = document.querySelectorAll(".category-btn");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
+  const categoryButtons = document.querySelectorAll(".category-btn");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
 
-    const modal = document.getElementById("productModal");
-    const modalImage = document.getElementById("modalImage");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalPrice = document.getElementById("modalPrice");
-    const modalDescription = document.getElementById("modalDescription");
-    const modalFeatures = document.getElementById("modalFeatures");
-    const modalCare = document.getElementById("modalCare");
-    const modalMedical = document.getElementById("modalMedical");
-    const readAloudBtn = document.querySelector(".read-aloud-btn");
-    const closeModalBtn = document.querySelector(".close-modal");
+  const modal = document.getElementById("productModal");
+  const modalImage = document.getElementById("modalImage");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalPrice = document.getElementById("modalPrice");
+  const modalDescription = document.getElementById("modalDescription");
+  const modalFeatures = document.getElementById("modalFeatures");
+  const modalCare = document.getElementById("modalCare");
+  const modalMedical = document.getElementById("modalMedical");
+  const readAloudBtn = document.querySelector(".read-aloud-btn");
+  const closeModalBtn = document.querySelector(".close-modal");
 
-    let currentCategory = "all";
-    let currentPage = 0;
-    const itemsPerPage = 4;
-    let filteredProducts = [];
-    let currentProductText = "";
-    const hash = window.location.hash.replace("#", "");
-    const validNeeds = [
-	"everyday", "intimates", "mobility", "vision",
-	"orthopedic", "footwear", "hygiene", "balance", "clothes", "all"
-    ];
+  let currentCategory = "all";
+  let currentPage = 0;
+  const itemsPerPage = 4;
+  let filteredProducts = [];
+  let currentProductText = "";
 
+  const validNeeds = [
+    "everyday", "intimates", "mobility", "vision",
+    "orthopedic", "footwear", "hygiene", "balance", "clothes", "all"
+  ];
+
+  // 🔁 Ortak kategori değiştirme fonksiyonu
+  function setCategoryFromHash(hash) {
     if (validNeeds.includes(hash)) {
-	currentCategory = hash;
-	document.querySelector(`.category-btn[data-category="${hash}"]`)?.classList.add("active");
-    } else {
-	currentCategory = "all";
-	document.querySelector(`.category-btn[data-category="all"]`)?.classList.add("active");
+      currentCategory = hash;
+      categoryButtons.forEach(b => b.classList.remove("active"));
+      document.querySelector(`.category-btn[data-category="${hash}"]`)?.classList.add("active");
+      currentPage = 0;
+      filterProducts();
+      renderProducts();
     }
-    
+  }
 
-    // ========== Product Rendering ==========
-    function renderProducts() {
-	productsGrid.innerHTML = "";
-	const start = currentPage * itemsPerPage;
-	const end = start + itemsPerPage;
-	const visibleProducts = filteredProducts.slice(start, end);
+  // ========== Product Rendering ==========
+  function renderProducts() {
+    productsGrid.innerHTML = "";
+    const start = currentPage * itemsPerPage;
+    const end = start + itemsPerPage;
+    const visibleProducts = filteredProducts.slice(start, end);
 
-	if (visibleProducts.length === 0) {
-	    noProducts.style.display = "block";
-	} else {
-	    noProducts.style.display = "none";
-	    visibleProducts.forEach(product => {
-		const card = document.createElement("div");
-		card.className = "product-card";
-		card.innerHTML = `
+    if (visibleProducts.length === 0) {
+      noProducts.style.display = "block";
+    } else {
+      noProducts.style.display = "none";
+      visibleProducts.forEach(product => {
+        const card = document.createElement("div");
+        card.className = "product-card";
+        card.innerHTML = `
           <img src="${product.image}" alt="${product.name}">
           <h4>${product.name}</h4>
           <p>${product.price}</p>
           <button class="view-details" data-id="${product.id}">View Details</button>
         `;
-		productsGrid.appendChild(card);
-	    });
-	}
-
-	updatePagination();
-	attachDetailListeners();
+        productsGrid.appendChild(card);
+      });
     }
 
-    function updatePagination() {
-	const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
-	const shown = Math.min(filteredProducts.length, (currentPage + 1) * itemsPerPage);
-	pageInfo.textContent = `Page ${currentPage + 1} of ${totalPages} • Showing ${shown} of ${filteredProducts.length} products`;
+    updatePagination();
+    attachDetailListeners();
+  }
 
-	prevBtn.disabled = currentPage === 0;
-	nextBtn.disabled = currentPage >= totalPages - 1;
+  function updatePagination() {
+    const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+    const shown = Math.min(filteredProducts.length, (currentPage + 1) * itemsPerPage);
+    pageInfo.textContent = `Page ${currentPage + 1} of ${totalPages} • Showing ${shown} of ${filteredProducts.length} products`;
+
+    prevBtn.disabled = currentPage === 0;
+    nextBtn.disabled = currentPage >= totalPages - 1;
+  }
+
+  // ========== Filtering ==========
+  function filterProducts() {
+    filteredProducts = currentCategory === "all"
+      ? products
+      : products.filter(p =>
+          Array.isArray(p.need) ? p.need.includes(currentCategory) : p.need === currentCategory
+        );
+  }
+
+  categoryButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const cat = btn.dataset.category;
+      window.location.hash = `#${cat}`;
+      setCategoryFromHash(cat);
+    });
+  });
+
+  // ========== Navigation ==========
+  prevBtn.addEventListener("click", () => {
+    if (currentPage > 0) {
+      currentPage--;
+      renderProducts();
     }
+  });
 
-    // ========== Category Filtering ==========
-    categoryButtons.forEach(btn => {
-	btn.addEventListener("click", () => {
-	    categoryButtons.forEach(b => b.classList.remove("active"));
-	    btn.classList.add("active");
-
-	    currentCategory = btn.dataset.category;
-	    currentPage = 0;
-	    filterProducts();
-	    renderProducts();
-	});
-    });
-
-    function filterProducts() {
-	filteredProducts = currentCategory === "all"
-	    ? products
-	    : products.filter(p =>
-		Array.isArray(p.need) ? p.need.includes(currentCategory) : p.need === currentCategory
-            );
+  nextBtn.addEventListener("click", () => {
+    const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+    if (currentPage < totalPages - 1) {
+      currentPage++;
+      renderProducts();
     }
+  });
 
-    // ========== Navigation ==========
-    prevBtn.addEventListener("click", () => {
-	if (currentPage > 0) {
-	    currentPage--;
-	    renderProducts();
-	}
+  // ========== Modal ==========
+  function attachDetailListeners() {
+    document.querySelectorAll(".view-details").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const productId = parseInt(btn.dataset.id);
+        const product = products.find(p => p.id === productId);
+        if (product) openModal(product);
+      });
+    });
+  }
+
+  function speakEnglish(text) {
+    if (!('speechSynthesis' in window)) return;
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US';
+
+    const voices = speechSynthesis.getVoices().filter(v => v.lang === 'en-US');
+    if (voices.length > 0) utterance.voice = voices[0];
+
+    speechSynthesis.cancel();
+    speechSynthesis.speak(utterance);
+  }
+
+  function openModal(product) {
+    modalImage.src = product.image;
+    modalTitle.textContent = product.name;
+    modalPrice.textContent = `Price: ${product.price}`;
+    modalDescription.textContent = product.description || "";
+
+    modalFeatures.innerHTML = "";
+    product.features?.forEach(feature => {
+      const li = document.createElement("li");
+      li.textContent = feature;
+      modalFeatures.appendChild(li);
     });
 
-    nextBtn.addEventListener("click", () => {
-	const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
-	if (currentPage < totalPages - 1) {
-	    currentPage++;
-	    renderProducts();
-	}
-    });
+    modalCare.textContent = product.careInstructions || "";
+    modalMedical.textContent = product.medicalNotice || "";
 
-    function speakEnglish(text) {
-	if (!('speechSynthesis' in window)) return;
+    modal.style.display = "flex";
 
-	const utterance = new SpeechSynthesisUtterance(text);
-	utterance.lang = 'en-US';
+    currentProductText = `
+      ${product.name}.
+      Price: ${product.price}.
+      ${product.description}.
+      Features include: ${product.features.join(", ")}.
+      Care instructions: ${product.careInstructions}.
+      Medical notice: ${product.medicalNotice}.
+    `;
 
-	const voices = speechSynthesis.getVoices().filter(v => v.lang === 'en-US');
-	if (voices.length > 0) {
-	    utterance.voice = voices[0];
-	}
-
-	speechSynthesis.cancel(); 
-	speechSynthesis.speak(utterance);
+    if (voiceConsent) {
+      speakEnglish(currentProductText);
     }
-    
-    // ========== Modal ==========
-    function attachDetailListeners() {
-	document.querySelectorAll(".view-details").forEach(btn => {
-	    btn.addEventListener("click", () => {
-		const productId = parseInt(btn.dataset.id);
-		const product = products.find(p => p.id === productId);
-		if (product) openModal(product);
-	    });
-	});
+  }
+
+  document.getElementById("btn-read-again")?.addEventListener("click", () => {
+    speakEnglish(currentProductText);
+  });
+
+  document.getElementById("btn-stop-reading")?.addEventListener("click", () => {
+    window.speechSynthesis.cancel();
+  });
+
+  closeModalBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+    window.speechSynthesis.cancel();
+  });
+
+  window.addEventListener("click", e => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+      window.speechSynthesis.cancel();
     }
+  });
 
-    function openModal(product) {
-	modalImage.src = product.image;
-	modalTitle.textContent = product.name;
-	modalPrice.textContent = `Price: ${product.price}`;
-	modalDescription.textContent = product.description || "";
+  // ========== Hash From URL ==========
+  const newHash = window.location.hash.replace("#", "");
+  setCategoryFromHash(newHash);
 
-	modalFeatures.innerHTML = "";
-	product.features?.forEach(feature => {
-	    const li = document.createElement("li");
-	    li.textContent = feature;
-	    modalFeatures.appendChild(li);
-	});
+  // ========== Keyboard Shortcuts ==========
+  document.addEventListener('keydown', function (event) {
+    const key = event.key.toLowerCase();
+    const keyMap = {
+      'a': 'everyday',
+      'b': 'intimates',
+      'c': 'mobility',
+      'd': 'vision',
+      'e': 'orthopedic',
+      'f': 'footwear',
+      'g': 'hygiene',
+      'h': 'balance',
+      'i': 'clothes',
+      'r': 'all'
+    };
 
-	modalCare.textContent = product.careInstructions || "";
-	modalMedical.textContent = product.medicalNotice || "";
-
-	modal.style.display = "flex";
-
-	currentProductText = `
-    ${product.name}.
-    Price: ${product.price}.
-    ${product.description}.
-    Features include: ${product.features.join(", ")}.
-    Care instructions: ${product.careInstructions}.
-    Medical notice: ${product.medicalNotice}.
-  `;
-
-	if (voiceConsent) {
-	    speakEnglish(currentProductText);
-	}
-	
+    if (keyMap[key]) {
+      window.location.hash = `#${keyMap[key]}`;
+      setCategoryFromHash(keyMap[key]);
     }
+  });
 
-    document.getElementById("btn-read-again").addEventListener("click", () => {
-	speakEnglish(currentProductText); // mevcut ürünü yeniden oku
-    });
-    
-    document.getElementById("btn-stop-reading").addEventListener("click", () => {
-	window.speechSynthesis.cancel(); // aktif konuşmayı durdur
-    });
-
-
-    closeModalBtn.addEventListener("click", () => {
-	modal.style.display = "none";
-	window.speechSynthesis.cancel(); // Sesli okuma durdurulsun
-    });
-
-    window.addEventListener("click", e => {
-	if (e.target === modal) {
-	    modal.style.display = "none";
-	    window.speechSynthesis.cancel();
-	}
-    });
-
-    // ========== Initialize ==========
-    filterProducts();
-    renderProducts();
+  // ========== Initialize ==========
+  filterProducts();
+  renderProducts();
 });

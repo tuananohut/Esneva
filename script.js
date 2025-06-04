@@ -18,13 +18,14 @@ document.addEventListener('keydown', function(event) {
     case '6': 
         window.location.href = "cart.html";
         break;
+
     default:
         break;
     }    
 });
 
 function speakText(text) {
-    alert('Valla çalışıyorum. ');
+
     
     if ('speechSynthesis' in window) {
 	speechSynthesis.cancel();
@@ -116,3 +117,13 @@ window.onload = () => {
     });
 };
 
+function toggleHighContrast() {
+  document.body.classList.toggle("contrast-toggle");
+  const logo = document.getElementById("site-logo");
+
+  if (document.body.classList.contains("high-contrast")) {
+    logo.src = "logo_black.png"; // siyah logo
+  } else {
+    logo.src = "logo.png"; // beyaz logo
+  }
+}
