@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Esneva</title>
+    <title>Esneva Community</title>
+    <link rel="stylesheet" href="community.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="accessible-styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   </head>
-
   <body>
     <header class="header">
       <div class="header-container">
@@ -39,8 +39,7 @@
 	
       </div>
     </header>
-    
-    <!-- accessibility-toolbar.html -->
+
     <button id="menu-toggle" class="hamburger-btn" aria-label="Toggle Accessibility Menu">
       <i class="fas fa-bars"></i>
     </button>
@@ -79,28 +78,102 @@
 
 
     
-    <!-- Contact Section -->
-    <section class="contact">
-      <div class="contact-text">
-	<h1>Contact Us</h1>
-	<p>If you have any questions or suggestions, please feel free to reach out. You can send us a message by filling out the form below.</p>
-      </div>
-      <form action="#" method="POST">
-	<label for="title">Title:</label>
-	<input type="text" id="title" name="title" required>
+    
+    <main class="community-main">
+      <section class="intro-section">
+	<h1>Esneva Community</h1>
+	<p>Connect, share experiences, and support each other in our adaptive fashion community</p>
+      </section>
 
-	<label for="name">Your Name:</label>
-	<input type="text" id="name" name="name" required>
+      <section class="community-wrapper">
+	<div class="post-form">
+          <h2>Share Your Story</h2>
+          <form id="shareForm">
+            <input type="text" placeholder="Your name..." required>
+            <input type="text" placeholder="Post title..." required>
+            <textarea placeholder="Share your experience, tips, or questions..." maxlength="500" required></textarea>
+            <select>
+              <option disabled selected>Category</option>
+              <option>Tips</option>
+              <option>Review</option>
+              <option>Experience</option>
+              <option>Question</option>
+            </select>
+            <button type="submit" class="share-btn"><i class="fas fa-share"></i> Share Post</button>
+          </form>
+	</div>
 
-	<label for="email">Your Email Address:</label>
-	<input type="email" id="email" name="email" required>
+	<aside class="community-sidebar">
+          <div class="community-stats">
+            <h3>Community Stats</h3>
+            <ul>
+              <li><strong>Members:</strong> 2,847</li>
+              <li><strong>Posts This Week:</strong> 156</li>
+              <li><strong>Active Today:</strong> 423</li>
+            </ul>
+          </div>
 
-	<label for="message">Your Message:</label>
-	<textarea id="message" name="message" rows="5" required></textarea>
+          <div class="upcoming-events">
+            <h3>Upcoming Events</h3>
+            <p><strong>Virtual Fashion Show</strong><br>March 15, 2025 at 2:00 PM EST</p>
+            <p><strong>Community Q&A Session</strong><br>March 22, 2025 at 1:00 PM EST</p>
+          </div>
 
-	<button type="submit">Send</button>
-      </form>
-    </section>
+          <div class="community-guidelines">
+            <h3>Community Guidelines</h3>
+            <ul>
+              <li>Be respectful and supportive</li>
+              <li>Share experiences and tips</li>
+              <li>No spam or self-promotion</li>
+              <li>Keep discussions relevant</li>
+            </ul>
+          </div>
+	</aside>
+      </section>
+
+      <section class="community-posts">
+	<h2>Community Posts</h2>
+	<div class="filters">
+          <select>
+            <option>Filter by Category</option>
+            <option>Tips</option>
+            <option>Review</option>
+            <option>Question</option>
+          </select>
+          <select>
+            <option>Sort by</option>
+            <option>Newest</option>
+            <option>Most Liked</option>
+          </select>
+	</div>
+
+	<div class="post-list">
+          <article class="post-preview">
+            <a href="community-post.html">
+              <h3>Caring for Adaptive Clothing</h3>
+              <p class="meta">By Emma L. • 3 days ago</p>
+              <p class="excerpt">Always check care labels, use gentle detergents, and air dry when possible...</p>
+            </a>
+            <div class="post-footer">
+              <span><i class="fas fa-thumbs-up"></i> 15</span>
+              <span><i class="fas fa-comment"></i> 6</span>
+              <span class="tag">Tips</span>
+            </div>
+          </article>
+
+          <!-- Diğer gönderiler burada -->
+	</div>
+      </section>
+
+      <section class="blog-section">
+	<h2>Esneva Blog & FAQs</h2>
+	<ul class="blog-links">
+          <li><a href="faq.html">Frequently Asked Questions</a></li>
+          <li><a href="returns.html">Return & Exchange Policy</a></li>
+          <li><a href="blog.html">Latest Blog Articles</a></li>
+	</ul>
+      </section>
+    </main>
 
     <!-- Footer Section -->
     <footer>
@@ -135,7 +208,8 @@
       </div>
     </footer>
     
-    <script src="script.js"></script>
     <script src="accessibility.js"></script>
+    <script src="community.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

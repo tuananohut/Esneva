@@ -7,18 +7,24 @@ document.addEventListener('keydown', function(event) {
         window.location.href = "products.html";
         break;
     case '3': 
-        window.location.href = "contact.html";
+        window.location.href = "community.html";
         break;
     case '4': 
-        window.location.href = "about.html";
+        window.location.href = "contact.html";
         break;
     case '5': 
-        window.location.href = "favorites.html";
+        window.location.href = "about.html";
         break;
     case '6': 
+        window.location.href = "favorites.html";
+        break;
+    case '7': 
         window.location.href = "cart.html";
         break;
-
+    case '8': 
+        window.location.href = "login.html";
+        break;
+	
     default:
         break;
     }    

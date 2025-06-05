@@ -539,13 +539,13 @@ footer {
 
 .contact h1 {
     font-size: 48px; /* Larger size for "Contact Us" */
-    color: var(--text-color);
+    color: #1e293b;
     margin-bottom: 20px;
 }
 
 .contact p {
     font-size: 18px;
-    color: var(--neutral-gray);
+    color: #1e293b;
     margin-bottom: 30px;
 }
 
@@ -560,7 +560,7 @@ footer {
 
 .contact label {
     font-size: 18px;
-    color: var(--text-color);
+    color: #1e293b;
 }
 
 .contact input, .contact textarea {
@@ -568,7 +568,7 @@ footer {
     font-size: 16px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    color: var(--text-color);
+    color: #1e293b;
 }
 
 .contact input:focus, .contact textarea:focus {
@@ -718,3 +718,4 @@ footer {
     cursor: pointer;
     font-size: 18px;
 }
+

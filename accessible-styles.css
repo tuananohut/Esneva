@@ -377,3 +377,50 @@ body.high-contrast #chatbot-toggle {
   background: #fff;
   color: #000;
 }
+
+body.high-contrast {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.high-contrast .post-form,
+.high-contrast .community-sidebar > div,
+.high-contrast .post-preview,
+.high-contrast .blog-section,
+.high-contrast .filters select {
+  background-color: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+
+.high-contrast .post-form input,
+.high-contrast .post-form textarea,
+.high-contrast .post-form select,
+.high-contrast .share-btn,
+.high-contrast .filters select {
+  background-color: #111 !important;
+  color: #fff !important;
+  border: 1px solid #fff !important;
+}
+
+.high-contrast .share-btn:hover {
+  background-color: #333 !important;
+}
+
+.high-contrast .post-footer i,
+.high-contrast .post-preview h3,
+.high-contrast .tag {
+  color: #fff !important;
+}
+
+.high-contrast .blog-links a {
+  color: #0ff !important;
+}
+
+.high-contrast .blog-links a:hover {
+  color: #0cf !important;
+}
+
+.high-contrast .contact label {
+    color: #fff;
+}
