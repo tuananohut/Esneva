@@ -230,3 +230,48 @@
 .high-contrast #particles-canvas {
   display: none;
 }
+
+.b2b-callout {
+  background-image: url("images/b2b-hospital.jpg"); /* kendi görsel yolunla deðiþtir */
+  background-size: cover;
+  background-position: center;
+  border-radius: 1rem;
+  padding: 4rem 1.5rem;
+  margin: 3rem auto;
+  max-width: 1000px;
+  position: relative;
+  overflow: hidden;
+}
+
+.b2b-overlay {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.b2b-callout h2 {
+  color: #1e293b;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.b2b-callout p {
+  color: #334155;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-btn {
+  background-color: #1e293b;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius:  1rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #334155;
+}
