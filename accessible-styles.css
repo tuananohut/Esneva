@@ -428,3 +428,7 @@ body.high-contrast {
 .high-contrast .b2b-overlay {
     background-color: rgba(10, 10, 10, 0.7);
 }
+
+.high-contrast .page-indicator span {
+    color: #fff;
+}
