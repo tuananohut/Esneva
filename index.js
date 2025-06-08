@@ -7,39 +7,39 @@ document.addEventListener('keydown', function(event) {
 	
     case 'a':
     case 'A':
-	window.location.href = "products.html#everyday";
+	window.location.href = "products.html#self-dressing";
 	break;
     case 'b':
     case 'B':
-	window.location.href = "products.html#intimates";
+	window.location.href = "products.html#assisted-dressing";
 	break;
     case 'c':
     case 'C':
-	window.location.href = "products.html#mobility";
+	window.location.href = "products.html#clothing";
 	break;
     case 'd':
     case 'D':
-	window.location.href = "products.html#vision";
+	window.location.href = "products.html#wheelchair-accessories";
 	break;
     case 'e':
     case 'E':
-	window.location.href = "products.html#orthopedic";
+	window.location.href = "products.html#footwear";
 	break;
     case 'f':
     case 'F':
-	window.location.href = "products.html#footwear";
+	window.location.href = "products.html#prosthesis";
 	break;
     case 'g':
     case 'G':
-	window.location.href = "products.html#hygiene";
+	window.location.href = "products.html#mobility";
 	break;
     case 'h':
     case 'H':
-	window.location.href = "products.html#balance";
+	window.location.href = "products.html#sensory";
 	break;
     case 'i':
     case 'I':
-	window.location.href = "products.html#clothes";
+	window.location.href = "products.html#independent";
 	break;
 	
     default:
@@ -53,11 +53,11 @@ canvas.width = canvas.offsetWidth;
 canvas.height = document.querySelector('.shop-by-needs').offsetHeight;
 
 const particles = [];
-for (let i = 0; i < 80; i++) {
+for (let i = 0; i < 90; i++) {
     particles.push({
 	x: Math.random() * canvas.width,
 	y: Math.random() * canvas.height,
-	r: Math.random() * 2 + 1,
+	r: Math.random() * 4 + 1,
 	dx: Math.random() * 0.5 - 0.25,
 	dy: Math.random() * 0.5 - 0.25
     });

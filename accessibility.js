@@ -20,8 +20,7 @@ window.addEventListener("DOMContentLoaded", () => {
 	logo.src = isHighContrast ? "logo_black.png" : "logo.png"; // Logoların adını senin dosyalarına göre ayarladım
     });
 
-    // Read Aloud Toggle
-    readBtn.addEventListener("click", () => {
+    function readAloud() {
 	if (!reading) {
 	    const textToRead = getTextFromBody();
 	    if (textToRead.trim().length === 0) return;
@@ -42,6 +41,19 @@ window.addEventListener("DOMContentLoaded", () => {
 	    readLabel.innerHTML = "&#9654;";
 	    reading = false;
 	}
+    }
+
+    function stopReading() {
+	if (reading) {
+	    speechSynthesis.cancel();
+	    readLabel.innerHTML = "&#9654;";
+	    reading = false;
+	} 
+    }
+    
+    // Read Aloud Toggle
+    readBtn.addEventListener("click", () => {
+	readAloud();
     });
 
     // Chatbot Toggle
@@ -53,7 +65,73 @@ window.addEventListener("DOMContentLoaded", () => {
 	}
     });
 
-    // Mikrofon butonunu daha sonra entegre edeceğiz
+    let recognition;
+    let recognizing = false;
+
+    if ('webkitSpeechRecognition' in window) {
+	recognition = new webkitSpeechRecognition();
+	recognition.lang = 'en-US';
+	recognition.continuous = false;
+	recognition.interimResults = false;
+
+	recognition.onstart = () => recognizing = true;
+	recognition.onend = () => recognizing = false;
+
+	recognition.onresult = function (event) {
+	    const command = event.results[0][0].transcript.toLowerCase().trim();
+	    handleVoiceCommand(command);
+	};
+    }
+
+    
+    function matchCommand(input, patterns) {
+	return patterns.some(p => input.toLowerCase().includes(p.toLowerCase()));
+    }
+
+    
+    function handleVoiceCommand(command) {
+	console.log("Voice command:", command);
+
+	if (matchCommand(command, ["go to home", "open home", "navigate to home"])) {
+	    window.location.href = "index.html";
+	} else if (matchCommand(command, ["go to products", "open products"])) {
+	    window.location.href = "products.html";
+	} else if (matchCommand(command, ["open cart", "go to cart", "show cart"])) {
+	    window.location.href = "cart.html";
+	} else if (matchCommand(command, ["open favorites", "go to favorites", "show favorites"])) {
+	    window.location.href = "favorites.html";
+	} else if (matchCommand(command, ["open community", "go to community"])) {
+	    window.location.href = "community.html";
+	} else if (matchCommand(command, ["read again", "read page"])) {
+	    document.getElementById("btn-read-again")?.click();
+	    readAloud();
+	} else if (matchCommand(command, ["stop reading", "stop voice"])) {
+	    document.getElementById("btn-stop-reading")?.click();
+	    stopReading()
+	} else if (matchCommand(command, ["close modal", "close popup"])) {
+	    document.querySelector(".close-modal")?.click();
+	} else if (matchCommand(command, ["next page", "next"])) {
+	    document.getElementById("nextBtn")?.click();
+	} else if (matchCommand(command, ["previous page", "back page", "previous"])) {
+	    document.getElementById("prevBtn")?.click();
+	} else if (command.includes("show me")) {
+	    const parts = command.split("show me ");
+	    if (parts[1]) {
+		const category = parts[1].trim().toLowerCase().replace(/\s+/g, "-");
+		window.location.href = `products.html#${category}`;
+	    }
+	} else {
+	    alert("Command not recognized: " + command);
+	}
+    }
+
+    document.getElementById("voice-toggle").addEventListener("click", () => {
+	if (!recognizing) {
+	    recognition.start();
+	} else {
+	    recognition.stop();
+	}
+    });
 });
 
 function getTextFromBody() {

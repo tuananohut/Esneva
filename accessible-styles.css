@@ -424,3 +424,7 @@ body.high-contrast {
 .high-contrast .contact label {
     color: #fff;
 }
+
+.high-contrast .b2b-overlay {
+    background-color: rgba(10, 10, 10, 0.7);
+}

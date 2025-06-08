@@ -68,16 +68,15 @@
       </button>
     </div>
 
-    <!-- Chatbot iframe – sağ alt köşede -->
+    <!-- Chatbot iframe – sağ alt köşede -->    
     <div id="chat-widget" style="display: none; position: fixed; bottom: 1rem; right: 1rem; z-index: 999;">
-      <iframe 
-	src="https://huggingface.co/chat/"
-	width="320"
-	height="420"
-	style="border: none; border-radius: 10px;">
-      </iframe>
+      <iframe
+	src="https://www.chatbase.co/chatbot-iframe/BAJuieQJDoDaN2fxGQiDn"
+	width="100%"
+	style="height: 100%; min-height: 500px"
+	frameborder="0"
+	></iframe>
     </div>
-
     
     <div class="products-container">
       <h1 class="products-title">Products</h1>
@@ -92,41 +91,41 @@
                 <span>All Products</span>
                 <span class="count" id="count-all">R</span>
               </button>
-              <button class="category-btn" data-category="everyday">
-                <span>Adaptive Everyday Wear</span>
+              <button class="category-btn" data-category="self-dressing">
+                <span>Self Dressing</span>
                 <span class="count" id="count-everyday">A</span>
               </button>
-              <button class="category-btn" data-category="clothes">
-                <span>Clothes</span>
-                <span class="count" id="count-clothes">I</span>
+              <button class="category-btn" data-category="assisted-dressing">
+                <span>Assisted Dressing</span>
+                <span class="count" id="count-clothes">B</span>
               </button>
-              <button class="category-btn" data-category="intimates">
-                <span>Inclusive Intimates</span>
-                <span class="count" id="count-intimates">B</span>
+              <button class="category-btn" data-category="clothing">
+                <span>Clothing</span>
+                <span class="count" id="count-intimates">C</span>
               </button>
-              <button class="category-btn" data-category="mobility">
-                <span>Mobility-Friendly</span>
-                <span class="count" id="count-mobility">C</span>
-              </button>
-              <button class="category-btn" data-category="vision">
-                <span>Vision-Accessible</span>
-                <span class="count" id="count-vision">D</span>
-              </button>
-              <button class="category-btn" data-category="orthopedic">
-                <span>Support & Orthopedic</span>
-                <span class="count" id="count-orthopedic">E</span>
+              <button class="category-btn" data-category="wheelchair-accessories">
+                <span>Wheelchair Accessories</span>
+                <span class="count" id="count-mobility">D</span>
               </button>
               <button class="category-btn" data-category="footwear">
-                <span>Comfort Footwear</span>
-                <span class="count" id="count-footwear">F</span>
+                <span>Footwear</span>
+                <span class="count" id="count-vision">E</span>
               </button>
-              <button class="category-btn" data-category="hygiene">
-                <span>Self-Care</span>
-                <span class="count" id="count-hygiene">G</span>
+              <button class="category-btn" data-category="prosthesis">
+                <span>Prosthesis & Orthotic Aids</span>
+                <span class="count" id="count-orthopedic">F</span>
               </button>
-              <button class="category-btn" data-category="balance">
-                <span>Walking & Balance Aids</span>
-                <span class="count" id="count-balance">H</span>
+              <button class="category-btn" data-category="mobility">
+                <span>Mobility & Walking Aids</span>
+                <span class="count" id="count-footwear">G</span>
+              </button>
+              <button class="category-btn" data-category="sensory">
+                <span>Sensory & Visual Aids</span>
+                <span class="count" id="count-hygiene">H</span>
+              </button>
+              <button class="category-btn" data-category="independent">
+                <span>Independent Living Tools</span>
+                <span class="count" id="count-balance">I</span>
               </button>
             </nav>
           </div>
@@ -165,61 +164,60 @@
       </div>
     </div>
 
-    
-    
     <div id="productModal" class="modal">
       <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <div class="modal-body">
-          <div class="modal-image">
-	    <img id="modalImage" src="/placeholder.svg" alt="Product Image">
-          </div>
-	  <div class="product-options">
-	    <div class="sizes">
-	      <label>Size:</label>
-	      <button class="size-btn">XS</button>
-	      <button class="size-btn">S</button>
-	      <button class="size-btn">M</button>
-	      <button class="size-btn">L</button>
-	      <button class="size-btn">XL</button>
-	    </div>
+	<span class="close-modal">&times;</span>
+	<div class="modal-body">
+	  
+	  <div class="modal-left">
+            <div class="modal-image">
+              <img id="modalImage" src="/placeholder.svg" alt="Product Image">
+            </div>
 
-	    <div class="colors">
-	      <label>Color:</label>
-	      <button class="color-btn" data-color="white" style="background: white;"></button>
-	      <button class="color-btn" data-color="black" style="background: black;"></button>
-	      <button class="color-btn" data-color="beige" style="background: beige;"></button>
-	    </div>
+            <div class="voice-controls">
+              <button id="btn-read-again">&#9654;</button>
+              <button id="btn-stop-reading">&#9632;</button>
+            </div>
+
+            <div class="sizes">
+              <label>Size:</label>
+              <button class="size-btn">XS</button>
+              <button class="size-btn">S</button>
+              <button class="size-btn">M</button>
+              <button class="size-btn">L</button>
+              <button class="size-btn">XL</button>
+            </div>
+
+            <div class="colors">
+              <label>Color:</label>
+              <button class="color-btn" data-color="white" style="background: white;"></button>
+              <button class="color-btn" data-color="black" style="background: black;"></button>
+              <button class="color-btn" data-color="beige" style="background: beige;"></button>
+            </div>
+
+            <div class="modal-actions">
+              <button class="modal-btn favorite-btn">
+		<i class="fas fa-heart"></i> 
+              </button>
+              <button class="modal-btn cart-btn">
+		<i class="fas fa-shopping-cart"></i>
+              </button>
+            </div>
 	  </div>
 
-          <div class="modal-details">
-	    <h2 id="modalTitle"></h2>
-	    <p class="modal-price" id="modalPrice"></p>
-	    <div class="voice-controls">
-	      <button id="btn-read-again">&#9654</button>
-	      <button id="btn-stop-reading">&#9632</button>
-	    </div>
-	    
-	    <p class="modal-description" id="modalDescription"></p>
-	    
-	    <h3>Features:</h3>
-	    <ul id="modalFeatures"></ul>
-	    
-	    <p id="modalCare"></p>
-	    <p id="modalMedical"></p>
-	    
-	    <div class="modal-actions">
-	      <button class="modal-btn favorite-btn">
-                <i class="fas fa-heart"></i> Add to Favorites
-	      </button>
-	      <button class="modal-btn cart-btn">
-                <i class="fas fa-shopping-cart"></i> Add to Cart
-	      </button>
-	    </div>
+	  <div class="modal-details">
+            <h2 id="modalTitle"></h2>
+            <p class="modal-price" id="modalPrice"></p>
+            <p class="modal-description" id="modalDescription"></p>
 
+            <h3>Features:</h3>
+            <ul id="modalFeatures"></ul>
 
-          </div>
-        </div>
+            <p id="modalCare"></p>
+            <p id="modalMedical"></p>
+	  </div>
+
+	</div>
       </div>
     </div>
 

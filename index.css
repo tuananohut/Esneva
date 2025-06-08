@@ -236,15 +236,16 @@
   background-size: cover;
   background-position: center;
   border-radius: 1rem;
-  padding: 4rem 1.5rem;
+  /*padding: 4rem 1.5rem;*/
+  padding: 8rem 15rem;
   margin: 3rem auto;
-  max-width: 1000px;
+  max-width: 1200px;
   position: relative;
   overflow: hidden;
 }
 
 .b2b-overlay {
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.7);
   padding: 2rem;
   border-radius: 1rem;
   text-align: center;
