@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="accessible-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header-container">
+	<div class="logo">
+	  <a href="index.html">
+            <img id="site-logo" src="logo.png" alt="Esneva Adaptive Clothing Company Logo">
+	  </a>
+	</div>
+	
+	<nav role="navigation" aria-label="Main Navigation">
+          <a href="index.html" tabindex="1" class="nav-link"
+	     accesskey="1" class="nav-link">1 Home</a>
+	  <a href="products.html" tabindex="2" class="nav-link"
+	     accesskey="2" class="nav-link">2 Products</a>
+	  <a href="community.html" tabindex="3" class="nav-link"
+	     accesskey="3" class="nav-link">3 Community</a>
+	  <a href="contact.html" tabindex="4" class="nav-link"
+	     accesskey="4" class="nav-link">4 Contact</a>
+	  <a href="about.html" tabindex="5" class="nav-link"
+	     accesskey="5" class="nav-link">5 About</a>
+	  <a href="favorites.html" tabindex="6" class="nav-link"
+	     accesskey="6" class="nav-link">6<i class='fas fa-heart'></i></a>
+	  <a href="cart.html" tabindex="7" class="nav-link"
+	     accesskey="7" class="nav-link">7<i class='fas fa-shopping-cart'></i></a>
+	  <a href="login.html" tabindex="8" class="nav-link"
+	     accesskey="8" class="nav-link">8<i class='fas fa-user'></i></a>
+	</nav>
+	
+      </div>
+    </header>
+
+    
+    <button id="menu-toggle" class="hamburger-btn" aria-label="Toggle Accessibility Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Accessibility Toolbar Çekmece -->
+    <div id="accessibility-drawer" class="accessibility-drawer hidden">
+      <button id="contrast-toggle" aria-label="Toggle high contrast">
+	<span id="contrast-label">&#9681</span>
+      </button>
+
+      <button id="read-toggle" aria-label="Read page">
+	<span id="read-label">&#9654</span>
+      </button>
+
+      <button id="voice-toggle" aria-label="Activate microphone">
+	<span id="microphone-label"><i class="fas fa-microphone"></i></span>
+      </button>
+
+    </div>
+
+    <div>
+      <button id="chatbot-toggle" aria-label="Open AI chat">
+	<i class="fa fa-comment"></i>
+      </button>
+    </div>
+
+    <!-- Chatbot iframe – sağ alt köşede -->
+    <div id="chat-widget" style="display: none; position: fixed; bottom: 1rem; right: 1rem; z-index: 999;">
+      <iframe
+	src="https://www.chatbase.co/chatbot-iframe/BAJuieQJDoDaN2fxGQiDn"
+	width="100%"
+	style="height: 100%; min-height: 500px"
+	frameborder="0"
+	></iframe>
+    </div>
+
+    <section class="account-section">
+      <h1>My Account</h1>
+      <div class="tabs">
+	<button class="tab active" data-tab="profile">Profile</button>
+	<button class="tab" data-tab="orders">Orders</button>
+	<button class="tab" data-tab="addresses">Addresses</button>
+	<button class="tab" data-tab="payment">Payment</button>
+      </div>
+
+      <div id="profile" class="tab-content active">
+	<h2>Profile Information</h2>
+	<form>
+	  <div class="form-row">
+            <label>Full Name</label>
+            <input type="text" value="John Doe" readonly />
+	  </div>
+	  <div class="form-row">
+            <label>Email Address</label>
+            <input type="email" value="john.doe@example.com" readonly />
+	  </div>
+	  <div class="form-row">
+            <label>Phone Number</label>
+            <input type="tel" value="+1 (555) 123-4567" readonly />
+	  </div>
+	  <div class="form-row">
+            <label>Address</label>
+            <input type="text" value="123 Main St, City, State 12345" readonly />
+	  </div>
+	  <button class="btn">Edit Profile</button>
+	</form>
+      </div>
+
+      <div id="orders" class="tab-content">
+	<h2>Order History</h2>
+	<ul class="order-list">
+	  <li>
+            <strong>Order #00124</strong><br>
+            2 items – <em>Delivered</em> – <a href="#">View Details</a>
+	  </li>
+	  <li>
+            <strong>Order #00123</strong><br>
+            1 item – <em>Processing</em> – <a href="#">Track Order</a>
+	  </li>
+	</ul>
+      </div>
+
+      <div id="addresses" class="tab-content">
+	<h2>Saved Addresses</h2>
+	<p>You currently have one saved address.</p>
+	<address>
+	  123 Main St<br>City, State 12345<br>
+	  <button class="btn">Edit</button>
+	</address>
+      </div>
+
+      <div id="payment" class="tab-content">
+	<h2>Payment Methods</h2>
+	<p>Saved payment method: <strong>Visa ending in 1234</strong></p>
+	<button class="btn">Update Payment</button>
+	<p>or <a href="checkout.html">Proceed to Checkout</a></p>
+      </div>
+    </section>
+
+    
+    
+    <!-- Footer Section -->
+    <footer>
+      <div class="footer-content">	
+        <div class="footer-links">
+          <div class="payment-logos">
+            <i class="fab fa-cc-visa payment-logo"></i>
+            <i class="fab fa-cc-mastercard payment-logo"></i>
+            <i class="fab fa-cc-paypal payment-logo"></i>
+          </div>
+
+          <div class="social-media">
+            <a href="https://www.facebook.com" aria-label="Facebook page"
+               target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com" aria-label="Instagram page"
+               target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.twitter.com" aria-label="X page"
+               target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com" aria-label="LinkedIn page"
+               target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Adaptive Clothing | All Rights Reserved</p>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Returns & Exchanges</a></li>
+        </ul>
+      </div>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script src="accessibility.js"></script>
+  </body>
+  <script>
+    document.querySelectorAll(".tab").forEach(tab => {
+	tab.addEventListener("click", () => {
+	    document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+	    document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+	    tab.classList.add("active");
+	    document.getElementById(tab.dataset.tab).classList.add("active");
+	});
+    });
+  </script>
+
+</html>
