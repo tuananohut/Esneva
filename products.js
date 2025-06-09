@@ -4,7 +4,7 @@ const products = [
     {
 	id: 2,
 	name: "Adaptive Pants",
-	price: "299 TL",
+	price: "1850 TL",
 	image: "images/products/pants/image1.jpg",
 	description: "Designed for ease, accessibility, and everyday comfort, these adaptive pants make dressing simple while offering style and practicality.",
 	sizes: ["XS", "S", "M", "L", "XL", "XXL"],
@@ -31,7 +31,7 @@ const products = [
     {
 	id: 1,
 	name: "Adaptive T-Shirt",
-	price: "199 TL",
+	price: "950 TL",
 	image: "images/products/t-shirt/gray.jpg",
 	description: "Designed for maximum comfort, accessibility, and style, this adaptive top is perfect for post-surgery recovery, medical use, and independent dressing.",
 	need: ["self-dressing", "assisted-dressing", "clothing"],
@@ -56,7 +56,7 @@ const products = [
     {
 	id: 3,
 	name: "Wheelchair Pants",
-	price: "",
+	price: "1650 TL",
 	image: "images/products/wheelchair/pants/black.jpg",
 	description: "Engineered specifically for wheelchair users, these pants offer superior seated comfort, discreet functionality, and style—perfect for everyday living without compromise.",
 	need: ["self-dressing", "assisted-dressing", "clothing"],
@@ -82,7 +82,7 @@ const products = [
     {
 	id: 4,
 	name: "Undergarments (Male)",
-	price: "",
+	price: "490 TL",
 	image: "images/products/undergarments/male/black.jpg",
 	description: "",
 	need: ["self-dressing", "assisted-dressing", "clothing"],
@@ -104,7 +104,7 @@ const products = [
     {
 	id: 5,
 	name: "Undergarments (Female)",
-	price: "",
+	price: "490 TL",
 	image: "images/products/undergarments/female/black.jpg",
 	description: "",
 	need: ["self-dressing", "assisted-dressing", "clothing"],
@@ -126,7 +126,7 @@ const products = [
     {
 	id: 6,
 	name: "Adaptive Bra",
-	price: "299 TL",
+	price: "580 TL",
 	image: "images/products/bra/black.jpg",
 	description: "Designed for ease, accessibility, and ultimate comfort, this adaptive bra supports independent dressing while ensuring a secure and stylish fit. Pair with the Esneva Adaptive Open-Front Underwear for a seamless, stylish, and ultra-comfortable lingerie set that prioritizes ease, softness, and everyday confidence.",
 	need: ["self-dressing", "assisted-dressing", "clothing"],
@@ -150,7 +150,7 @@ const products = [
     {
 	id: 7,
 	name: "Assisted Dressing Pants",
-	price: "",
+	price: "1550 TL",
 	image: "images/products/assisted-dressing/pants/black.jpg",
 	description: "Designed specifically for individuals who require assistance with dressing, these pants prioritize caregiver ease while preserving wearer comfort and dignity in daily care routines.",
 	need: ["assisted-dressing", "clothing"],
@@ -172,7 +172,7 @@ const products = [
     {
 	id: 8,
 	name: "Assisted Dressing Top",
-	price: "",
+	price: "1390 TL",
 	image: "images/products/assisted-dressing/top/white.jpg",
 	description: "Designed for individuals who rely on caregiver assistance, this top supports dignity and comfort during daily dressing, ideal for both home care and long-term care facilities.",
 	need: ["assisted-dressing", "clothing"],
@@ -194,7 +194,7 @@ const products = [
     {
 	id: 9,
 	name: "Backless Top",
-	price: "",
+	price: "1200 TL",
 	image: "images/products/backless-top/white.jpg",
 	description: "This backless top is thoughtfully engineered to meet the needs of wheelchair users, offering dignity, convenience, and comfort in a stylish adaptive design.",
 	need: ["self-dressing", "assisted-dressing", "clothing", "wheelchair-accessories"],
@@ -217,7 +217,7 @@ const products = [
     {
 	id: 10,
 	name: "Magnetic Shirt",
-	price: "",
+	price: "1400 TL",
 	image: "images/products/magnetic-shirt/white.jpg",
 	description: "This Magnetic Shirt merges fashion with functionality, providing dignity and ease for anyone who faces challenges with traditional clothing fasteners.",
 	need: ["self-dressing", "assisted-dressing", "clothing"],
@@ -241,7 +241,7 @@ const products = [
     {    
 	id: 11,
 	name: "Adaptive Footwear",
-	price: "300 TL",
+	price: "1050 TL",
 	image: "images/products/footwear/black.jpg",
 	description: " ",
 	need: ["footwear"],
