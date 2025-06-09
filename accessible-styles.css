@@ -119,6 +119,7 @@
 }
 
 .high-contrast .category-card h3,
+.high-contrast .hover-text,
 .high-contrast .category-card span,
 .high-contrast footer {
     color: black !important;
