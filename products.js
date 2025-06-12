@@ -263,7 +263,7 @@ const products = [
     {
 	id: 12,
 	name: "Prosthetic Silicone Liner",
-	price: "300 TL",
+	price: "390 TL",
 	image: "images/products/prosthetics/image1.jpg",
 	description: " ",
 	need: ["prosthesis"],
@@ -296,7 +296,7 @@ const products = [
     {
 	id: 14,
 	name: "Orthopedic Insole",
-	price: "300 TL",
+	price: "400 TL",
 	image: "images/products/orthopedic/image1.jpg",
 	description: " ",
 	need: ["prosthesis", "footwear"],
@@ -313,7 +313,7 @@ const products = [
     {
 	id: 15,
 	name: "Forearm Crutch",
-	price: "300 TL",
+	price: "600 TL",
 	image: "images/products/forearm_crutch/image1.jpg",
 	description: " ",
 	need: ["mobility"],
@@ -330,7 +330,7 @@ const products = [
     {
 	id: 16,
 	name: "Walking Cane",
-	price: "300 TL",
+	price: "500 TL",
 	image: "images/products/cane/image1.jpg",
 	description: " ",
 	need: ["mobility"],
@@ -379,7 +379,7 @@ const products = [
     {
 	id: 19,
 	name: "Dressing Hook",
-	price: "300 TL",
+	price: "110 TL",
 	image: "images/products/hook/image1.jpg",
 	description: " ",
 	need: ["independent"],
